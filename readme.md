@@ -1,6 +1,6 @@
-# Browser.php - Detecting a user's browser from PHP
+_This is not my code, but rather a Github repo of Chris Schuld's code so people can use it as a submodule in their Git projects. To download the original code please visit [Chris Schuld's page](http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php/)._
 
-This is not my code, but rather a Github repo of Chris Schuld's code so people can use it as a submodule in their Git projects. To download the original code please visit [Chris Schuld's page](http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php/).
+# Browser.php - Detecting a user's browser from PHP
 
 Detecting the user’s browser type and version is helpful in web applications that harness some of the newer bleeding edge concepts. With the browser type and version you can notify users about challenges they may experience and suggest they upgrade before using such application. Not a great idea on a large scale public site; but on a private application this type of check can be helpful.
 
