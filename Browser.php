@@ -2,8 +2,8 @@
 	/**
 	 * File: Browser.php
 	 * Author: Chris Schuld (http://chrisschuld.com/)
-	 * Last Modified: August 20th, 2010
-	 * @version 1.9
+	 * Last Modified: March 11th, 2013
+	 * @version 1.10
 	 * @package PegasusPHP
 	 *
 	 * Copyright (C) 2008-2010 Chris Schuld  (chris@chrisschuld.com)
@@ -33,6 +33,9 @@
 	 * http://apptools.com/phptools/browser/
 	 *
 	 * UPDATES:
+	 *
+	 * 2013-03-08 (v1.10):
+	 *  + Added SeaMonkey Browser	
 	 *
 	 * 2010-08-20 (v1.9):
 	 *  + Added MSN Explorer Browser (legacy)
@@ -156,6 +159,7 @@
 		const BROWSER_OMNIWEB = 'OmniWeb';                        // http://www.omnigroup.com/applications/omniweb/
 		const BROWSER_FIREBIRD = 'Firebird';                      // http://www.ibphoenix.com/
 		const BROWSER_FIREFOX = 'Firefox';                        // http://www.mozilla.com/en-US/firefox/firefox.html
+		const BROWSER_SEAMONKEY = 'SeaMonkey';                    // http://www.seamonkey-project.org/
 		const BROWSER_ICEWEASEL = 'Iceweasel';                    // http://www.geticeweasel.org/
 		const BROWSER_SHIRETOKO = 'Shiretoko';                    // http://wiki.mozilla.org/Projects/shiretoko
 		const BROWSER_MOZILLA = 'Mozilla';                        // http://www.mozilla.com/en-US/
@@ -369,6 +373,7 @@
 				$this->checkBrowserOpera() ||
 				$this->checkBrowserGaleon() ||
 				$this->checkBrowserNetscapeNavigator9Plus() ||
+				$this->checkBrowserSeaMonkey() ||
 				$this->checkBrowserFirefox() ||
 				$this->checkBrowserChrome() ||
 				$this->checkBrowserOmniWeb() ||
@@ -810,6 +815,26 @@
 				else if( preg_match("/Firefox$/i",$this->_agent,$matches) ) {
 					$this->setVersion("");
 					$this->setBrowser(self::BROWSER_FIREFOX);
+					return true;
+				}
+			}
+		    return false;
+	    }
+		
+	    /**
+	     * Determine if the browser is SeaMonkey or not (last updated 1.10)
+	     * @return boolean True if the browser is SeaMonkey otherwise false
+	     */
+	    protected function checkBrowserSeaMonkey() {
+		    if( stripos($this->_agent,'safari') === false ) {
+				if( preg_match("/SeaMonkey[\/ \(]([^ ;\)]+)/i",$this->_agent,$matches) ) {
+					$this->setVersion($matches[1]);
+					$this->setBrowser(self::BROWSER_SEAMONKEY);
+					return true;
+				}
+				else if( preg_match("/SeaMonkey$/i",$this->_agent,$matches) ) {
+					$this->setVersion("");
+					$this->setBrowser(self::BROWSER_SEAMONKEY);
 					return true;
 				}
 			}
