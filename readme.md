@@ -46,6 +46,7 @@ The Browser class allow you to detect a user's browser and version.
  * Galeon
  * NetPositive
  * Phoenix
+ * SeaMonkey
 
 ### Example
 
