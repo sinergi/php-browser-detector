@@ -1,0 +1,26 @@
+{
+    "name": "gavroche/browser",
+    "type": "library",
+    "description": "Detecting the user's browser, operating system and language.",
+    "keywords": ["browser", "os", "operating system", "language", "detection"],
+    "homepage": "https://github.com/gavroche/php-browser",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Gabriel Bull",
+            "email": "gavroche.bull@gmail.com"
+        },
+        {
+	        "name": "Chris Schuld",
+            "email": "unknown"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "autoload": {
+        "psr-0" : {
+            "Browser" : "lib/"
+        }
+    }
+}

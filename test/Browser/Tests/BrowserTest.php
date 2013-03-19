@@ -1,0 +1,31 @@
+<?php
+
+namespace Browser\Tests;
+
+use Browser\Browser, PHPUnit_Framework_TestCase;
+
+class BrowserTest extends PHPUnit_Framework_TestCase {	
+	public function testBlackBerry() {
+		Browser::setUserAgent("BlackBerry8100/4.5.0.124 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/100");
+		$this->assertEquals(Browser::BLACKBERRY, Browser::getBrowser());
+		$this->assertEquals('4.5.0.124', Browser::getVersion());
+	}
+	
+	public function testFirefox() {
+		Browser::setUserAgent("Mozilla/5.0 (X11; Linux x86_64; rv:18.0) Gecko/20100101 Firefox/18.0");
+		$this->assertEquals(Browser::FIREFOX, Browser::getBrowser());
+		$this->assertEquals('18.0', Browser::getVersion());
+	}
+	
+	public function testSeaMonkey() {
+		Browser::setUserAgent("Mozilla/5.0 (Windows; U; Windows NT 5.1; RW; rv:1.8.0.7) Gecko/20110321 MultiZilla/4.33.2.6a SeaMonkey/8.6.55");
+		$this->assertEquals(Browser::SEAMONKEY, Browser::getBrowser());
+		$this->assertEquals('8.6.55', Browser::getVersion());
+	}
+	
+	public function testUnknown() {
+		Browser::setUserAgent("");
+		$this->assertEquals(Browser::UNKNOWN, Browser::getBrowser());
+		$this->assertEquals(Browser::VERSION_UNKNOWN, Browser::getVersion());
+	}
+}
