@@ -1,6 +1,6 @@
 # PHP Browser
 
-Copyright 2013, Gabriel Bull, Licensed under the GNU GENERAL PUBLIC LICENSE.
+Copyright 2013, Gabriel Bull, Licensed under MIT License.
 
 This project is a fork of [Chris Schuld's browser.php](http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php/).
 
