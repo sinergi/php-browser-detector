@@ -1,6 +1,6 @@
 # PHP Browser
 
-Copyright 2013, Gabriel Bull, Licensed under MIT License.
+Copyright 2013, Gabriel Bull, dual licensed under GNU GENERAL PUBLIC LICENSE and MIT License.
 
 This project is a fork of [Chris Schuld's browser.php](http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php/).
 
@@ -28,9 +28,6 @@ The Browser class allow you to detect a user's browser and version.
  * Amaya
  * Lynx
  * Safari
- * iPhone
- * iPod
- * iPad
  * Chrome
  * Navigator
  * GoogleBot
