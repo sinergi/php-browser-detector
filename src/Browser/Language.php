@@ -112,7 +112,7 @@ class Language
      *
      * @return  string
      */
-    public static function getLanguageLocale()
+    public static function getLanguageLocale($separator = '-')
     {
         if (!is_array(self::$languages)) {
             self::checkLanguages();
@@ -127,7 +127,7 @@ class Language
         }
 
         if (!empty($locale)) {
-            return $userLanguage . "-" . strtoupper($locale);
+            return $userLanguage . $separator . strtoupper($locale);
         } else {
             return $userLanguage;
         }
