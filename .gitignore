@@ -1,14 +1,11 @@
 .DS_Store
-
-# Thumbnails
 ._*
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# Windows image file caches
-Thumbs.db 
-
-# Folder config file
+Thumbs.db
 Desktop.ini
+.idea
+phpunit.xml
+composer.lock
+composer.phar
+vendor

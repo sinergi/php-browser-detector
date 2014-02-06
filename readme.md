@@ -1,9 +1,5 @@
 # PHP Browser
 
-Copyright 2013, Gabriel Bull, dual licensed under GNU GENERAL PUBLIC LICENSE and MIT License.
-
-This project is a fork of [Chris Schuld's browser.php](http://chrisschuld.com/projects/browser-php-detecting-a-users-browser-from-php/).
-
 Detecting the user's browser, operating system and language from PHP. Because browser detection is not always reliable and evolves at all time, use with care and feel free to contribute.
 
 ## Browser Detection
