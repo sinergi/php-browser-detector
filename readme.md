@@ -1,5 +1,7 @@
 # PHP Browser
 
+[![Build Status](https://travis-ci.org/gabrielbull/php-browser.png)](https://travis-ci.org/gabrielbull/php-browser)
+
 Detecting the user's browser, operating system and language from PHP. Because browser detection is not always reliable and evolves at all time, use with care and feel free to contribute.
 
 ## Browser Detection
