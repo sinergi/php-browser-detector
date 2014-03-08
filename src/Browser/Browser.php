@@ -198,11 +198,15 @@ class Browser
             //     user agents used in some older versions of Opera
             // (2) WebTV is strapped onto Internet Explorer so we must
             //     check for WebTV before IE
-            // (3) (deprecated) Galeon is based on Firefox and needs to be
+            // (3) Because of Internet Explorer 11 using
+            //     "Mozilla/5.0 ([...] Trident/7.0; rv:11.0) like Gecko"
+            //     as user agent, tests for IE must be run before any
+            //     tests checking for "Mozilla"
+            // (4) (deprecated) Galeon is based on Firefox and needs to be
             //     tested before Firefox is tested
-            // (4) OmniWeb is based on Safari so OmniWeb check must occur
+            // (5) OmniWeb is based on Safari so OmniWeb check must occur
             //     before Safari
-            // (5) Netscape 9+ is based on Firefox so Netscape checks
+            // (6) Netscape 9+ is based on Firefox so Netscape checks
             //     before FireFox are necessary
             self::checkBrowserWebTv() ||
             self::checkBrowserInternetExplorer() ||
@@ -291,7 +295,7 @@ class Browser
                 self::setVersion('1.5');
             }
             return true;
-        } // Test for versions > 1.5
+        } // Test for versions > 1.5 and < 11
         else if (stripos(self::getUserAgent(), 'msie') !== false && stripos(self::getUserAgent(), 'opera') === false) {
             // See if the browser is the odd MSN Explorer
             if (stripos(self::getUserAgent(), 'msnb') !== false) {
@@ -304,6 +308,17 @@ class Browser
             self::setBrowser(self::IE);
             self::setVersion(str_replace(array('(', ')', ';'), '', $aresult[1]));
             return true;
+        } // Test for versions >= 11
+        else if (stripos(self::getUserAgent(), 'trident') !== false) {
+            self::setBrowser(self::IE);
+
+            preg_match('/rv:(\d+\.\d+)/', self::getUserAgent(), $matches);
+            if (isset($matches[1])) {
+                self::setVersion($matches[1]);
+                return true;
+            } else {
+                return false;
+            }
         } // Test for Pocket IE
         else if (stripos(self::getUserAgent(), 'mspie') !== false || stripos(self::getUserAgent(), 'pocket') !== false) {
             $aresult = explode(' ', stristr(self::getUserAgent(), 'mspie'));

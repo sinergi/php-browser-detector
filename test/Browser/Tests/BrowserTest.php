@@ -20,6 +20,13 @@ class BrowserTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('18.0', Browser::getVersion());
     }
 
+    public function testInternetExplorer11()
+    {
+        Browser::setUserAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko");
+        $this->assertEquals(Browser::IE, Browser::getBrowser());
+        $this->assertEquals('11.0', Browser::getVersion());
+    }
+
     public function testSeaMonkey()
     {
         Browser::setUserAgent("Mozilla/5.0 (Windows; U; Windows NT 5.1; RW; rv:1.8.0.7) Gecko/20110321 MultiZilla/4.33.2.6a SeaMonkey/8.6.55");
