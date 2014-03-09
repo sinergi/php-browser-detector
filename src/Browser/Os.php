@@ -7,7 +7,7 @@ namespace Browser;
  *
  * @package browser
  */
-class OS
+class Os
 {
     const UNKNOWN = 'unknown';
     const OSX = 'OS X';

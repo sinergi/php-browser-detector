@@ -3,6 +3,7 @@
 namespace Browser\Tests;
 
 use Browser\Browser;
+use Browser\Os;
 use PHPUnit_Framework_TestCase;
 
 class BrowserTest extends PHPUnit_Framework_TestCase
@@ -40,5 +41,13 @@ class BrowserTest extends PHPUnit_Framework_TestCase
         Browser::setUserAgent("");
         $this->assertEquals(Browser::UNKNOWN, Browser::getBrowser());
         $this->assertEquals(Browser::VERSION_UNKNOWN, Browser::getVersion());
+    }
+
+    public function testSafariIpod()
+    {
+        Browser::setUserAgent("Mozilla/5.0 (iPod; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.16 Mobile/10B329 Safari/8536.25");
+        $this->assertEquals(Browser::SAFARI, Browser::getBrowser());
+        $this->assertEquals(Os::IOS, Os::getOS());
+        $this->assertTrue(Browser::isMobile());
     }
 }
