@@ -1,5 +1,4 @@
 <?php
-
 namespace Browser\Tests;
 
 use Browser\Browser;

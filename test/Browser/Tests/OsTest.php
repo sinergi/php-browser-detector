@@ -1,8 +1,6 @@
 <?php
-
 namespace Browser\Tests;
 
-use Browser\Browser;
 use Browser\Os;
 use PHPUnit_Framework_TestCase;
 
