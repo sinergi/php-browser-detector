@@ -27,6 +27,12 @@ class OsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(Os::VERSION_UNKNOWN, $os->getVersion());
     }
 
+    public function testIsMobile()
+    {
+        $os = new Os("Mozilla/5.0 (iPod; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.16 Mobile/10B329 Safari/8536.25");
+        $this->assertTrue($os->isMobile());
+    }
+
     public function testUnknown()
     {
         $os = new Os("");
