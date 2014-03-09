@@ -13,5 +13,5 @@ if (file_exists($vendor . "/autoload.php")) {
     }
 }
 
-require_once __DIR__.'/../src/Browser/Autoloader.php';
+require_once __DIR__ . '/../src/Browser/Autoloader.php';
 Browser\Autoloader::register();

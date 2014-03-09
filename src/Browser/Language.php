@@ -14,8 +14,6 @@ class Language
 
     /**
      * Detect a user's languages and order them by priority
-     *
-     * @return  void
      */
     private static function checkLanguages()
     {
@@ -46,7 +44,7 @@ class Language
     /**
      * Get the accept language value in use to determine the language.
      *
-     * @return   string
+     * @return string
      */
     public static function getAcceptLanguage()
     {
@@ -60,8 +58,7 @@ class Language
     /**
      * Set the accept language value in use to determine the browser.
      *
-     * @param    string $acceptLanguage
-     * @return   void
+     * @param string $acceptLanguage
      */
     public static function setAcceptLanguage($acceptLanguage)
     {
@@ -71,7 +68,7 @@ class Language
     /**
      * Get all user's languages
      *
-     * @return   array
+     * @return array
      */
     public static function getLanguages()
     {
@@ -85,8 +82,7 @@ class Language
     /**
      * Set languages.
      *
-     * @param   string $value
-     * @return  void
+     * @param string $value
      */
     public static function setLanguages($value)
     {
@@ -96,7 +92,7 @@ class Language
     /**
      * Get a user's language
      *
-     * @return  string
+     * @return string
      */
     public static function getLanguage()
     {
@@ -110,7 +106,8 @@ class Language
     /**
      * Get a user's language and locale
      *
-     * @return  string
+     * @param string $separator
+     * @return string
      */
     public static function getLanguageLocale($separator = '-')
     {

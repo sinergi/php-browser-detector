@@ -53,7 +53,7 @@ class Browser
     /**
      * Get the user agent value in use to determine the browser.
      *
-     * @return  string
+     * @return string
      */
     public static function getUserAgent()
     {
@@ -66,8 +66,7 @@ class Browser
     /**
      * Set the user agent value in use to determine the browser.
      *
-     * @param   string $value
-     * @return  void
+     * @param string $value
      */
     public static function setUserAgent($value)
     {
@@ -80,7 +79,7 @@ class Browser
     /**
      * Return the name of the Browser.
      *
-     * @return  string
+     * @return string
      */
     public static function getBrowser()
     {
@@ -93,8 +92,8 @@ class Browser
     /**
      * Check to see if the specific browser is valid
      *
-     * @param   string $name
-     * @return  bool
+     * @param string $name
+     * @return bool
      */
     public static function isBrowser($name)
     {
@@ -107,8 +106,7 @@ class Browser
     /**
      * Set the name of the OS.
      *
-     * @param   string $value
-     * @return  void
+     * @param string $value
      */
     public static function setBrowser($value)
     {
@@ -118,7 +116,7 @@ class Browser
     /**
      * The version of the browser.
      *
-     * @return  string
+     * @return string
      */
     public static function getVersion()
     {
@@ -131,8 +129,7 @@ class Browser
     /**
      * Set the version of the browser
      *
-     * @param   string $value
-     * @return  void
+     * @param string $value
      */
     public static function setVersion($value)
     {
@@ -142,7 +139,7 @@ class Browser
     /**
      * Is the browser from a robot (ex Slurp,GoogleBot)?
      *
-     * @return  bool
+     * @return bool
      */
     public static function isRobot()
     {
@@ -152,8 +149,7 @@ class Browser
     /**
      * Set the Browser to be a robot
      *
-     * @param   bool $value
-     * @return  void
+     * @param bool $value
      */
     public static function setRobot($value = true)
     {
@@ -164,7 +160,7 @@ class Browser
      * Deprecated, use Browser\OS::isMobile instead.
      * Is the browser from a mobile device?
      *
-     * @return  bool
+     * @return bool
      */
     public static function isMobile()
     {
@@ -174,7 +170,7 @@ class Browser
     /**
      * Used to determine if the browser is actually "chromeframe"
      *
-     * @return  bool
+     * @return bool
      */
     public static function isChromeFrame()
     {
@@ -184,7 +180,7 @@ class Browser
     /**
      * Routine to determine the browser type
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowser()
     {
@@ -247,7 +243,7 @@ class Browser
     /**
      * Determine if the user is using a BlackBerry.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserBlackBerry()
     {
@@ -264,7 +260,7 @@ class Browser
     /**
      * Determine if the browser is a robot.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserRobot()
     {
@@ -282,7 +278,7 @@ class Browser
     /**
      * Determine if the browser is Internet Explorer.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserInternetExplorer()
     {
@@ -338,7 +334,7 @@ class Browser
     /**
      * Determine if the browser is Opera.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserOpera()
     {
@@ -375,7 +371,7 @@ class Browser
     /**
      * Determine if the browser is Chrome.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserChrome()
     {
@@ -393,7 +389,7 @@ class Browser
     /**
      * Determine if the browser is WebTv.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserWebTv()
     {
@@ -410,7 +406,7 @@ class Browser
     /**
      * Determine if the browser is NetPositive.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserNetPositive()
     {
@@ -427,7 +423,7 @@ class Browser
     /**
      * Determine if the browser is Galeon.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserGaleon()
     {
@@ -444,7 +440,7 @@ class Browser
     /**
      * Determine if the browser is Konqueror.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserKonqueror()
     {
@@ -461,7 +457,7 @@ class Browser
     /**
      * Determine if the browser is iCab.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserIcab()
     {
@@ -477,7 +473,7 @@ class Browser
     /**
      * Determine if the browser is OmniWeb.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserOmniWeb()
     {
@@ -494,7 +490,7 @@ class Browser
     /**
      * Determine if the browser is Phoenix.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserPhoenix()
     {
@@ -510,7 +506,7 @@ class Browser
     /**
      * Determine if the browser is Firebird.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserFirebird()
     {
@@ -526,7 +522,7 @@ class Browser
     /**
      * Determine if the browser is Netscape Navigator 9+.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserNetscapeNavigator9Plus()
     {
@@ -545,7 +541,7 @@ class Browser
     /**
      * Determine if the browser is Shiretoko.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserShiretoko()
     {
@@ -560,7 +556,7 @@ class Browser
     /**
      * Determine if the browser is Ice Cat.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserIceCat()
     {
@@ -575,7 +571,7 @@ class Browser
     /**
      * Determine if the browser is Nokia.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserNokia()
     {
@@ -594,7 +590,7 @@ class Browser
     /**
      * Determine if the browser is Firefox.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserFirefox()
     {
@@ -615,7 +611,7 @@ class Browser
     /**
      * Determine if the browser is SeaMonkey.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserSeaMonkey()
     {
@@ -636,7 +632,7 @@ class Browser
     /**
      * Determine if the browser is Iceweasel.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserIceweasel()
     {
@@ -653,7 +649,7 @@ class Browser
     /**
      * Determine if the browser is Mozilla.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserMozilla()
     {
@@ -679,7 +675,7 @@ class Browser
     /**
      * Determine if the browser is Lynx.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserLynx()
     {
@@ -696,7 +692,7 @@ class Browser
     /**
      * Determine if the browser is Amaya.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserAmaya()
     {
@@ -713,7 +709,7 @@ class Browser
     /**
      * Determine if the browser is Safari.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserSafari()
     {
@@ -734,7 +730,7 @@ class Browser
     /**
      * Determine if the browser is Android.
      *
-     * @return  bool
+     * @return bool
      */
     private static function checkBrowserAndroid()
     {
