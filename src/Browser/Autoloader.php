@@ -1,5 +1,4 @@
 <?php
-
 namespace Browser;
 
 /**
@@ -9,29 +8,30 @@ namespace Browser;
  */
 class Autoloader
 {
+    const PREFIX = 'Browser';
+
     /**
      * Register the autoloader
-     *
-     * @return  void
      */
     public static function register()
     {
-        ini_set('unserialize_callback_func', 'spl_autoload_call');
         spl_autoload_register(array(new self, 'autoload'));
     }
 
     /**
      * Autoloader
      *
-     * @param   string
-     * @return  void
+     * @param string
      */
     public static function autoload($class)
     {
-        if (0 !== strpos($class, 'Browser\\')) {
-            return;
-        } else if (file_exists($file = dirname(__FILE__) . '/' . preg_replace('!^Browser\\\!', '', $class) . '.php')) {
-            require $file;
+        $prefixLength = strlen(self::PREFIX);
+        if (0 === strncmp(self::PREFIX, $class, $prefixLength)) {
+            $file = str_replace('\\', DIRECTORY_SEPARATOR, substr($class, $prefixLength));
+            $file = realpath(__DIR__ . (empty($file) ? '' : DIRECTORY_SEPARATOR) . $file . '.php');
+            if (file_exists($file)) {
+                require_once $file;
+            }
         }
     }
 }
