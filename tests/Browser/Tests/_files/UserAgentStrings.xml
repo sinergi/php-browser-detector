@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <strings>
+        <string>
+            <field name="browser">Opera</field>
+            <field name="version">21</field>
+            <field name="os">OS X</field>
+            <field name="os_version">10.9.3</field>
+            <field name="string">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko)
+                Chrome/34.0.1847.132 Safari/537.36 OPR/21.0.1432.67
+            </field>
+        </string>
+    </strings>
+</document>

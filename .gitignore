@@ -6,6 +6,7 @@ Thumbs.db
 Desktop.ini
 .idea
 phpunit.xml
+phpunit.phar
 composer.lock
 composer.phar
 vendor

@@ -1,7 +1,10 @@
 PHP Browser
 ===========
 
-[![Build Status](https://travis-ci.org/gabrielbull/php-browser.png)](https://travis-ci.org/gabrielbull/php-browser)
+[![Build Status](https://travis-ci.org/gabrielbull/php-browser.svg)](https://travis-ci.org/gabrielbull/php-browser)
+[![Latest Stable Version](https://poser.pugx.org/leaphly/cart-bundle/version.png)](https://packagist.org/packages/leaphly/cart-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/leaphly/cart-bundle/v/unstable.png)](//packagist.org/packages/leaphly/cart-bundle)
+[![Total Downloads](https://poser.pugx.org/leaphly/cart-bundle/downloads.png)](https://packagist.org/packages/leaphly/cart-bundle)
 
 Detecting the user's browser, operating system and language from PHP. Because browser detection is not always reliable and evolves at all time, use with care and feel free to contribute.
 
@@ -11,7 +14,7 @@ This library uses PHP 5.3+.
 
 ## Install
 
-It is recommended that you install the PHP Browser library [through composer](http://getcomposer.org).
+It is recommended that you install the PHP Browser library [through composer](http://getcomposer.org). To do so, add the following lines to your composer.json file.
 
 ```JSON
 {
