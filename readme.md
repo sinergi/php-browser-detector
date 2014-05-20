@@ -2,9 +2,10 @@ PHP Browser
 ===========
 
 [![Build Status](https://travis-ci.org/gabrielbull/php-browser.svg)](https://travis-ci.org/gabrielbull/php-browser)
-[![Latest Stable Version](https://poser.pugx.org/leaphly/cart-bundle/version.png)](https://packagist.org/packages/leaphly/cart-bundle)
-[![Latest Unstable Version](https://poser.pugx.org/leaphly/cart-bundle/v/unstable.png)](//packagist.org/packages/leaphly/cart-bundle)
-[![Total Downloads](https://poser.pugx.org/leaphly/cart-bundle/downloads.png)](https://packagist.org/packages/leaphly/cart-bundle)
+[![Latest Stable Version](https://poser.pugx.org/gabrielbull/browser/v/stable.png)](https://packagist.org/packages/gabrielbull/browser)
+[![Total Downloads](https://poser.pugx.org/gabrielbull/browser/downloads.png)](https://packagist.org/packages/gabrielbull/browser)
+[![Latest Unstable Version](https://poser.pugx.org/gabrielbull/browser/v/unstable.png)](https://packagist.org/packages/gabrielbull/browser)
+[![License](https://poser.pugx.org/gabrielbull/browser/license.png)](https://packagist.org/packages/gabrielbull/browser)
 
 Detecting the user's browser, operating system and language from PHP. Because browser detection is not always reliable and evolves at all time, use with care and feel free to contribute.
 
