@@ -3,7 +3,7 @@
     <strings>
         <string>
             <field name="browser">Opera</field>
-            <field name="version">21</field>
+            <field name="version">21.0.1432.67</field>
             <field name="os">OS X</field>
             <field name="os_version">10.9.3</field>
             <field name="string">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko)

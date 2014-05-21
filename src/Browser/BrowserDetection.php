@@ -204,11 +204,11 @@ class BrowserDetection
             }
             $browser->setName($browser::OPERA_MINI);
             return true;
-        } else if (stripos($userAgent->getUserAgentString(), 'opera') !== false) {
+        } elseif (stripos($userAgent->getUserAgentString(), 'opera') !== false) {
             $resultant = stristr($userAgent->getUserAgentString(), 'opera');
             if (preg_match('/Version\/(10.*)$/', $resultant, $matches)) {
                 $browser->setVersion($matches[1]);
-            } else if (preg_match('/\//', $resultant)) {
+            } elseif (preg_match('/\//', $resultant)) {
                 $aresult = explode('/', str_replace("(", " ", $resultant));
                 $aversion = explode(' ', $aresult[1]);
                 $browser->setVersion($aversion[0]);
@@ -217,6 +217,12 @@ class BrowserDetection
                 $browser->setVersion(isset($aversion[1]) ? $aversion[1] : "");
             }
             $browser->setName($browser::OPERA);
+            return true;
+        } elseif (stripos($userAgent->getUserAgentString(), ' OPR/') !== false) {
+            $browser->setName($browser::OPERA);
+            if (preg_match('/OPR\/([\d\.]*)/', $userAgent->getUserAgentString(), $matches)) {
+                $browser->setVersion($matches[1]);
+            }
             return true;
         }
         return false;
@@ -403,7 +409,7 @@ class BrowserDetection
             $browser->setVersion($matches[1]);
             $browser->setName($browser::NETSCAPE_NAVIGATOR);
             return true;
-        } else if (stripos($userAgent->getUserAgentString(), 'Firefox') === false && preg_match('/Netscape6?\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+        } elseif (stripos($userAgent->getUserAgentString(), 'Firefox') === false && preg_match('/Netscape6?\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::NETSCAPE_NAVIGATOR);
             return true;
@@ -480,7 +486,7 @@ class BrowserDetection
                 $browser->setVersion($matches[1]);
                 $browser->setName($browser::FIREFOX);
                 return true;
-            } else if (preg_match("/Firefox$/i", $userAgent->getUserAgentString(), $matches)) {
+            } elseif (preg_match("/Firefox$/i", $userAgent->getUserAgentString(), $matches)) {
                 $browser->setVersion("");
                 $browser->setName($browser::FIREFOX);
                 return true;
@@ -503,7 +509,7 @@ class BrowserDetection
                 $browser->setVersion($matches[1]);
                 $browser->setName($browser::SEAMONKEY);
                 return true;
-            } else if (preg_match("/SeaMonkey$/i", $userAgent->getUserAgentString(), $matches)) {
+            } elseif (preg_match("/SeaMonkey$/i", $userAgent->getUserAgentString(), $matches)) {
                 $browser->setVersion("");
                 $browser->setName($browser::SEAMONKEY);
                 return true;
@@ -546,12 +552,12 @@ class BrowserDetection
             $browser->setVersion(str_replace('rv:', '', $aversion[0]));
             $browser->setName($browser::MOZILLA);
             return true;
-        } else if (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/rv:[0-9]\.[0-9]/i', $userAgent->getUserAgentString()) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
+        } elseif (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/rv:[0-9]\.[0-9]/i', $userAgent->getUserAgentString()) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
             $aversion = explode('', stristr($userAgent->getUserAgentString(), 'rv:'));
             $browser->setVersion(str_replace('rv:', '', $aversion[0]));
             $browser->setName($browser::MOZILLA);
             return true;
-        } else if (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/mozilla\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
+        } elseif (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/mozilla\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::MOZILLA);
             return true;
