@@ -68,7 +68,7 @@ The Browser class allow you to detect a user's browser and version.
 
 ```php
 $browser = new Browser\Browser;
-if ($browser->getBrowser() === $browser::IE && $browser->getVersion() < 8) {
+if ($browser->getName() === $browser::IE && $browser->getVersion() < 8) {
 	echo 'Please upgrade your browser.';
 }
 ```
@@ -99,7 +99,7 @@ The OS class allow you to detect a user's operating system and version.
 
 ```php
 $os = new Browser\Os;
-if ($os->getOS() == $os::IOS) {
+if ($os->getName() == $os::IOS) {
 	echo 'You are using an iOS device.';
 }
 ```
