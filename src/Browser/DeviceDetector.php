@@ -29,7 +29,14 @@ class DeviceDetector implements DetectorInterface
             throw new InvalidArgumentException;
         }
 
+        if (!$this->userAgent instanceof UserAgent) {
+            $this->userAgent = new UserAgent();
+            $this->userAgent->createUserAgentString();
+        }
+
         $this->checkIpad();
+
+        $this->device->setIsDetected(true);
     }
 
     /**

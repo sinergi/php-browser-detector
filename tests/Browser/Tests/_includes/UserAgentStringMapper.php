@@ -12,8 +12,8 @@ class UserAgentStringMapper
     {
         $collection = array();
         $xml = new SimpleXmlElement(file_get_contents(FILES . DIRECTORY_SEPARATOR . 'UserAgentStrings.xml'));
-        foreach ($xml->strings as $string) {
-            $string = $string->string->field;
+        foreach ($xml->strings->string as $string) {
+            $string = $string->field;
             $userAgentString = new UserAgentString();
             $userAgentString->setBrowser((string)$string[0]);
             $userAgentString->setBrowserVersion((string)$string[1]);

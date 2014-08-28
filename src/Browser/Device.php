@@ -19,7 +19,7 @@ class Device
     private $version = self::UNKNOWN_VERSION;
 
     /**
-     * @var bool
+     * @var boolean
      */
     private $isDetected = false;
 
@@ -60,6 +60,24 @@ class Device
     public function setVersion($version)
     {
         $this->version = $version;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isDetected()
+    {
+        return $this->isDetected;
+    }
+
+    /**
+     * @param boolean $isDetected
+     * @return $this
+     */
+    public function setIsDetected($isDetected)
+    {
+        $this->isDetected = $isDetected;
         return $this;
     }
 }
