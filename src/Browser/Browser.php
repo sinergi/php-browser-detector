@@ -105,7 +105,7 @@ class Browser
     public function getName()
     {
         if (!isset($this->name)) {
-            BrowserDetection::detect($this, $this->getUserAgent());
+            BrowserDetector::detect($this, $this->getUserAgent());
         }
         return $this->name;
     }
@@ -141,7 +141,7 @@ class Browser
     public function getVersion()
     {
         if (!isset($this->name)) {
-            BrowserDetection::detect($this, $this->getUserAgent());
+            BrowserDetector::detect($this, $this->getUserAgent());
         }
         return $this->version;
     }
@@ -166,7 +166,7 @@ class Browser
     public function getIsRobot()
     {
         if (!isset($this->name)) {
-            BrowserDetection::detect($this, $this->getUserAgent());
+            BrowserDetector::detect($this, $this->getUserAgent());
         }
         return $this->isRobot;
     }
@@ -197,7 +197,7 @@ class Browser
     public function getIsChromeFrame()
     {
         if (!isset($this->name)) {
-            BrowserDetection::detect($this, $this->getUserAgent());
+            BrowserDetector::detect($this, $this->getUserAgent());
         }
         return $this->isChromeFrame;
     }

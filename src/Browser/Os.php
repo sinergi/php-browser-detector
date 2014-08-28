@@ -72,7 +72,7 @@ class Os
     public function getName()
     {
         if (!isset($this->name)) {
-            OsDetection::detect($this, $this->getUserAgent());
+            OsDetector::detect($this, $this->getUserAgent());
         }
         return $this->name;
     }
@@ -99,7 +99,7 @@ class Os
         if (isset($this->version)) {
             return $this->version;
         } else {
-            OsDetection::detect($this, $this->getUserAgent());
+            OsDetector::detect($this, $this->getUserAgent());
             return $this->version;
         }
     }
@@ -124,7 +124,7 @@ class Os
     public function getIsMobile()
     {
         if (!isset($this->name)) {
-            OsDetection::detect($this, $this->getUserAgent());
+            OsDetector::detect($this, $this->getUserAgent());
         }
         return $this->isMobile;
     }

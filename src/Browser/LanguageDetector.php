@@ -1,7 +1,7 @@
 <?php
 namespace Browser;
 
-class LanguageDetection
+class LanguageDetector implements DetectorInterface
 {
     /**
      * Detect a user's languages and order them by priority

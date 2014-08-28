@@ -1,7 +1,7 @@
 <?php
 namespace Browser;
 
-class BrowserDetection
+class BrowserDetector implements DetectorInterface
 {
     /**
      * Routine to determine the browser type

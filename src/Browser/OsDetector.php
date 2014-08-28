@@ -1,7 +1,7 @@
 <?php
 namespace Browser;
 
-class OsDetection
+class OsDetector implements DetectorInterface
 {
     /**
      * Determine the user's operating system

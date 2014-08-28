@@ -43,7 +43,7 @@ class Language
     public function getLanguages()
     {
         if (!is_array($this->languages)) {
-            LanguageDetection::detect($this, $this->getAcceptLanguage());
+            LanguageDetector::detect($this, $this->getAcceptLanguage());
         }
 
         return $this->languages;
@@ -69,7 +69,7 @@ class Language
     public function getLanguage()
     {
         if (!is_array($this->languages)) {
-            LanguageDetection::detect($this, $this->getAcceptLanguage());
+            LanguageDetector::detect($this, $this->getAcceptLanguage());
         }
 
         return strtolower(substr(reset($this->languages), 0, 2));
@@ -84,7 +84,7 @@ class Language
     public function getLanguageLocale($separator = '-')
     {
         if (!is_array($this->languages)) {
-            LanguageDetection::detect($this, $this->getAcceptLanguage());
+            LanguageDetector::detect($this, $this->getAcceptLanguage());
         }
 
         $userLanguage = $this->getLanguage();
