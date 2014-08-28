@@ -7,9 +7,9 @@
          convertWarningsToExceptions="true"
          stopOnFailure="false"
          syntaxCheck="false">
-  <testsuites>
-    <testsuite name="Browser Test Suite">
-      <directory>./tests/Browser/</directory>
-    </testsuite>
-  </testsuites>
+    <testsuites>
+        <testsuite name="Browser Test Suite">
+            <directory>./tests/Browser/</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
