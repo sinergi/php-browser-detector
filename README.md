@@ -6,7 +6,8 @@ PHP Browser
 [![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/php-browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/php-browser)
 [![License](https://img.shields.io/packagist/l/gabrielbull/php-browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/php-browser)
 
-Detecting the user's browser, operating system and language from PHP. Because browser detection is not always reliable and evolves at all time, use with care and feel free to contribute.
+Detecting the user's browser, operating system, device and language from PHP. Because browser detection is not always
+reliable and evolves at all time, use with care and feel free to contribute.
 
 ## Requirements
 
@@ -66,7 +67,9 @@ The Browser class allow you to detect a user's browser and version.
 ### Usage
 
 ```php
-$browser = new Browser\Browser;
+use Browser\Browser;
+
+$browser = new Browser;
 if ($browser->getName() === $browser::IE && $browser->getVersion() < 8) {
 	echo 'Please upgrade your browser.';
 }
@@ -97,9 +100,30 @@ The OS class allow you to detect a user's operating system and version.
 ### Usage
 
 ```php
-$os = new Browser\Os;
+use Browser\Os;
+
+$os = new Os;
 if ($os->getName() == $os::IOS) {
 	echo 'You are using an iOS device.';
+}
+```
+
+## Device Detection
+
+The Device class allow you to detect a user's device.
+
+### Device Detected
+
+ * iPad
+
+### Usage
+
+```php
+use Browser\Device;
+
+$device = new Device;
+if ($device->getName() == $device::IPAD) {
+	echo 'You are using an iPad.';
 }
 ```
 
@@ -110,7 +134,9 @@ The Language class allow you to detect a user's language.
 ### Usage
 
 ```php
-$language = new Browser\Language;
+use Browser\Language;
+
+$language = new Language;
 if ($language->getLanguage() == 'de') {
 	echo 'Get this website in german.';
 }
