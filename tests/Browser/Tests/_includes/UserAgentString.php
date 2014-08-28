@@ -11,7 +11,7 @@ class UserAgentString
     /**
      * @var string
      */
-    private $version;
+    private $browserVersion;
 
     /**
      * @var string
@@ -21,7 +21,17 @@ class UserAgentString
     /**
      * @var string
      */
-    private $os_version;
+    private $osVersion;
+
+    /**
+     * @var string
+     */
+    private $device;
+
+    /**
+     * @var string
+     */
+    private $deviceVersion;
 
     /**
      * @var string
@@ -67,18 +77,18 @@ class UserAgentString
     /**
      * @return string
      */
-    public function getOsVersion()
+    public function getosVersion()
     {
-        return $this->os_version;
+        return $this->osVersion;
     }
 
     /**
-     * @param string $os_version
+     * @param string $osVersion
      * @return $this
      */
-    public function setOsVersion($os_version)
+    public function setosVersion($osVersion)
     {
-        $this->os_version = $os_version;
+        $this->osVersion = $osVersion;
         return $this;
     }
 
@@ -103,18 +113,54 @@ class UserAgentString
     /**
      * @return string
      */
-    public function getVersion()
+    public function getbrowserVersion()
     {
-        return $this->version;
+        return $this->browserVersion;
     }
 
     /**
-     * @param string $version
+     * @param string $browserVersion
      * @return $this
      */
-    public function setVersion($version)
+    public function setbrowserVersion($browserVersion)
     {
-        $this->version = $version;
+        $this->browserVersion = $browserVersion;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDevice()
+    {
+        return $this->device;
+    }
+
+    /**
+     * @param string $device
+     * @return $this
+     */
+    public function setDevice($device)
+    {
+        $this->device = $device;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeviceVersion()
+    {
+        return $this->deviceVersion;
+    }
+
+    /**
+     * @param string $deviceVersion
+     * @return $this
+     */
+    public function setDeviceVersion($deviceVersion)
+    {
+        $this->deviceVersion = $deviceVersion;
         return $this;
     }
 }

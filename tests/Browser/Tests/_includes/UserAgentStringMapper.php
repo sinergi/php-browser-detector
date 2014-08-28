@@ -16,10 +16,12 @@ class UserAgentStringMapper
             $string = $string->string->field;
             $userAgentString = new UserAgentString();
             $userAgentString->setBrowser((string)$string[0]);
-            $userAgentString->setVersion((string)$string[1]);
+            $userAgentString->setBrowserVersion((string)$string[1]);
             $userAgentString->setOs((string)$string[2]);
             $userAgentString->setOsVersion((string)$string[3]);
-            $userAgentString->setString(str_replace(array(PHP_EOL, '  '), ' ', (string)$string[4]));
+            $userAgentString->setDevice((string)$string[4]);
+            $userAgentString->setDeviceVersion((string)$string[5]);
+            $userAgentString->setString(str_replace(array(PHP_EOL, '  '), ' ', (string)$string[6]));
             $collection[] = $userAgentString;
         }
         return $collection;

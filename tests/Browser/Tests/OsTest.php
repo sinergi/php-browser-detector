@@ -4,6 +4,7 @@ namespace Browser\Tests;
 use Browser\Os;
 use PHPUnit_Framework_TestCase;
 
+// todo: move to os detector tests
 class OsTest extends PHPUnit_Framework_TestCase
 {
     public function testIOs()

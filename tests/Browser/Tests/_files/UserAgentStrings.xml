@@ -3,10 +3,13 @@
     <strings>
         <string>
             <field name="browser">Opera</field>
-            <field name="version">21.0.1432.67</field>
+            <field name="browser_version">21.0.1432.67</field>
             <field name="os">OS X</field>
             <field name="os_version">10.9.3</field>
-            <field name="string">Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko)
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/34.0.1847.132 Safari/537.36 OPR/21.0.1432.67
             </field>
         </string>

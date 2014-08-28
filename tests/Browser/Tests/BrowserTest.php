@@ -4,6 +4,7 @@ namespace Browser\Tests;
 use Browser\Browser;
 use PHPUnit_Framework_TestCase;
 
+// todo: move to browser detector tests
 class BrowserTest extends PHPUnit_Framework_TestCase
 {
     public function testBlackBerry()

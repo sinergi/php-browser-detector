@@ -19,10 +19,19 @@ class Device
     private $version = self::UNKNOWN_VERSION;
 
     /**
+     * @var bool
+     */
+    private $isDetected = false;
+
+    /**
      * @return string
      */
     public function getName()
     {
+        if (!$this->isDetected) {
+            $detector = (new DeviceDetector());
+            $detector->detect($this);
+        }
         return $this->name;
     }
 
