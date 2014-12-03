@@ -88,7 +88,7 @@ class OsDetector implements DetectorInterface
     {
         if (stripos($userAgent->getUserAgentString(), 'OS X') !== false) {
             $os->setName($os::OSX);
-            if (preg_match('/OS X ([\d_]*)/i', $userAgent->getUserAgentString(), $matches)) {
+            if (preg_match('/OS X ([\d\._]*)/i', $userAgent->getUserAgentString(), $matches)) {
                 $os->setVersion(str_replace('_', '.', $matches[1]));
             }
             return true;
