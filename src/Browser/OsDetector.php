@@ -111,6 +111,9 @@ class OsDetector implements DetectorInterface
             // Windows version
             if (preg_match('/Windows NT ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
                 switch (str_replace('_', '.', $matches[1])) {
+                    case '6.3':
+                         $os->setVersion('8.1');
+                         break;
                     case '6.2':
                         $os->setVersion('8');
                         break;
