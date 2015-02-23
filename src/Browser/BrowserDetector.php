@@ -244,6 +244,35 @@ class BrowserDetector implements DetectorInterface
             $browser->setName($browser::CHROME);
             return true;
         }
+
+        elseif (stripos($userAgent->getUserAgentString(), 'CriOS') !== false) {
+            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'CriOS'));
+            $aversion = explode(' ', $aresult[1]);
+            $browser->setVersion($aversion[0]);
+            $browser->setName($browser::CHROME);
+            return true;
+        }
+        
+        return false;
+    }
+
+    /**
+     * Determine if the browser is Google Search Appliance.
+     *
+     * @param Browser $browser
+     * @param UserAgent $userAgent
+     * @return bool
+     */
+    private static function checkBrowserGsa(Browser $browser, UserAgent $userAgent)
+    {
+        if (stripos($userAgent->getUserAgentString(), 'GSA') !== false) {
+            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'GSA'));
+            $aversion = explode(' ', $aresult[1]);
+            $browser->setVersion($aversion[0]);
+            $browser->setName($browser::GSA);
+            return true;
+        }
+
         return false;
     }
 

@@ -43,6 +43,7 @@ class Browser
     const GALEON = 'Galeon';
     const NETPOSITIVE = 'NetPositive';
     const PHOENIX = 'Phoenix';
+    const GSA = 'Google Search Appliance';
 
     const VERSION_UNKNOWN = 'unknown';
 
