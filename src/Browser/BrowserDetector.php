@@ -48,6 +48,7 @@ class BrowserDetector implements DetectorInterface
             self::checkBrowserAndroid($browser, $userAgent) ||
             self::checkBrowserBlackBerry($browser, $userAgent) ||
             self::checkBrowserNokia($browser, $userAgent) ||
+            self::checkBrowserGsa($browser, $userAgent) ||
 
             // common bots
             self::checkBrowserRobot($browser, $userAgent) ||
