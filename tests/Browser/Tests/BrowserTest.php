@@ -26,6 +26,14 @@ class BrowserTest extends PHPUnit_Framework_TestCase
         $browser = new Browser("Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko");
         $this->assertEquals(Browser::IE, $browser->getName());
         $this->assertEquals('11.0', $browser->getVersion());
+
+        $browser = new Browser("Mozilla/5.0 (MSIE 9.0; Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko");
+        $this->assertEquals(Browser::IE, $browser->getName());
+        $this->assertEquals('11.0', $browser->getVersion());
+
+        $browser = new Browser("Mozilla/5.0 (MSIE 9.0; Windows NT 6.3; WOW64; Trident/7.0;) like Gecko");
+        $this->assertEquals(Browser::IE, $browser->getName());
+        $this->assertEquals('9.0', $browser->getVersion());
     }
 
     public function testSeaMonkey()

@@ -144,7 +144,7 @@ class BrowserDetector implements DetectorInterface
                 $browser->setVersion('1.5');
             }
             return true;
-        } // Test for versions > 1.5 and < 11
+        } // Test for versions > 1.5 and < 11 and some cases of 11
         else if (stripos($userAgent->getUserAgentString(), 'msie') !== false && stripos($userAgent->getUserAgentString(), 'opera') === false) {
             // See if the browser is the odd MSN Explorer
             if (stripos($userAgent->getUserAgentString(), 'msnb') !== false) {
@@ -156,6 +156,14 @@ class BrowserDetector implements DetectorInterface
             $aresult = explode(' ', stristr(str_replace(';', '; ', $userAgent->getUserAgentString()), 'msie'));
             $browser->setName($browser::IE);
             $browser->setVersion(str_replace(array('(', ')', ';'), '', $aresult[1]));
+            // See https://msdn.microsoft.com/en-us/library/ie/hh869301%28v=vs.85%29.aspx 
+            // Might be 11, anyway !
+            if (stripos($userAgent->getUserAgentString(), 'trident') !== false) {
+                preg_match('/rv:(\d+\.\d+)/', $userAgent->getUserAgentString(), $matches);
+                if (isset($matches[1])) {
+                    $browser->setVersion($matches[1]);
+                }
+            }
             return true;
         } // Test for versions >= 11
         else if (stripos($userAgent->getUserAgentString(), 'trident') !== false) {
