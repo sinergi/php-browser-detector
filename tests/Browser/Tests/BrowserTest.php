@@ -49,4 +49,15 @@ class BrowserTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(Browser::UNKNOWN, $browser->getName());
         $this->assertEquals(Browser::VERSION_UNKNOWN, $browser->getVersion());
     }
+
+    public function testOpera()
+    {
+        $browser = new Browser('Opera/9.80 (Windows NT 6.0) Presto/2.12.388 Version/12.14');
+        $this->assertEquals(Browser::OPERA, $browser->getName());
+        $this->assertEquals('12.14', $browser->getVersion());
+
+        $browser = new Browser('Mozilla/5.0 (SunOS 5.8 sun4u; U) Opera 5.0 [en]');
+        $this->assertEquals(Browser::OPERA, $browser->getName());
+        $this->assertEquals('5.0', $browser->getVersion());
+    }
 }
