@@ -215,7 +215,7 @@ class BrowserDetector implements DetectorInterface
             return true;
         } elseif (stripos($userAgent->getUserAgentString(), 'opera') !== false) {
             $resultant = stristr($userAgent->getUserAgentString(), 'opera');
-            if (preg_match('/Version\/(10.*)$/', $resultant, $matches)) {
+            if (preg_match('/Version\/(1[0-2].*)$/', $resultant, $matches)) {
                 $browser->setVersion($matches[1]);
             } elseif (preg_match('/\//', $resultant)) {
                 $aresult = explode('/', str_replace("(", " ", $resultant));
