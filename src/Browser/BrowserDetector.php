@@ -3,6 +3,8 @@ namespace Browser;
 
 class BrowserDetector implements DetectorInterface
 {
+
+    protected static $userAgentString;
     /**
      * Routine to determine the browser type
      *
@@ -12,10 +14,11 @@ class BrowserDetector implements DetectorInterface
      */
     public static function detect(Browser $browser, UserAgent $userAgent)
     {
+        self::$userAgentString = $userAgent->getUserAgentString();
         $browser->setName($browser::UNKNOWN);
         $browser->setVersion($browser::VERSION_UNKNOWN);
 
-        self::checkChromeFrame($browser, $userAgent);
+        self::checkChromeFrame($browser);
 
         return (
             // well-known, well-used
@@ -34,40 +37,40 @@ class BrowserDetector implements DetectorInterface
             //     before Safari
             // (6) Netscape 9+ is based on Firefox so Netscape checks
             //     before FireFox are necessary
-            self::checkBrowserWebTv($browser, $userAgent) ||
-            self::checkBrowserInternetExplorer($browser, $userAgent) ||
-            self::checkBrowserOpera($browser, $userAgent) ||
-            self::checkBrowserGaleon($browser, $userAgent) ||
-            self::checkBrowserNetscapeNavigator9Plus($browser, $userAgent) ||
-            self::checkBrowserSeaMonkey($browser, $userAgent) ||
-            self::checkBrowserFirefox($browser, $userAgent) ||
-            self::checkBrowserChrome($browser, $userAgent) ||
-            self::checkBrowserOmniWeb($browser, $userAgent) ||
+            self::checkBrowserWebTv($browser) ||
+            self::checkBrowserInternetExplorer($browser) ||
+            self::checkBrowserOpera($browser) ||
+            self::checkBrowserGaleon($browser) ||
+            self::checkBrowserNetscapeNavigator9Plus($browser) ||
+            self::checkBrowserSeaMonkey($browser) ||
+            self::checkBrowserFirefox($browser) ||
+            self::checkBrowserChrome($browser) ||
+            self::checkBrowserOmniWeb($browser) ||
 
             // common mobile
-            self::checkBrowserAndroid($browser, $userAgent) ||
-            self::checkBrowserBlackBerry($browser, $userAgent) ||
-            self::checkBrowserNokia($browser, $userAgent) ||
-            self::checkBrowserGsa($browser, $userAgent) ||
+            self::checkBrowserAndroid($browser) ||
+            self::checkBrowserBlackBerry($browser) ||
+            self::checkBrowserNokia($browser) ||
+            self::checkBrowserGsa($browser) ||
 
             // common bots
-            self::checkBrowserRobot($browser, $userAgent) ||
+            self::checkBrowserRobot($browser) ||
 
             // WebKit base check (post mobile and others)
-            self::checkBrowserSafari($browser, $userAgent) ||
+            self::checkBrowserSafari($browser) ||
 
             // everyone else
-            self::checkBrowserNetPositive($browser, $userAgent) ||
-            self::checkBrowserFirebird($browser, $userAgent) ||
-            self::checkBrowserKonqueror($browser, $userAgent) ||
-            self::checkBrowserIcab($browser, $userAgent) ||
-            self::checkBrowserPhoenix($browser, $userAgent) ||
-            self::checkBrowserAmaya($browser, $userAgent) ||
-            self::checkBrowserLynx($browser, $userAgent) ||
-            self::checkBrowserShiretoko($browser, $userAgent) ||
-            self::checkBrowserIceCat($browser, $userAgent) ||
-            self::checkBrowserIceweasel($browser, $userAgent) ||
-            self::checkBrowserMozilla($browser, $userAgent) /* Mozilla is such an open standard that you must check it last */
+            self::checkBrowserNetPositive($browser) ||
+            self::checkBrowserFirebird($browser) ||
+            self::checkBrowserKonqueror($browser) ||
+            self::checkBrowserIcab($browser) ||
+            self::checkBrowserPhoenix($browser) ||
+            self::checkBrowserAmaya($browser) ||
+            self::checkBrowserLynx($browser) ||
+            self::checkBrowserShiretoko($browser) ||
+            self::checkBrowserIceCat($browser) ||
+            self::checkBrowserIceweasel($browser) ||
+            self::checkBrowserMozilla($browser) /* Mozilla is such an open standard that you must check it last */
         );
     }
 
@@ -78,9 +81,9 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkChromeFrame(Browser $browser, UserAgent $userAgent)
+    private static function checkChromeFrame(Browser $browser)
     {
-        if (strpos($userAgent->getUserAgentString(), "chromeframe") !== false) {
+        if (strpos(self::$userAgentString, "chromeframe") !== false) {
             $browser->setIsChromeFrame(true);
             return true;
         }
@@ -94,10 +97,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserBlackBerry(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserBlackBerry(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'blackberry') !== false) {
-            $aresult = explode("/", stristr($userAgent->getUserAgentString(), "BlackBerry"));
+        if (stripos(self::$userAgentString, 'blackberry') !== false) {
+            $aresult = explode("/", stristr(self::$userAgentString, "BlackBerry"));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::BLACKBERRY);
@@ -113,12 +116,12 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserRobot(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserRobot(Browser $browser)
     {
         if (
-            stripos($userAgent->getUserAgentString(), 'bot') !== false ||
-            stripos($userAgent->getUserAgentString(), 'spider') !== false ||
-            stripos($userAgent->getUserAgentString(), 'crawler') !== false
+            stripos(self::$userAgentString, 'bot') !== false ||
+            stripos(self::$userAgentString, 'spider') !== false ||
+            stripos(self::$userAgentString, 'crawler') !== false
         ) {
             $browser->setIsRobot(true);
             return true;
@@ -133,43 +136,43 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserInternetExplorer(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserInternetExplorer(Browser $browser)
     {
         // Test for v1 - v1.5 IE
-        if (stripos($userAgent->getUserAgentString(), 'microsoft internet explorer') !== false) {
+        if (stripos(self::$userAgentString, 'microsoft internet explorer') !== false) {
             $browser->setName($browser::IE);
             $browser->setVersion('1.0');
-            $aresult = stristr($userAgent->getUserAgentString(), '/');
+            $aresult = stristr(self::$userAgentString, '/');
             if (preg_match('/308|425|426|474|0b1/i', $aresult)) {
                 $browser->setVersion('1.5');
             }
             return true;
         } // Test for versions > 1.5 and < 11 and some cases of 11
-        else if (stripos($userAgent->getUserAgentString(), 'msie') !== false && stripos($userAgent->getUserAgentString(), 'opera') === false) {
+        else if (stripos(self::$userAgentString, 'msie') !== false && stripos(self::$userAgentString, 'opera') === false) {
             // See if the browser is the odd MSN Explorer
-            if (stripos($userAgent->getUserAgentString(), 'msnb') !== false) {
-                $aresult = explode(' ', stristr(str_replace(';', '; ', $userAgent->getUserAgentString()), 'MSN'));
+            if (stripos(self::$userAgentString, 'msnb') !== false) {
+                $aresult = explode(' ', stristr(str_replace(';', '; ', self::$userAgentString), 'MSN'));
                 $browser->setName($browser::MSN);
                 $browser->setVersion(str_replace(array('(', ')', ';'), '', $aresult[1]));
                 return true;
             }
-            $aresult = explode(' ', stristr(str_replace(';', '; ', $userAgent->getUserAgentString()), 'msie'));
+            $aresult = explode(' ', stristr(str_replace(';', '; ', self::$userAgentString), 'msie'));
             $browser->setName($browser::IE);
             $browser->setVersion(str_replace(array('(', ')', ';'), '', $aresult[1]));
             // See https://msdn.microsoft.com/en-us/library/ie/hh869301%28v=vs.85%29.aspx 
             // Might be 11, anyway !
-            if (stripos($userAgent->getUserAgentString(), 'trident') !== false) {
-                preg_match('/rv:(\d+\.\d+)/', $userAgent->getUserAgentString(), $matches);
+            if (stripos(self::$userAgentString, 'trident') !== false) {
+                preg_match('/rv:(\d+\.\d+)/', self::$userAgentString, $matches);
                 if (isset($matches[1])) {
                     $browser->setVersion($matches[1]);
                 }
             }
             return true;
         } // Test for versions >= 11
-        else if (stripos($userAgent->getUserAgentString(), 'trident') !== false) {
+        else if (stripos(self::$userAgentString, 'trident') !== false) {
             $browser->setName($browser::IE);
 
-            preg_match('/rv:(\d+\.\d+)/', $userAgent->getUserAgentString(), $matches);
+            preg_match('/rv:(\d+\.\d+)/', self::$userAgentString, $matches);
             if (isset($matches[1])) {
                 $browser->setVersion($matches[1]);
                 return true;
@@ -177,14 +180,14 @@ class BrowserDetector implements DetectorInterface
                 return false;
             }
         } // Test for Pocket IE
-        else if (stripos($userAgent->getUserAgentString(), 'mspie') !== false || stripos($userAgent->getUserAgentString(), 'pocket') !== false) {
-            $aresult = explode(' ', stristr($userAgent->getUserAgentString(), 'mspie'));
+        else if (stripos(self::$userAgentString, 'mspie') !== false || stripos(self::$userAgentString, 'pocket') !== false) {
+            $aresult = explode(' ', stristr(self::$userAgentString, 'mspie'));
             $browser->setName($browser::POCKET_IE);
 
-            if (stripos($userAgent->getUserAgentString(), 'mspie') !== false) {
+            if (stripos(self::$userAgentString, 'mspie') !== false) {
                 $browser->setVersion($aresult[1]);
             } else {
-                $aversion = explode('/', $userAgent->getUserAgentString());
+                $aversion = explode('/', self::$userAgentString);
                 $browser->setVersion($aversion[1]);
             }
             return true;
@@ -199,10 +202,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserOpera(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserOpera(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'opera mini') !== false) {
-            $resultant = stristr($userAgent->getUserAgentString(), 'opera mini');
+        if (stripos(self::$userAgentString, 'opera mini') !== false) {
+            $resultant = stristr(self::$userAgentString, 'opera mini');
             if (preg_match('/\//', $resultant)) {
                 $aresult = explode('/', $resultant);
                 $aversion = explode(' ', $aresult[1]);
@@ -213,8 +216,8 @@ class BrowserDetector implements DetectorInterface
             }
             $browser->setName($browser::OPERA_MINI);
             return true;
-        } elseif (stripos($userAgent->getUserAgentString(), 'opera') !== false) {
-            $resultant = stristr($userAgent->getUserAgentString(), 'opera');
+        } elseif (stripos(self::$userAgentString, 'opera') !== false) {
+            $resultant = stristr(self::$userAgentString, 'opera');
             if (preg_match('/Version\/(1[0-2].*)$/', $resultant, $matches)) {
                 $browser->setVersion($matches[1]);
             } elseif (preg_match('/\//', $resultant)) {
@@ -227,9 +230,9 @@ class BrowserDetector implements DetectorInterface
             }
             $browser->setName($browser::OPERA);
             return true;
-        } elseif (stripos($userAgent->getUserAgentString(), ' OPR/') !== false) {
+        } elseif (stripos(self::$userAgentString, ' OPR/') !== false) {
             $browser->setName($browser::OPERA);
-            if (preg_match('/OPR\/([\d\.]*)/', $userAgent->getUserAgentString(), $matches)) {
+            if (preg_match('/OPR\/([\d\.]*)/', self::$userAgentString, $matches)) {
                 $browser->setVersion($matches[1]);
             }
             return true;
@@ -244,18 +247,18 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserChrome(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserChrome(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Chrome') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'Chrome'));
+        if (stripos(self::$userAgentString, 'Chrome') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Chrome'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::CHROME);
             return true;
         }
 
-        elseif (stripos($userAgent->getUserAgentString(), 'CriOS') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'CriOS'));
+        elseif (stripos(self::$userAgentString, 'CriOS') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'CriOS'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::CHROME);
@@ -272,10 +275,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserGsa(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserGsa(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'GSA') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'GSA'));
+        if (stripos(self::$userAgentString, 'GSA') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'GSA'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::GSA);
@@ -292,10 +295,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserWebTv(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserWebTv(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'webtv') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'webtv'));
+        if (stripos(self::$userAgentString, 'webtv') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'webtv'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::WEBTV);
@@ -311,10 +314,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserNetPositive(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserNetPositive(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'NetPositive') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'NetPositive'));
+        if (stripos(self::$userAgentString, 'NetPositive') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'NetPositive'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion(str_replace(array('(', ')', ';'), '', $aversion[0]));
             $browser->setName($browser::NETPOSITIVE);
@@ -330,10 +333,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserGaleon(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserGaleon(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'galeon') !== false) {
-            $aresult = explode(' ', stristr($userAgent->getUserAgentString(), 'galeon'));
+        if (stripos(self::$userAgentString, 'galeon') !== false) {
+            $aresult = explode(' ', stristr(self::$userAgentString, 'galeon'));
             $aversion = explode('/', $aresult[0]);
             $browser->setVersion($aversion[1]);
             $browser->setName($browser::GALEON);
@@ -349,10 +352,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserKonqueror(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserKonqueror(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Konqueror') !== false) {
-            $aresult = explode(' ', stristr($userAgent->getUserAgentString(), 'Konqueror'));
+        if (stripos(self::$userAgentString, 'Konqueror') !== false) {
+            $aresult = explode(' ', stristr(self::$userAgentString, 'Konqueror'));
             $aversion = explode('/', $aresult[0]);
             $browser->setVersion($aversion[1]);
             $browser->setName($browser::KONQUEROR);
@@ -368,10 +371,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserIcab(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserIcab(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'icab') !== false) {
-            $aversion = explode(' ', stristr(str_replace('/', ' ', $userAgent->getUserAgentString()), 'icab'));
+        if (stripos(self::$userAgentString, 'icab') !== false) {
+            $aversion = explode(' ', stristr(str_replace('/', ' ', self::$userAgentString), 'icab'));
             $browser->setVersion($aversion[1]);
             $browser->setName($browser::ICAB);
             return true;
@@ -386,10 +389,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserOmniWeb(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserOmniWeb(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'omniweb') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'omniweb'));
+        if (stripos(self::$userAgentString, 'omniweb') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'omniweb'));
             $aversion = explode(' ', isset($aresult[1]) ? $aresult[1] : "");
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::OMNIWEB);
@@ -405,10 +408,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserPhoenix(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserPhoenix(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Phoenix') !== false) {
-            $aversion = explode('/', stristr($userAgent->getUserAgentString(), 'Phoenix'));
+        if (stripos(self::$userAgentString, 'Phoenix') !== false) {
+            $aversion = explode('/', stristr(self::$userAgentString, 'Phoenix'));
             $browser->setVersion($aversion[1]);
             $browser->setName($browser::PHOENIX);
             return true;
@@ -423,10 +426,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserFirebird(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserFirebird(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Firebird') !== false) {
-            $aversion = explode('/', stristr($userAgent->getUserAgentString(), 'Firebird'));
+        if (stripos(self::$userAgentString, 'Firebird') !== false) {
+            $aversion = explode('/', stristr(self::$userAgentString, 'Firebird'));
             $browser->setVersion($aversion[1]);
             $browser->setName($browser::FIREBIRD);
             return true;
@@ -441,13 +444,13 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserNetscapeNavigator9Plus(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserNetscapeNavigator9Plus(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Firefox') !== false && preg_match('/Navigator\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+        if (stripos(self::$userAgentString, 'Firefox') !== false && preg_match('/Navigator\/([^ ]*)/i', self::$userAgentString, $matches)) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::NETSCAPE_NAVIGATOR);
             return true;
-        } elseif (stripos($userAgent->getUserAgentString(), 'Firefox') === false && preg_match('/Netscape6?\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+        } elseif (stripos(self::$userAgentString, 'Firefox') === false && preg_match('/Netscape6?\/([^ ]*)/i', self::$userAgentString, $matches)) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::NETSCAPE_NAVIGATOR);
             return true;
@@ -462,9 +465,9 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserShiretoko(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserShiretoko(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Mozilla') !== false && preg_match('/Shiretoko\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+        if (stripos(self::$userAgentString, 'Mozilla') !== false && preg_match('/Shiretoko\/([^ ]*)/i', self::$userAgentString, $matches)) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::SHIRETOKO);
             return true;
@@ -479,9 +482,9 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserIceCat(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserIceCat(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Mozilla') !== false && preg_match('/IceCat\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+        if (stripos(self::$userAgentString, 'Mozilla') !== false && preg_match('/IceCat\/([^ ]*)/i', self::$userAgentString, $matches)) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::ICECAT);
             return true;
@@ -496,11 +499,11 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserNokia(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserNokia(Browser $browser)
     {
-        if (preg_match("/Nokia([^\/]+)\/([^ SP]+)/i", $userAgent->getUserAgentString(), $matches)) {
+        if (preg_match("/Nokia([^\/]+)\/([^ SP]+)/i", self::$userAgentString, $matches)) {
             $browser->setVersion($matches[2]);
-            if (stripos($userAgent->getUserAgentString(), 'Series60') !== false || strpos($userAgent->getUserAgentString(), 'S60') !== false) {
+            if (stripos(self::$userAgentString, 'Series60') !== false || strpos(self::$userAgentString, 'S60') !== false) {
                 $browser->setName($browser::NOKIA_S60);
             } else {
                 $browser->setName($browser::NOKIA);
@@ -517,14 +520,14 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserFirefox(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserFirefox(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'safari') === false) {
-            if (preg_match("/Firefox[\/ \(]([^ ;\)]+)/i", $userAgent->getUserAgentString(), $matches)) {
+        if (stripos(self::$userAgentString, 'safari') === false) {
+            if (preg_match("/Firefox[\/ \(]([^ ;\)]+)/i", self::$userAgentString, $matches)) {
                 $browser->setVersion($matches[1]);
                 $browser->setName($browser::FIREFOX);
                 return true;
-            } elseif (preg_match("/Firefox$/i", $userAgent->getUserAgentString(), $matches)) {
+            } elseif (preg_match("/Firefox$/i", self::$userAgentString, $matches)) {
                 $browser->setVersion("");
                 $browser->setName($browser::FIREFOX);
                 return true;
@@ -540,14 +543,14 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserSeaMonkey(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserSeaMonkey(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'safari') === false) {
-            if (preg_match("/SeaMonkey[\/ \(]([^ ;\)]+)/i", $userAgent->getUserAgentString(), $matches)) {
+        if (stripos(self::$userAgentString, 'safari') === false) {
+            if (preg_match("/SeaMonkey[\/ \(]([^ ;\)]+)/i", self::$userAgentString, $matches)) {
                 $browser->setVersion($matches[1]);
                 $browser->setName($browser::SEAMONKEY);
                 return true;
-            } elseif (preg_match("/SeaMonkey$/i", $userAgent->getUserAgentString(), $matches)) {
+            } elseif (preg_match("/SeaMonkey$/i", self::$userAgentString, $matches)) {
                 $browser->setVersion("");
                 $browser->setName($browser::SEAMONKEY);
                 return true;
@@ -563,10 +566,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserIceweasel(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserIceweasel(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Iceweasel') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'Iceweasel'));
+        if (stripos(self::$userAgentString, 'Iceweasel') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Iceweasel'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::ICEWEASEL);
@@ -582,20 +585,20 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserMozilla(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserMozilla(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/rv:[0-9].[0-9][a-b]?/i', $userAgent->getUserAgentString()) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
-            $aversion = explode(' ', stristr($userAgent->getUserAgentString(), 'rv:'));
-            preg_match('/rv:[0-9].[0-9][a-b]?/i', $userAgent->getUserAgentString(), $aversion);
+        if (stripos(self::$userAgentString, 'mozilla') !== false && preg_match('/rv:[0-9].[0-9][a-b]?/i', self::$userAgentString) && stripos(self::$userAgentString, 'netscape') === false) {
+            $aversion = explode(' ', stristr(self::$userAgentString, 'rv:'));
+            preg_match('/rv:[0-9].[0-9][a-b]?/i', self::$userAgentString, $aversion);
             $browser->setVersion(str_replace('rv:', '', $aversion[0]));
             $browser->setName($browser::MOZILLA);
             return true;
-        } elseif (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/rv:[0-9]\.[0-9]/i', $userAgent->getUserAgentString()) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
-            $aversion = explode('', stristr($userAgent->getUserAgentString(), 'rv:'));
+        } elseif (stripos(self::$userAgentString, 'mozilla') !== false && preg_match('/rv:[0-9]\.[0-9]/i', self::$userAgentString) && stripos(self::$userAgentString, 'netscape') === false) {
+            $aversion = explode('', stristr(self::$userAgentString, 'rv:'));
             $browser->setVersion(str_replace('rv:', '', $aversion[0]));
             $browser->setName($browser::MOZILLA);
             return true;
-        } elseif (stripos($userAgent->getUserAgentString(), 'mozilla') !== false && preg_match('/mozilla\/([^ ]*)/i', $userAgent->getUserAgentString(), $matches) && stripos($userAgent->getUserAgentString(), 'netscape') === false) {
+        } elseif (stripos(self::$userAgentString, 'mozilla') !== false && preg_match('/mozilla\/([^ ]*)/i', self::$userAgentString, $matches) && stripos(self::$userAgentString, 'netscape') === false) {
             $browser->setVersion($matches[1]);
             $browser->setName($browser::MOZILLA);
             return true;
@@ -610,10 +613,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserLynx(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserLynx(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'lynx') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'Lynx'));
+        if (stripos(self::$userAgentString, 'lynx') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Lynx'));
             $aversion = explode(' ', (isset($aresult[1]) ? $aresult[1] : ""));
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::LYNX);
@@ -629,10 +632,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserAmaya(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserAmaya(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'amaya') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'Amaya'));
+        if (stripos(self::$userAgentString, 'amaya') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Amaya'));
             $aversion = explode(' ', $aresult[1]);
             $browser->setVersion($aversion[0]);
             $browser->setName($browser::AMAYA);
@@ -648,10 +651,10 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserSafari(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserSafari(Browser $browser)
     {
-        if (stripos($userAgent->getUserAgentString(), 'Safari') !== false) {
-            $aresult = explode('/', stristr($userAgent->getUserAgentString(), 'Version'));
+        if (stripos(self::$userAgentString, 'Safari') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Version'));
             if (isset($aresult[1])) {
                 $aversion = explode(' ', $aresult[1]);
                 $browser->setVersion($aversion[0]);
@@ -671,11 +674,11 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    private static function checkBrowserAndroid(Browser $browser, UserAgent $userAgent)
+    private static function checkBrowserAndroid(Browser $browser)
     {
         // Navigator
-        if (stripos($userAgent->getUserAgentString(), 'Android') !== false) {
-            if (preg_match('/Version\/([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
+        if (stripos(self::$userAgentString, 'Android') !== false) {
+            if (preg_match('/Version\/([\d\.]*)/i', self::$userAgentString, $matches)) {
                 $browser->setVersion($matches[1]);
             } else {
                 $browser->setVersion($browser::VERSION_UNKNOWN);
