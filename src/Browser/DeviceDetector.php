@@ -14,18 +14,12 @@ class DeviceDetector implements DetectorInterface
     private $userAgent;
 
     /**
-     * @param Device $device
+     * @param null|Device $device
      * @throws \Browser\InvalidArgumentException
      */
-    public function detect(Device $device = null)
+    public function detect(Device $device)
     {
-        if (null !== $device) {
-            $this->device = $device;
-        }
-
-        if (!$this->device instanceof Device) {
-            throw new InvalidArgumentException;
-        }
+        $this->device = $device;
 
         if (!$this->userAgent instanceof UserAgent) {
             $this->userAgent = new UserAgent();
