@@ -29,8 +29,9 @@ class BrowserDetector implements DetectorInterface
         'Galeon',
         'NetscapeNavigator9Plus',
         'SeaMonkey',
-        'OmniWeb',
+        'Firefox',
         'Chrome',
+        'OmniWeb',
 
         // common mobile
         'Android',
@@ -49,6 +50,7 @@ class BrowserDetector implements DetectorInterface
         'Firebird',
         'Konqueror',
         'Icab',
+        'Phoenix',
         'Amaya',
         'Lynx',
         'Shiretoko',
@@ -63,9 +65,14 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    public static function detect(Browser $browser, $userAgentString)
+    public static function detect(Browser $browser, $userAgent = null)
     {
-        self::$userAgentString = $userAgentString;
+        if(is_null($userAgent)) {
+            self::$userAgentString = $browser->getUserAgent()->getUserAgentString();
+        } else {
+            self::$userAgentString = $userAgent->getUserAgentString();
+        }
+
         $browser->setName(Browser::UNKNOWN);
         $browser->setVersion(Browser::VERSION_UNKNOWN);
 
