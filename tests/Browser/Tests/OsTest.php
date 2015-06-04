@@ -41,6 +41,13 @@ class OsTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($os->isMobile());
     }
 
+    public function testWindows() {
+        $os = new Os("Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)");
+        $this->assertEquals(Os::WINDOWS, $os->getName());
+        $this->assertEquals('7', $os->getVersion());
+
+    }
+
     public function testUnknown()
     {
         $os = new Os("");
