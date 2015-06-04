@@ -5,6 +5,57 @@ class BrowserDetector implements DetectorInterface
 {
 
     protected static $userAgentString;
+
+    protected static $browsersList = [
+        // well-known, well-used
+        // Special Notes:
+        // (1) Opera must be checked before FireFox due to the odd
+        //     user agents used in some older versions of Opera
+        // (2) WebTV is strapped onto Internet Explorer so we must
+        //     check for WebTV before IE
+        // (3) Because of Internet Explorer 11 using
+        //     "Mozilla/5.0 ([...] Trident/7.0; rv:11.0) like Gecko"
+        //     as user agent, tests for IE must be run before any
+        //     tests checking for "Mozilla"
+        // (4) (deprecated) Galeon is based on Firefox and needs to be
+        //     tested before Firefox is tested
+        // (5) OmniWeb is based on Safari so OmniWeb check must occur
+        //     before Safari
+        // (6) Netscape 9+ is based on Firefox so Netscape checks
+        //     before FireFox are necessary
+        'WebTv',
+        'InternetExplorer',
+        'Opera',
+        'Galeon',
+        'NetscapeNavigator9Plus',
+        'SeaMonkey',
+        'OmniWeb',
+        'Chrome',
+
+        // common mobile
+        'Android',
+        'BlackBerry',
+        'Nokia',
+        'Gsa',
+
+        // common bots
+        'Robot',
+
+        // WebKit base check (post mobile and others)
+        'Safari',
+
+        // everyone else
+        'NetPositive',
+        'Firebird',
+        'Konqueror',
+        'Icab',
+        'Amaya',
+        'Lynx',
+        'Shiretoko',
+        'IceCat',
+        'Iceweasel',
+        'Mozilla' /* Mozilla is such an open standard that you must check it last */
+    ];
     /**
      * Routine to determine the browser type
      *
@@ -20,58 +71,13 @@ class BrowserDetector implements DetectorInterface
 
         self::checkChromeFrame($browser);
 
-        return (
-            // well-known, well-used
-            // Special Notes:
-            // (1) Opera must be checked before FireFox due to the odd
-            //     user agents used in some older versions of Opera
-            // (2) WebTV is strapped onto Internet Explorer so we must
-            //     check for WebTV before IE
-            // (3) Because of Internet Explorer 11 using
-            //     "Mozilla/5.0 ([...] Trident/7.0; rv:11.0) like Gecko"
-            //     as user agent, tests for IE must be run before any
-            //     tests checking for "Mozilla"
-            // (4) (deprecated) Galeon is based on Firefox and needs to be
-            //     tested before Firefox is tested
-            // (5) OmniWeb is based on Safari so OmniWeb check must occur
-            //     before Safari
-            // (6) Netscape 9+ is based on Firefox so Netscape checks
-            //     before FireFox are necessary
-            self::checkBrowserWebTv($browser) ||
-            self::checkBrowserInternetExplorer($browser) ||
-            self::checkBrowserOpera($browser) ||
-            self::checkBrowserGaleon($browser) ||
-            self::checkBrowserNetscapeNavigator9Plus($browser) ||
-            self::checkBrowserSeaMonkey($browser) ||
-            self::checkBrowserFirefox($browser) ||
-            self::checkBrowserChrome($browser) ||
-            self::checkBrowserOmniWeb($browser) ||
+        $checks = array_map(function($browserName) use ($browser) {
+            $funcName = 'checkBrowser'.$browserName;
 
-            // common mobile
-            self::checkBrowserAndroid($browser) ||
-            self::checkBrowserBlackBerry($browser) ||
-            self::checkBrowserNokia($browser) ||
-            self::checkBrowserGsa($browser) ||
+            return self::$funcName($browser);
+        }, self::$browsersList);
 
-            // common bots
-            self::checkBrowserRobot($browser) ||
-
-            // WebKit base check (post mobile and others)
-            self::checkBrowserSafari($browser) ||
-
-            // everyone else
-            self::checkBrowserNetPositive($browser) ||
-            self::checkBrowserFirebird($browser) ||
-            self::checkBrowserKonqueror($browser) ||
-            self::checkBrowserIcab($browser) ||
-            self::checkBrowserPhoenix($browser) ||
-            self::checkBrowserAmaya($browser) ||
-            self::checkBrowserLynx($browser) ||
-            self::checkBrowserShiretoko($browser) ||
-            self::checkBrowserIceCat($browser) ||
-            self::checkBrowserIceweasel($browser) ||
-            self::checkBrowserMozilla($browser) /* Mozilla is such an open standard that you must check it last */
-        );
+        return in_array(true, $checks, true);
     }
 
     /**
