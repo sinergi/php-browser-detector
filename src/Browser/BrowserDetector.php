@@ -233,6 +233,12 @@ class BrowserDetector implements DetectorInterface
             }
             self::$browser->setName(Browser::OPERA_MINI);
             return true;
+        } elseif (stripos(self::$userAgentString, 'OPiOS') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'OPiOS'));
+            $aversion = explode(' ', $aresult[1]);
+            self::$browser->setVersion($aversion[0]);
+            self::$browser->setName(Browser::OPERA_MINI);
+            return true;
         } elseif (stripos(self::$userAgentString, 'opera') !== false) {
             $resultant = stristr(self::$userAgentString, 'opera');
             if (preg_match('/Version\/(1[0-2].*)$/', $resultant, $matches)) {
