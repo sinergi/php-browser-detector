@@ -2,6 +2,7 @@
 namespace Browser\Tests;
 
 use Browser\Os;
+use Browser\UserAgent;
 use PHPUnit_Framework_TestCase;
 
 // todo: move to os detector tests
@@ -41,12 +42,37 @@ class OsTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($os->isMobile());
     }
 
-    public function testWindows() {
+    public function testWindows()
+    {
         $os = new Os("Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)");
         $this->assertEquals(Os::WINDOWS, $os->getName());
         $this->assertEquals('7', $os->getVersion());
-
     }
+
+    public function testConstructor()
+    {
+        $userAgent = new UserAgent("Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)");
+        $os = new Os($userAgent);
+
+        $this->assertInstanceOf('\Browser\Os', $os);
+    }
+
+    /**
+     * @expectedException \Browser\InvalidArgumentException
+     */
+    public function testConstructorException()
+    {
+        $os = new Os(1);
+    }
+
+    public function testGetVersion()
+    {
+        $userAgent = new UserAgent("Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)");
+        $os = new Os($userAgent);
+
+        $this->assertEquals('7', $os->getVersion());
+    }
+
 
     public function testUnknown()
     {
