@@ -79,7 +79,7 @@ class BrowserDetector implements DetectorInterface
         self::$browser->setName(Browser::UNKNOWN);
         self::$browser->setVersion(Browser::VERSION_UNKNOWN);
 
-        self::checkChromeFrame(self::$browser);
+        self::checkChromeFrame();
 
         foreach (self::$browsersList as $browserName) {
             $funcName = self::FUNC_PREFIX . $browserName;
