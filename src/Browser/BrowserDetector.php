@@ -67,7 +67,7 @@ class BrowserDetector implements DetectorInterface
      *
      * @return bool
      */
-    public static function detect(Browser $browser, $userAgent = null)
+    public static function detect(Browser $browser, UserAgent $userAgent = null)
     {
         self::$browser = $browser;
         if (is_null($userAgent)) {
@@ -94,9 +94,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the user is using Chrome Frame.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkChromeFrame()
@@ -110,9 +107,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the user is using a BlackBerry.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -131,9 +125,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is a robot.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserRobot()
@@ -151,9 +142,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Internet Explorer.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -228,9 +216,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Opera.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserOpera()
@@ -274,9 +259,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Chrome.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserChrome()
@@ -301,9 +283,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Google Search Appliance.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserGsa()
@@ -322,9 +301,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is WebTv.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserWebTv()
@@ -341,9 +317,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is NetPositive.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -362,9 +335,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Galeon.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserGaleon()
@@ -381,9 +351,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Konqueror.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -402,9 +369,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is iCab.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserIcab()
@@ -420,9 +384,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is OmniWeb.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -441,9 +402,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Phoenix.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserPhoenix()
@@ -460,9 +418,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Firebird.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserFirebird()
@@ -478,9 +433,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Netscape Navigator 9+.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -505,9 +457,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Shiretoko.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserShiretoko()
@@ -525,9 +474,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Ice Cat.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserIceCat()
@@ -544,9 +490,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Nokia.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -569,9 +512,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Firefox.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserFirefox()
@@ -592,9 +532,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is SeaMonkey.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -617,9 +554,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Iceweasel.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserIceweasel()
@@ -636,9 +570,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Mozilla.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -672,9 +603,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Lynx.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserLynx()
@@ -692,9 +620,6 @@ class BrowserDetector implements DetectorInterface
     /**
      * Determine if the browser is Amaya.
      *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
-     *
      * @return bool
      */
     private static function checkBrowserAmaya()
@@ -711,9 +636,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Safari.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
@@ -735,9 +657,6 @@ class BrowserDetector implements DetectorInterface
 
     /**
      * Determine if the browser is Android.
-     *
-     * @param Browser $browser
-     * @param UserAgent $userAgent
      *
      * @return bool
      */
