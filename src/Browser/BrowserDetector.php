@@ -34,6 +34,7 @@ class BrowserDetector implements DetectorInterface
         'NetscapeNavigator9Plus',
         'SeaMonkey',
         'Firefox',
+        'Yandex',
         'Chrome',
         'OmniWeb',
         // common mobile
@@ -71,10 +72,9 @@ class BrowserDetector implements DetectorInterface
     {
         self::$browser = $browser;
         if (is_null($userAgent)) {
-            self::$userAgentString = self::$browser->getUserAgent()->getUserAgentString();
-        } else {
-            self::$userAgentString = $userAgent->getUserAgentString();
+            $userAgent = self::$browser->getUserAgent();
         }
+        self::$userAgentString = $userAgent->getUserAgentString();
 
         self::$browser->setName(Browser::UNKNOWN);
         self::$browser->setVersion(Browser::VERSION_UNKNOWN);
@@ -84,8 +84,9 @@ class BrowserDetector implements DetectorInterface
         foreach (self::$browsersList as $browserName) {
             $funcName = self::FUNC_PREFIX . $browserName;
 
-            if(self::$funcName())
+            if (self::$funcName()) {
                 return true;
+            }
         }
 
         return false;
@@ -650,6 +651,23 @@ class BrowserDetector implements DetectorInterface
                 self::$browser->setVersion(Browser::VERSION_UNKNOWN);
             }
             self::$browser->setName(Browser::SAFARI);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Determine if the browser is Yandex.
+     *
+     * @return bool
+     */
+    private static function checkBrowserYandex()
+    {
+        if (stripos(self::$userAgentString, 'YaBrowser') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'YaBrowser'));
+            $aversion = explode(' ', $aresult[1]);
+            self::$browser->setVersion($aversion[0]);
+            self::$browser->setName(Browser::YANDEX);
             return true;
         }
         return false;

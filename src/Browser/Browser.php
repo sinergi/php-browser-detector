@@ -44,6 +44,7 @@ class Browser
     const NETPOSITIVE = 'NetPositive';
     const PHOENIX = 'Phoenix';
     const GSA = 'Google Search Appliance';
+    const YANDEX = 'Yandex';
 
     const VERSION_UNKNOWN = 'unknown';
 
