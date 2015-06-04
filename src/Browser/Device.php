@@ -7,6 +7,7 @@ class Device
     const UNKNOWN_VERSION = 'unknown';
 
     const IPAD = 'iPad';
+    const IPHONE = 'iPhone';
 
     /**
      * @var string

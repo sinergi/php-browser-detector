@@ -32,7 +32,7 @@ class DeviceDetector implements DetectorInterface
             $this->userAgent->createUserAgentString();
         }
 
-        $this->checkIpad();
+        $this->checkIpad() || $this->checkIphone();
 
         $this->device->setIsDetected(true);
     }
@@ -44,6 +44,19 @@ class DeviceDetector implements DetectorInterface
     {
         if (stripos($this->userAgent->getUserAgentString(), 'ipad') !== false) {
             $this->device->setName(Device::IPAD);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Determine if the device is Iphone
+     * @return bool
+     */
+    public function checkIphone()
+    {
+        if (stripos($this->userAgent->getUserAgentString(), 'iphone;') !== false) {
+            $this->device->setName(Device::IPHONE);
             return true;
         }
         return false;
