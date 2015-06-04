@@ -34,7 +34,7 @@
             <field name="device_version">unknown</field>
             <field name="string">
                 Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
-                Version/8.0 Mobile/12B440 Mobile/12B440 Safari/600.1.4
+                Version/8.0 Mobile/12B440 Safari/600.1.4
             </field>
         </string>
         <string>
@@ -94,6 +94,17 @@
             <field name="string">
                 Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
                 OPiOS/10.1.1.92212 Mobile/12B440 Safari/9537.53
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">43.0.2357.51</field>
+            <field name="os">iOS</field>
+            <field name="os_version">8.1.2</field>
+            <field name="device">iPhone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) CriOS/43.0.2357.51 Mobile/12B440 Safari/600.1.4
             </field>
         </string>
     </strings>
