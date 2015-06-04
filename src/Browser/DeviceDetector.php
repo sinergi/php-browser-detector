@@ -1,8 +1,6 @@
 <?php
 namespace Browser;
 
-use InvalidArgumentException;
-
 class DeviceDetector implements DetectorInterface
 {
     /**
@@ -17,7 +15,7 @@ class DeviceDetector implements DetectorInterface
 
     /**
      * @param Device $device
-     * @throws InvalidArgumentException
+     * @throws \Browser\InvalidArgumentException
      */
     public function detect(Device $device = null)
     {
