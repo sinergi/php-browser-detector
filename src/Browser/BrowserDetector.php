@@ -12,9 +12,9 @@ class BrowserDetector implements DetectorInterface
      * @param UserAgent $userAgent
      * @return bool
      */
-    public static function detect(Browser $browser, UserAgent $userAgent)
+    public static function detect(Browser $browser, $userAgentString)
     {
-        self::$userAgentString = $userAgent->getUserAgentString();
+        self::$userAgentString = $userAgentString;
         $browser->setName($browser::UNKNOWN);
         $browser->setVersion($browser::VERSION_UNKNOWN);
 
