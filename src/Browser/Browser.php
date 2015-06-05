@@ -1,8 +1,6 @@
 <?php
 namespace Browser;
 
-use InvalidArgumentException;
-
 /**
  * Browser Detection
  *
@@ -44,6 +42,7 @@ class Browser
     const NETPOSITIVE = 'NetPositive';
     const PHOENIX = 'Phoenix';
     const GSA = 'Google Search Appliance';
+    const YANDEX = 'Yandex';
 
     const VERSION_UNKNOWN = 'unknown';
 
@@ -73,7 +72,7 @@ class Browser
 
     /**
      * @param null|string|UserAgent $userAgent
-     * @throws InvalidArgumentException
+     * @throws \Browser\InvalidArgumentException
      */
     public function __construct($userAgent = null)
     {

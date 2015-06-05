@@ -6,7 +6,7 @@ use PHPUnit_Framework_TestCase;
 
 class BrowserDetectorTest extends PHPUnit_Framework_TestCase
 {
-    public function testBlackBerry()
+    public function testDetect()
     {
         $userAgentStringCollection = UserAgentStringMapper::map();
         foreach ($userAgentStringCollection as $userAgentString) {

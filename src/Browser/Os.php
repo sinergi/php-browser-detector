@@ -1,8 +1,6 @@
 <?php
 namespace Browser;
 
-use InvalidArgumentException;
-
 /**
  * OS Detection
  *
@@ -51,7 +49,7 @@ class Os
 
     /**
      * @param null|string|UserAgent $userAgent
-     * @throws InvalidArgumentException
+     * @throws \Browser\InvalidArgumentException
      */
     public function __construct($userAgent = null)
     {
