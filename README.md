@@ -63,6 +63,7 @@ The Browser class allow you to detect a user's browser and version.
  * NetPositive
  * Phoenix
  * SeaMonkey
+ * Yandex Browser
 
 ### Usage
 
@@ -115,6 +116,7 @@ The Device class allow you to detect a user's device.
 ### Device Detected
 
  * iPad
+ * iPhone
 
 ### Usage
 
