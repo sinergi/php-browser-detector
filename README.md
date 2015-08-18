@@ -141,3 +141,7 @@ if ($language->getLanguage() == 'de') {
 	echo 'Get this website in german.';
 }
 ```
+
+## License
+
+PHP Browser is licensed under [The MIT License (MIT)](LICENSE).
