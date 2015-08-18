@@ -103,7 +103,7 @@ The OS class allow you to detect a user's operating system and version.
 use Browser\Os;
 
 $os = new Os;
-if ($os->getName() == $os::IOS) {
+if ($os->getName() === $os::IOS) {
 	echo 'You are using an iOS device.';
 }
 ```
@@ -122,7 +122,7 @@ The Device class allow you to detect a user's device.
 use Browser\Device;
 
 $device = new Device;
-if ($device->getName() == $device::IPAD) {
+if ($device->getName() === $device::IPAD) {
 	echo 'You are using an iPad.';
 }
 ```
@@ -137,7 +137,7 @@ The Language class allow you to detect a user's language.
 use Browser\Language;
 
 $language = new Language;
-if ($language->getLanguage() == 'de') {
+if ($language->getLanguage() === 'de') {
 	echo 'Get this website in german.';
 }
 ```
