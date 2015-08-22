@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser\Tests;
 
 class UserAgentString
@@ -48,11 +49,13 @@ class UserAgentString
 
     /**
      * @param string $browser
+     *
      * @return $this
      */
     public function setBrowser($browser)
     {
         $this->browser = $browser;
+
         return $this;
     }
 
@@ -66,11 +69,13 @@ class UserAgentString
 
     /**
      * @param string $os
+     *
      * @return $this
      */
     public function setOs($os)
     {
         $this->os = $os;
+
         return $this;
     }
 
@@ -84,11 +89,13 @@ class UserAgentString
 
     /**
      * @param string $osVersion
+     *
      * @return $this
      */
     public function setosVersion($osVersion)
     {
         $this->osVersion = $osVersion;
+
         return $this;
     }
 
@@ -102,11 +109,13 @@ class UserAgentString
 
     /**
      * @param string $string
+     *
      * @return $this
      */
     public function setString($string)
     {
         $this->string = $string;
+
         return $this;
     }
 
@@ -120,11 +129,13 @@ class UserAgentString
 
     /**
      * @param string $browserVersion
+     *
      * @return $this
      */
     public function setbrowserVersion($browserVersion)
     {
         $this->browserVersion = $browserVersion;
+
         return $this;
     }
 
@@ -138,11 +149,13 @@ class UserAgentString
 
     /**
      * @param string $device
+     *
      * @return $this
      */
     public function setDevice($device)
     {
         $this->device = $device;
+
         return $this;
     }
 
@@ -156,11 +169,13 @@ class UserAgentString
 
     /**
      * @param string $deviceVersion
+     *
      * @return $this
      */
     public function setDeviceVersion($deviceVersion)
     {
         $this->deviceVersion = $deviceVersion;
+
         return $this;
     }
 }

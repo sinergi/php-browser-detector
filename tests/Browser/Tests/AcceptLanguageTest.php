@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser\Tests;
 
 use Browser\AcceptLanguage;
@@ -8,7 +9,7 @@ class AcceptLanguageTest extends PHPUnit_Framework_TestCase
 {
     public function testObject()
     {
-        $acceptLanguage = new AcceptLanguage;
+        $acceptLanguage = new AcceptLanguage();
         $this->assertNull($acceptLanguage->getAcceptLanguageString());
 
         $acceptLanguage = new AcceptLanguage('my_accept_language_string');

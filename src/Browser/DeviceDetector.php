@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser;
 
 class DeviceDetector implements DetectorInterface
@@ -15,6 +16,7 @@ class DeviceDetector implements DetectorInterface
 
     /**
      * @param null|Device $device
+     *
      * @throws \Browser\InvalidArgumentException
      */
     public function detect(Device $device)
@@ -38,21 +40,26 @@ class DeviceDetector implements DetectorInterface
     {
         if (stripos($this->userAgent->getUserAgentString(), 'ipad') !== false) {
             $this->device->setName(Device::IPAD);
+
             return true;
         }
+
         return false;
     }
 
     /**
-     * Determine if the device is Iphone
+     * Determine if the device is Iphone.
+     *
      * @return bool
      */
     public function checkIphone()
     {
         if (stripos($this->userAgent->getUserAgentString(), 'iphone;') !== false) {
             $this->device->setName(Device::IPHONE);
+
             return true;
         }
+
         return false;
     }
 
@@ -66,11 +73,13 @@ class DeviceDetector implements DetectorInterface
 
     /**
      * @param Device $device
+     *
      * @return $this
      */
     public function setDevice(Device $device)
     {
         $this->device = $device;
+
         return $this;
     }
 
@@ -84,11 +93,13 @@ class DeviceDetector implements DetectorInterface
 
     /**
      * @param UserAgent $userAgent
+     *
      * @return $this
      */
     public function setUserAgent(UserAgent $userAgent)
     {
         $this->userAgent = $userAgent;
+
         return $this;
     }
 }

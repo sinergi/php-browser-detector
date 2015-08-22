@@ -1,10 +1,9 @@
 <?php
+
 namespace Browser;
 
 /**
- * Browser Detection
- *
- * @package browser
+ * Browser Detection.
  */
 class Browser
 {
@@ -73,6 +72,7 @@ class Browser
 
     /**
      * @param null|string|UserAgent $userAgent
+     *
      * @throws \Browser\InvalidArgumentException
      */
     public function __construct($userAgent = null)
@@ -82,7 +82,7 @@ class Browser
         } elseif (null === $userAgent || is_string($userAgent)) {
             $this->setUserAgent(new UserAgent($userAgent));
         } else {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
     }
 
@@ -90,11 +90,13 @@ class Browser
      * Set the name of the OS.
      *
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -108,13 +110,15 @@ class Browser
         if (!isset($this->name)) {
             BrowserDetector::detect($this, $this->getUserAgent());
         }
+
         return $this->name;
     }
 
     /**
-     * Check to see if the specific browser is valid
+     * Check to see if the specific browser is valid.
      *
      * @param string $name
+     *
      * @return bool
      */
     public function isBrowser($name)
@@ -123,14 +127,16 @@ class Browser
     }
 
     /**
-     * Set the version of the browser
+     * Set the version of the browser.
      *
      * @param string $version
+     *
      * @return $this
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
@@ -144,18 +150,21 @@ class Browser
         if (!isset($this->name)) {
             BrowserDetector::detect($this, $this->getUserAgent());
         }
+
         return $this->version;
     }
 
     /**
-     * Set the Browser to be a robot
+     * Set the Browser to be a robot.
      *
      * @param bool $isRobot
+     *
      * @return $this
      */
     public function setIsRobot($isRobot)
     {
-        $this->isRobot = (bool)$isRobot;
+        $this->isRobot = (bool) $isRobot;
+
         return $this;
     }
 
@@ -169,6 +178,7 @@ class Browser
         if (!isset($this->name)) {
             BrowserDetector::detect($this, $this->getUserAgent());
         }
+
         return $this->isRobot;
     }
 
@@ -182,16 +192,18 @@ class Browser
 
     /**
      * @param bool $isChromeFrame
+     *
      * @return $this
      */
     public function setIsChromeFrame($isChromeFrame)
     {
-        $this->isChromeFrame = (bool)$isChromeFrame;
+        $this->isChromeFrame = (bool) $isChromeFrame;
+
         return $this;
     }
 
     /**
-     * Used to determine if the browser is actually "chromeframe"
+     * Used to determine if the browser is actually "chromeframe".
      *
      * @return bool
      */
@@ -200,6 +212,7 @@ class Browser
         if (!isset($this->name)) {
             BrowserDetector::detect($this, $this->getUserAgent());
         }
+
         return $this->isChromeFrame;
     }
 
@@ -213,11 +226,13 @@ class Browser
 
     /**
      * @param UserAgent $userAgent
+     *
      * @return $this
      */
     public function setUserAgent(UserAgent $userAgent)
     {
         $this->userAgent = $userAgent;
+
         return $this;
     }
 

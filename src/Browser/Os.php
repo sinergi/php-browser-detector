@@ -1,10 +1,9 @@
 <?php
+
 namespace Browser;
 
 /**
- * OS Detection
- *
- * @package browser
+ * OS Detection.
  */
 class Os
 {
@@ -49,6 +48,7 @@ class Os
 
     /**
      * @param null|string|UserAgent $userAgent
+     *
      * @throws \Browser\InvalidArgumentException
      */
     public function __construct($userAgent = null)
@@ -58,7 +58,7 @@ class Os
         } elseif (null === $userAgent || is_string($userAgent)) {
             $this->setUserAgent(new UserAgent($userAgent));
         } else {
-            throw new InvalidArgumentException;
+            throw new InvalidArgumentException();
         }
     }
 
@@ -72,6 +72,7 @@ class Os
         if (!isset($this->name)) {
             OsDetector::detect($this, $this->getUserAgent());
         }
+
         return $this->name;
     }
 
@@ -79,11 +80,13 @@ class Os
      * Set the name of the OS.
      *
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -98,6 +101,7 @@ class Os
             return $this->version;
         } else {
             OsDetector::detect($this, $this->getUserAgent());
+
             return $this->version;
         }
     }
@@ -106,11 +110,13 @@ class Os
      * Set the version of the OS.
      *
      * @param string $version
+     *
      * @return $this
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
@@ -124,6 +130,7 @@ class Os
         if (!isset($this->name)) {
             OsDetector::detect($this, $this->getUserAgent());
         }
+
         return $this->isMobile;
     }
 
@@ -136,22 +143,24 @@ class Os
     }
 
     /**
-     * Set the Browser to be mobile
+     * Set the Browser to be mobile.
      *
      * @param bool $isMobile
      */
     public function setIsMobile($isMobile = true)
     {
-        $this->isMobile = (bool)$isMobile;
+        $this->isMobile = (bool) $isMobile;
     }
 
     /**
      * @param UserAgent $userAgent
+     *
      * @return $this
      */
     public function setUserAgent(UserAgent $userAgent)
     {
         $this->userAgent = $userAgent;
+
         return $this;
     }
 

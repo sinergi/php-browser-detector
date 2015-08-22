@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser;
 
 class UserAgent
@@ -20,11 +21,13 @@ class UserAgent
 
     /**
      * @param string $userAgentString
+     *
      * @return $this
      */
     public function setUserAgentString($userAgentString)
     {
         $this->userAgentString = $userAgentString;
+
         return $this;
     }
 
@@ -36,6 +39,7 @@ class UserAgent
         if (null === $this->userAgentString) {
             $this->createUserAgentString();
         }
+
         return $this->userAgentString;
     }
 
@@ -46,6 +50,7 @@ class UserAgent
     {
         $userAgentString = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : null;
         $this->setUserAgentString($userAgentString);
+
         return $userAgentString;
     }
 }

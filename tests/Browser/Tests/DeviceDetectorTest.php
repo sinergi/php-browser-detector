@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser\Tests;
 
 use Browser\Device;
@@ -12,7 +13,7 @@ class DeviceDetectorTest extends PHPUnit_Framework_TestCase
     {
         $userAgentStringCollection = UserAgentStringMapper::map();
 
-        foreach($userAgentStringCollection as $userAgentString) {
+        foreach ($userAgentStringCollection as $userAgentString) {
             $device = new Device();
             $deviceDetector = new DeviceDetector();
             $deviceDetector->setUserAgent(new UserAgent($userAgentString->getString()));
@@ -64,5 +65,4 @@ class DeviceDetectorTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($userAgent, $deviceDetector->getUserAgent());
     }
-
 }
