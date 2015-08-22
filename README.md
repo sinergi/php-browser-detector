@@ -17,13 +17,13 @@ reliable and evolves at all time, use with care and feel free to contribute.
 This library uses PHP 5.3+.
 
 ## Install
-
+    
 It is recommended that you install the PHP Browser library [through composer](http://getcomposer.org). To do so, add the following lines to your composer.json file.
 
 ```JSON
 {
     "require": {
-        "gabrielbull/browser": "^3.0"
+        "gabrielbull/browser": "^4.0"
     }
 }
 ```
