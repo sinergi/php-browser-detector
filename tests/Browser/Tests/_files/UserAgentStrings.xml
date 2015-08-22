@@ -25,5 +25,87 @@
                 Version/4.0.4 Mobile/7B314 Safari/531.21.10gin_lib.cc
             </field>
         </string>
+        <string>
+            <field name="browser">Safari</field>
+            <field name="version">8.0</field>
+            <field name="os">iOS</field>
+            <field name="os_version">8.1.2</field>
+            <field name="device">iPhone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
+                Version/8.0 Mobile/12B440 Safari/600.1.4
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">41.0.2272.118</field>
+            <field name="os">OS X</field>
+            <field name="os_version">10.10.2</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko)
+                Chrome/41.0.2272.118 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Yandex</field>
+            <field name="version">15.6.2311.3451</field>
+            <field name="os">OS X</field>
+            <field name="os_version">10.10.2</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko)
+                Chrome/42.0.2311.152 YaBrowser/15.6.2311.3451 (beta) Yowser/2.0 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Internet Explorer</field>
+            <field name="version">8.0</field>
+            <field name="os">Windows</field>
+            <field name="os_version">7</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2;
+                .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">35.0</field>
+            <field name="os">OS X</field>
+            <field name="os_version">10.10</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:35.0) Gecko/20100101 Firefox/35.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Opera Mini</field>
+            <field name="version">10.1.1.92212</field>
+            <field name="os">iOS</field>
+            <field name="os_version">8.1.2</field>
+            <field name="device">iPhone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
+                OPiOS/10.1.1.92212 Mobile/12B440 Safari/9537.53
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">43.0.2357.51</field>
+            <field name="os">iOS</field>
+            <field name="os_version">8.1.2</field>
+            <field name="device">iPhone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) CriOS/43.0.2357.51 Mobile/12B440 Safari/600.1.4
+            </field>
+        </string>
     </strings>
 </document>

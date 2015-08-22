@@ -1,8 +1,6 @@
 <?php
 namespace Browser;
 
-use InvalidArgumentException;
-
 /**
  * Language Detection
  *
@@ -22,7 +20,7 @@ class Language
 
     /**
      * @param null|string|AcceptLanguage $acceptLanguage
-     * @throws InvalidArgumentException
+     * @throws \Browser\InvalidArgumentException
      */
     public function __construct($acceptLanguage = null)
     {

@@ -1,8 +1,6 @@
 <?php
 namespace Browser;
 
-use InvalidArgumentException;
-
 class DeviceDetector implements DetectorInterface
 {
     /**
@@ -16,25 +14,19 @@ class DeviceDetector implements DetectorInterface
     private $userAgent;
 
     /**
-     * @param Device $device
-     * @throws InvalidArgumentException
+     * @param null|Device $device
+     * @throws \Browser\InvalidArgumentException
      */
-    public function detect(Device $device = null)
+    public function detect(Device $device)
     {
-        if (null !== $device) {
-            $this->device = $device;
-        }
-
-        if (!$this->device instanceof Device) {
-            throw new InvalidArgumentException;
-        }
+        $this->device = $device;
 
         if (!$this->userAgent instanceof UserAgent) {
             $this->userAgent = new UserAgent();
             $this->userAgent->createUserAgentString();
         }
 
-        $this->checkIpad();
+        $this->checkIpad() || $this->checkIphone();
 
         $this->device->setIsDetected(true);
     }
@@ -46,6 +38,19 @@ class DeviceDetector implements DetectorInterface
     {
         if (stripos($this->userAgent->getUserAgentString(), 'ipad') !== false) {
             $this->device->setName(Device::IPAD);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Determine if the device is Iphone
+     * @return bool
+     */
+    public function checkIphone()
+    {
+        if (stripos($this->userAgent->getUserAgentString(), 'iphone;') !== false) {
+            $this->device->setName(Device::IPHONE);
             return true;
         }
         return false;
