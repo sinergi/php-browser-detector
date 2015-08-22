@@ -39,6 +39,7 @@ The Browser class allow you to detect a user's browser and version.
  * WebTV
  * Internet Explorer
  * Pocket Internet Explorer
+ * Microsoft Edge
  * Konqueror
  * iCab
  * OmniWeb
