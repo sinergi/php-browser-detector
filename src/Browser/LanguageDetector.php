@@ -1,13 +1,15 @@
 <?php
+
 namespace Browser;
 
 class LanguageDetector implements DetectorInterface
 {
     /**
-     * Detect a user's languages and order them by priority
+     * Detect a user's languages and order them by priority.
      *
      * @param Language $language
      * @param AcceptLanguage $acceptLanguage
+     *
      * @return bool
      */
     public static function detect(Language $language, AcceptLanguage $acceptLanguage)

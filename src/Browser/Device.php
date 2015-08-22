@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser;
 
 class Device
@@ -20,7 +21,7 @@ class Device
     private $version = self::UNKNOWN_VERSION;
 
     /**
-     * @var boolean
+     * @var bool
      */
     private $isDetected = false;
 
@@ -33,16 +34,19 @@ class Device
             $detector = (new DeviceDetector());
             $detector->detect($this);
         }
+
         return $this->name;
     }
 
     /**
      * @param string $name
+     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = $name;
+
         return $this;
     }
 
@@ -56,16 +60,18 @@ class Device
 
     /**
      * @param string $version
+     *
      * @return $this
      */
     public function setVersion($version)
     {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isDetected()
     {
@@ -73,12 +79,14 @@ class Device
     }
 
     /**
-     * @param boolean $isDetected
+     * @param bool $isDetected
+     *
      * @return $this
      */
     public function setIsDetected($isDetected)
     {
         $this->isDetected = $isDetected;
+
         return $this;
     }
 }

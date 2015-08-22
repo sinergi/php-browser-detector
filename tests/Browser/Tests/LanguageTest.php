@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser\Tests;
 
 use Browser\AcceptLanguage;
@@ -14,7 +15,7 @@ class LanguageTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $httpAcceptLanguage = "fr-CA,fr;q=0.8,en-CA;q=0.6,en;q=0.4,en-US;q=0.2";
+        $httpAcceptLanguage = 'fr-CA,fr;q=0.8,en-CA;q=0.6,en;q=0.4,en-US;q=0.2';
         $this->language = new Language($httpAcceptLanguage);
     }
 
@@ -25,7 +26,7 @@ class LanguageTest extends PHPUnit_Framework_TestCase
 
     public function testGetLanguages()
     {
-        $this->assertGreaterThan(0, sizeof($this->language->getLanguages()));
+        $this->assertGreaterThan(0, count($this->language->getLanguages()));
     }
 
     public function testGetLanguageLocal()
@@ -55,6 +56,4 @@ class LanguageTest extends PHPUnit_Framework_TestCase
         $language = new Language('ru,en-us;q=0.5,en;q=0.3');
         $this->assertEquals('ru', $language->getLanguageLocale());
     }
-
-
 }

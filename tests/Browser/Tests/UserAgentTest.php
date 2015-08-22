@@ -1,4 +1,5 @@
 <?php
+
 namespace Browser\Tests;
 
 use Browser\UserAgent;
@@ -8,7 +9,7 @@ class UserAgentTest extends PHPUnit_Framework_TestCase
 {
     public function testObject()
     {
-        $userAgent = new UserAgent;
+        $userAgent = new UserAgent();
         $this->assertNull($userAgent->getUserAgentString());
 
         $userAgent = new UserAgent('my_agent_user_string');
