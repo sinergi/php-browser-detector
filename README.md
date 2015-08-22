@@ -2,6 +2,7 @@ PHP Browser
 ===========
 
 [![Build Status](https://img.shields.io/travis/gabrielbull/php-browser/master.svg?style=flat)](https://travis-ci.org/gabrielbull/php-browser)
+[![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
 [![Latest Stable Version](http://img.shields.io/packagist/v/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![License](https://img.shields.io/packagist/l/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
