@@ -31,5 +31,12 @@
         "psr-4": {
             "Browser\\Tests\\": ["tests/Browser/Tests", "tests/Browser/Tests/_includes"]
         }
-    }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-develop": "4.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
