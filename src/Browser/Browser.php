@@ -43,6 +43,7 @@ class Browser
     const PHOENIX = 'Phoenix';
     const GSA = 'Google Search Appliance';
     const YANDEX = 'Yandex';
+    const EDGE = 'Edge';
 
     const VERSION_UNKNOWN = 'unknown';
 

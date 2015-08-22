@@ -107,5 +107,15 @@
                 Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) CriOS/43.0.2357.51 Mobile/12B440 Safari/600.1.4
             </field>
         </string>
+        <string>
+            <field name="browser">Edge</field>
+            <field name="version">12.10136</field>
+            <field name="os">Windows</field>
+            <field name="os_version">10.0</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.10136            </field>
+        </string>
     </strings>
 </document>
