@@ -20,7 +20,7 @@ It is recommended that you install the PHP Browser library [through composer](ht
 ```JSON
 {
     "require": {
-        "gabrielbull/browser": "dev-master"
+        "gabrielbull/browser": "^3.0"
     }
 }
 ```
