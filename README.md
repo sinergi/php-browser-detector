@@ -8,6 +8,7 @@ PHP Browser
 [![Latest Stable Version](http://img.shields.io/packagist/v/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![License](https://img.shields.io/packagist/l/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/91aa3b4f-c58a-46f9-8ac6-c17658084034/mini.png)](https://insight.sensiolabs.com/projects/91aa3b4f-c58a-46f9-8ac6-c17658084034)
 
 Detecting the user's browser, operating system, device and language from PHP. Because browser detection is not always
 reliable and evolves at all time, use with care and feel free to contribute.
