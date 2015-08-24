@@ -1,5 +1,5 @@
-PHP Browser
-===========
+Browser Detector
+================
 
 [![Build Status](https://img.shields.io/travis/gabrielbull/php-browser/master.svg?style=flat)](https://travis-ci.org/gabrielbull/php-browser)
 [![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
