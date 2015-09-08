@@ -1,14 +1,14 @@
 Browser Detector
 ================
 
-[![Build Status](https://img.shields.io/travis/gabrielbull/php-browser/master.svg?style=flat)](https://travis-ci.org/gabrielbull/php-browser)
+[![Build Status](https://img.shields.io/travis/sinergi/php-browser-detector/master.svg?style=flat)](https://travis-ci.org/sinergi/php-browser-detector)
 [![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/gabrielbull/php-browser/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/gabrielbull/php-browser/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/gabrielbull/php-browser/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/gabrielbull/php-browser/?branch=master)
-[![Latest Stable Version](http://img.shields.io/packagist/v/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
-[![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
-[![License](https://img.shields.io/packagist/l/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/91aa3b4f-c58a-46f9-8ac6-c17658084034/mini.png)](https://insight.sensiolabs.com/projects/91aa3b4f-c58a-46f9-8ac6-c17658084034)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
+[![Latest Stable Version](http://img.shields.io/packagist/v/sinergi/php-browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![Total Downloads](https://img.shields.io/packagist/dt/sinergi/php-browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![License](https://img.shields.io/packagist/l/sinergi/php-browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896/mini.png)](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896)
 
 Detecting the user's browser, operating system, device and language from PHP. Because browser detection is not always
 reliable and evolves at all time, use with care and feel free to contribute.
