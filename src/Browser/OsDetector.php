@@ -143,6 +143,11 @@ class OsDetector implements DetectorInterface
                     case '4.0':
                         $os->setVersion('NT 4.0');
                         break;
+                    default:
+                        if ((float)$matches[1] >= 10.0) {
+                            $os->setVersion((float)$matches[1]);
+                        }
+                        break;
                 }
             }
 
