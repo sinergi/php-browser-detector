@@ -6,7 +6,7 @@ Browser Detector
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
 [![Latest Stable Version](http://img.shields.io/packagist/v/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
-[![Total Downloads](https://img.shields.io/packagist/dt/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![License](https://img.shields.io/packagist/l/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896/mini.png)](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896)
 
