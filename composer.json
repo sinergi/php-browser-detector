@@ -33,7 +33,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "4.1-dev"
+            "dev-develop": "5.0-dev"
         }
     },
     "minimum-stability": "dev",
