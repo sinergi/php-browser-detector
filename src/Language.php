@@ -1,6 +1,6 @@
 <?php
 
-namespace Browser;
+namespace Sinergi\BrowserDetector;
 
 /**
  * Language Detection.
@@ -97,7 +97,7 @@ class Language
         }
 
         if (!empty($locale)) {
-            return $userLanguage.$separator.strtoupper($locale);
+            return $userLanguage . $separator . strtoupper($locale);
         } else {
             return $userLanguage;
         }

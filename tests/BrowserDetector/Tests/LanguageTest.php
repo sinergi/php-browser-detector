@@ -1,10 +1,10 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\AcceptLanguage;
-use Browser\Language;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\AcceptLanguage;
+use Sinergi\BrowserDetector\Language;
 
 class LanguageTest extends PHPUnit_Framework_TestCase
 {
@@ -39,12 +39,12 @@ class LanguageTest extends PHPUnit_Framework_TestCase
         $acceptLanguage = new AcceptLanguage('my_accept_language_string');
         $language = new Language($acceptLanguage);
 
-        $this->assertInstanceOf('\Browser\AcceptLanguage', $acceptLanguage);
-        $this->assertInstanceOf('\Browser\Language', $language);
+        $this->assertInstanceOf("\\Sinergi\\BrowserDetector\\AcceptLanguage", $acceptLanguage);
+        $this->assertInstanceOf("\\Sinergi\\BrowserDetector\\Language", $language);
     }
 
     /**
-     * @expectedException \Browser\InvalidArgumentException
+     * @expectedException \Sinergi\BrowserDetector\InvalidArgumentException
      */
     public function testConstructorException()
     {

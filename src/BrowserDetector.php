@@ -1,6 +1,6 @@
 <?php
 
-namespace Browser;
+namespace Sinergi\BrowserDetector;
 
 class BrowserDetector implements DetectorInterface
 {
@@ -87,7 +87,7 @@ class BrowserDetector implements DetectorInterface
         self::checkChromeFrame();
 
         foreach (self::$browsersList as $browserName) {
-            $funcName = self::FUNC_PREFIX.$browserName;
+            $funcName = self::FUNC_PREFIX . $browserName;
 
             if (self::$funcName()) {
                 return true;
@@ -321,7 +321,7 @@ class BrowserDetector implements DetectorInterface
         if (stripos(self::$userAgentString, 'Edge') !== false) {
             $version = explode('Edge/', self::$userAgentString);
             if (isset($version[1])) {
-                self::$browser->setVersion((float) $version[1]);
+                self::$browser->setVersion((float)$version[1]);
             }
             self::$browser->setName(Browser::EDGE);
 

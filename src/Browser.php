@@ -1,6 +1,6 @@
 <?php
 
-namespace Browser;
+namespace Sinergi\BrowserDetector;
 
 /**
  * Browser Detection.
@@ -163,7 +163,7 @@ class Browser
      */
     public function setIsRobot($isRobot)
     {
-        $this->isRobot = (bool) $isRobot;
+        $this->isRobot = (bool)$isRobot;
 
         return $this;
     }
@@ -197,7 +197,7 @@ class Browser
      */
     public function setIsChromeFrame($isChromeFrame)
     {
-        $this->isChromeFrame = (bool) $isChromeFrame;
+        $this->isChromeFrame = (bool)$isChromeFrame;
 
         return $this;
     }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\Browser;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\Browser;
 
 // todo: move to browser detector tests
 class BrowserTest extends PHPUnit_Framework_TestCase

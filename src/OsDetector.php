@@ -1,6 +1,6 @@
 <?php
 
-namespace Browser;
+namespace Sinergi\BrowserDetector;
 
 class OsDetector implements DetectorInterface
 {
@@ -121,8 +121,8 @@ class OsDetector implements DetectorInterface
             if (preg_match('/Windows NT ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
                 switch (str_replace('_', '.', $matches[1])) {
                     case '6.3':
-                         $os->setVersion('8.1');
-                         break;
+                        $os->setVersion('8.1');
+                        break;
                     case '6.2':
                         $os->setVersion('8');
                         break;
@@ -144,8 +144,8 @@ class OsDetector implements DetectorInterface
                         $os->setVersion('NT 4.0');
                         break;
                     default:
-                        if ((float) $matches[1] >= 10.0) {
-                            $os->setVersion((float) $matches[1]);
+                        if ((float)$matches[1] >= 10.0) {
+                            $os->setVersion((float)$matches[1]);
                         }
                         break;
                 }

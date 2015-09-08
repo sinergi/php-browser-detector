@@ -1,9 +1,9 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\Device;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\Device;
 
 class DeviceTest extends PHPUnit_Framework_TestCase
 {

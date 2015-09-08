@@ -1,9 +1,9 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\Os;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\Os;
 
 class OsDetectorTest extends PHPUnit_Framework_TestCase
 {

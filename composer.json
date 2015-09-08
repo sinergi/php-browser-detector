@@ -1,5 +1,5 @@
 {
-    "name": "gabrielbull/browser",
+    "name": "sinergi/browser-detector",
     "type": "library",
     "description": "Detecting the user's browser, operating system and language.",
     "keywords": ["browser", "os", "operating system", "language", "detection"],
@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Browser\\": "src/Browser"
+            "Sinergi\\BrowserDetector\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Browser\\Tests\\": ["tests/Browser/Tests", "tests/Browser/Tests/_includes"]
+            "Sinergi\\BrowserDetector\\Tests\\": ["tests/BrowserDetector/Tests", "tests/BrowserDetector/Tests/_includes"]
         }
     },
     "extra": {

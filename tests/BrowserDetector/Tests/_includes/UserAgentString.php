@@ -1,6 +1,6 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
 class UserAgentString
 {

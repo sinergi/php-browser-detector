@@ -5,9 +5,9 @@ Browser Detector
 [![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
-[![Latest Stable Version](http://img.shields.io/packagist/v/gabrielbull/php-browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
-[![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/php-browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
-[![License](https://img.shields.io/packagist/l/gabrielbull/php-browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![Latest Stable Version](http://img.shields.io/packagist/v/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![Total Downloads](https://img.shields.io/packagist/dt/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
+[![License](https://img.shields.io/packagist/l/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896/mini.png)](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896)
 
 Detecting the user's browser, operating system, device and language from PHP. Because browser detection is not always
@@ -24,7 +24,7 @@ It is recommended that you install the PHP Browser library [through composer](ht
 ```JSON
 {
     "require": {
-        "gabrielbull/browser": "^4.0"
+        "sinergi/browser-detector": "^4.0"
     }
 }
 ```

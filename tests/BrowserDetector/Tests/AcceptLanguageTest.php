@@ -1,9 +1,9 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\AcceptLanguage;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\AcceptLanguage;
 
 class AcceptLanguageTest extends PHPUnit_Framework_TestCase
 {

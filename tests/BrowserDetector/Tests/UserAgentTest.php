@@ -1,9 +1,9 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\UserAgent;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\UserAgent;
 
 class UserAgentTest extends PHPUnit_Framework_TestCase
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Browser\Tests;
+namespace Sinergi\BrowserDetector\Tests;
 
-use Browser\Device;
-use Browser\DeviceDetector;
-use Browser\UserAgent;
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\Device;
+use Sinergi\BrowserDetector\DeviceDetector;
+use Sinergi\BrowserDetector\UserAgent;
 
 class DeviceDetectorTest extends PHPUnit_Framework_TestCase
 {
@@ -33,7 +33,7 @@ class DeviceDetectorTest extends PHPUnit_Framework_TestCase
 
         $deviceDetector->detect($device);
 
-        $this->assertInstanceOf('\Browser\Device', $deviceDetector->getDevice());
+        $this->assertInstanceOf("\\Sinergi\\BrowserDetector\\Device", $deviceDetector->getDevice());
     }
 
     public function testSetDevice()

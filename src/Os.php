@@ -1,6 +1,6 @@
 <?php
 
-namespace Browser;
+namespace Sinergi\BrowserDetector;
 
 /**
  * OS Detection.
@@ -149,7 +149,7 @@ class Os
      */
     public function setIsMobile($isMobile = true)
     {
-        $this->isMobile = (bool) $isMobile;
+        $this->isMobile = (bool)$isMobile;
     }
 
     /**
