@@ -1,8 +1,6 @@
 Browser Detector
 ================
 
-[![Join the chat at https://gitter.im/sinergi/php-browser-detector](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sinergi/php-browser-detector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 [![Build Status](https://img.shields.io/travis/sinergi/php-browser-detector/master.svg?style=flat)](https://travis-ci.org/sinergi/php-browser-detector)
 [![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
@@ -11,6 +9,8 @@ Browser Detector
 [![Total Downloads](https://img.shields.io/packagist/dt/gabrielbull/browser.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![License](https://img.shields.io/packagist/l/sinergi/browser-detector.svg?style=flat)](https://packagist.org/packages/gabrielbull/browser)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896/mini.png)](https://insight.sensiolabs.com/projects/673d60ca-a836-47f5-ab32-44f406ba6896)
+
+[![Join the chat at https://gitter.im/sinergi/php-browser-detector](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sinergi/php-browser-detector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Detecting the user's browser, operating system, device and language from PHP. Because browser detection is not always
 reliable and evolves at all time, use with care and feel free to contribute.
