@@ -73,10 +73,10 @@ The Browser class allow you to detect a user's browser and version.
 ### Usage
 
 ```php
-use Browser\Browser;
+use Sinergi\BrowserDetector\Browser;
 
-$browser = new Browser;
-if ($browser->getName() === $browser::IE && $browser->getVersion() < 8) {
+$browser = new Browser();
+if ($browser->getName() === $browser::IE && $browser->getVersion() < 11) {
 	echo 'Please upgrade your browser.';
 }
 ```
@@ -106,7 +106,7 @@ The OS class allow you to detect a user's operating system and version.
 ### Usage
 
 ```php
-use Browser\Os;
+use Sinergi\BrowserDetector\Os;
 
 $os = new Os;
 if ($os->getName() === $os::IOS) {
@@ -126,7 +126,7 @@ The Device class allow you to detect a user's device.
 ### Usage
 
 ```php
-use Browser\Device;
+use Sinergi\BrowserDetector\Device;
 
 $device = new Device;
 if ($device->getName() === $device::IPAD) {
@@ -141,7 +141,7 @@ The Language class allow you to detect a user's language.
 ### Usage
 
 ```php
-use Browser\Language;
+use Sinergi\BrowserDetector\Language;
 
 $language = new Language;
 if ($language->getLanguage() === 'de') {
