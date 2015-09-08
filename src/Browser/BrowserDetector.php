@@ -310,6 +310,7 @@ class BrowserDetector implements DetectorInterface
 
         return false;
     }
+
     /**
      * Determine if the browser is Microsoft Edge.
      *
