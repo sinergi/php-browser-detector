@@ -1,6 +1,8 @@
 Browser Detector
 ================
 
+[![Join the chat at https://gitter.im/sinergi/php-browser-detector](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sinergi/php-browser-detector?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Build Status](https://img.shields.io/travis/sinergi/php-browser-detector/master.svg?style=flat)](https://travis-ci.org/sinergi/php-browser-detector)
 [![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
