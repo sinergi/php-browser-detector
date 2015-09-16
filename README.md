@@ -25,7 +25,7 @@ It is recommended that you install the PHP Browser library [through composer](ht
 ```JSON
 {
     "require": {
-        "sinergi/browser-detector": "^4.0"
+        "sinergi/browser-detector": "^5.0"
     }
 }
 ```
