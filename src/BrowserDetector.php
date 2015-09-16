@@ -31,10 +31,12 @@ class BrowserDetector implements DetectorInterface
         // (6) Netscape 9+ is based on Firefox so Netscape checks
         //     before FireFox are necessary
         // (7) Microsoft Edge must be checked before Chrome and Safari
+        // (7) Vivaldi must be checked before Chrome
         'WebTv',
         'InternetExplorer',
         'Edge',
         'Opera',
+        'Vivaldi',
         'Galeon',
         'NetscapeNavigator9Plus',
         'SeaMonkey',
@@ -304,6 +306,25 @@ class BrowserDetector implements DetectorInterface
             $aversion = explode(' ', $aresult[1]);
             self::$browser->setVersion($aversion[0]);
             self::$browser->setName(Browser::CHROME);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the browser is Vivaldi.
+     *
+     * @return bool
+     */
+    public static function checkBrowserVivaldi()
+    {
+        if (stripos(self::$userAgentString, 'Vivaldi') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Vivaldi'));
+            $aversion = explode(' ', $aresult[1]);
+            self::$browser->setVersion($aversion[0]);
+            self::$browser->setName(Browser::VIVALDI);
 
             return true;
         }

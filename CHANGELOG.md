@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 5.0.1 (released 2015-09-16)
+
+- Added Vivaldi detection
+
 ## 5.0.0 (released 2015-09-07)
 
 - Changed namespace from Browser to Sinergi\BrowserDetector

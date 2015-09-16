@@ -35,6 +35,7 @@ The Browser class allow you to detect a user's browser and version.
 
 ### Browsers Detected
 
+ * Vivaldi
  * Opera
  * Opera Mini
  * WebTV

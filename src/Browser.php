@@ -8,6 +8,7 @@ namespace Sinergi\BrowserDetector;
 class Browser
 {
     const UNKNOWN = 'unknown';
+    const VIVALDI = 'Vivaldi';
     const OPERA = 'Opera';
     const OPERA_MINI = 'Opera Mini';
     const WEBTV = 'WebTV';
@@ -73,7 +74,7 @@ class Browser
     /**
      * @param null|string|UserAgent $userAgent
      *
-     * @throws \Browser\InvalidArgumentException
+     * @throws \Sinergi\BrowserDetector\InvalidArgumentException
      */
     public function __construct($userAgent = null)
     {

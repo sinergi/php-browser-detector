@@ -17,7 +17,7 @@ class DeviceDetector implements DetectorInterface
     /**
      * @param null|Device $device
      *
-     * @throws \Browser\InvalidArgumentException
+     * @throws \Sinergi\BrowserDetector\InvalidArgumentException
      */
     public function detect(Device $device)
     {
