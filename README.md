@@ -1,7 +1,7 @@
 Browser Detector
 ================
 
-[![Build Status](https://img.shields.io/travis/sinergi/php-browser-detector/master.svg?style=flat)](https://travis-ci.org/sinergi/php-browser-detector)
+[![Build Status](https://travis-ci.org/sinergi/php-browser-detector.svg?branch=master)](https://travis-ci.org/sinergi/php-browser-detector)
 [![StyleCI](https://styleci.io/repos/3752453/shield)](https://styleci.io/repos/3752453)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/sinergi/php-browser-detector/?branch=master)
