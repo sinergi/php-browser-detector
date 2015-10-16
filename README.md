@@ -20,14 +20,10 @@ This library uses PHP 5.3+.
 
 ## Install
     
-It is recommended that you install the PHP Browser library [through composer](http://getcomposer.org). To do so, add the following lines to your composer.json file.
+It is recommended that you install the PHP Browser library [through composer](http://getcomposer.org). To do so, run the following command:
 
-```JSON
-{
-    "require": {
-        "sinergi/browser-detector": "^5.0"
-    }
-}
+```sh
+composer require sinergi/browser-detector
 ```
 
 ## Browser Detection
