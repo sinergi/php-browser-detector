@@ -23,6 +23,7 @@ class Os
     const SUNOS = 'SunOS';
     const OS2 = 'OS2';
     const BEOS = 'BeOS';
+    const WINDOWS_PHONE = 'Windows Phone';
 
     const VERSION_UNKNOWN = 'unknown';
 
