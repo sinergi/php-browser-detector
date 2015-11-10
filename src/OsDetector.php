@@ -26,6 +26,7 @@ class OsDetector implements DetectorInterface
             self::checkOSX($os, $userAgent) ||
             self::checkSymbOS($os, $userAgent) ||
             self::checkWindows($os, $userAgent) ||
+            self::checkWindowsPhone($os, $userAgent) ||
             self::checkFreeBSD($os, $userAgent) ||
             self::checkOpenBSD($os, $userAgent) ||
             self::checkNetBSD($os, $userAgent) ||
@@ -173,6 +174,28 @@ class OsDetector implements DetectorInterface
             return true;
         }
 
+        return false;
+    }
+    
+    /**
+     * Determine if the user's operating system is Windows Phone.
+     *
+     * @param Os $os
+     * @param UserAgent $userAgent
+     *
+     * @return bool
+     */
+    private static function checkWindowsPhone(Os $os, UserAgent $userAgent)
+    {
+        if (stripos($userAgent->getUserAgentString(), 'Windows Phone') !== false) {
+            $os->setName($os::WINDOWS_PHONE);
+            // Windows version
+            if (preg_match('/Windows Phone ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
+                $os->setVersion((float)$matches[1]);
+            }
+    
+            return true;
+        }
         return false;
     }
 
