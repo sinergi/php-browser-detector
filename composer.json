@@ -1,5 +1,5 @@
 {
-    "name": "antonio-valdez-arce/browser-detector",
+    "name": "sinergi/browser-detector",
     "type": "library",
     "description": "Detecting the user's browser, operating system and language.",
     "keywords": ["browser", "os", "operating system", "language", "detection"],

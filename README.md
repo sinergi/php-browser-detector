@@ -87,6 +87,7 @@ The OS class allow you to detect a user's operating system and version.
 ### OS Detected
 
  * Windows
+ * Windows Phone
  * OS X
  * iOS
  * Android
