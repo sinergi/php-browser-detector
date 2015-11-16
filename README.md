@@ -123,6 +123,7 @@ The Device class allow you to detect a user's device.
 
  * iPad
  * iPhone
+ * Windows Phone
 
 ### Usage
 

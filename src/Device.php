@@ -5,34 +5,64 @@ namespace Sinergi\BrowserDetector;
 class Device
 {
     const UNKNOWN = 'unknown';
-    const UNKNOWN_VERSION = 'unknown';
 
     const IPAD = 'iPad';
     const IPHONE = 'iPhone';
+    const WINDOWS_PHONE = 'Windows Phone';
 
     /**
      * @var string
      */
-    private $name = self::UNKNOWN;
+    private $name;
 
     /**
-     * @var string
+     * @var UserAgent
      */
-    private $version = self::UNKNOWN_VERSION;
+    private $userAgent;
 
     /**
-     * @var bool
+     * @param null|string|UserAgent $userAgent
+     *
+     * @throws \Sinergi\BrowserDetector\InvalidArgumentException
      */
-    private $isDetected = false;
+    public function __construct($userAgent = null)
+    {
+        if ($userAgent instanceof UserAgent) {
+            $this->setUserAgent($userAgent);
+        } elseif (null === $userAgent || is_string($userAgent)) {
+            $this->setUserAgent(new UserAgent($userAgent));
+        } else {
+            throw new InvalidArgumentException();
+        }
+    }
+
+    /**
+     * @param UserAgent $userAgent
+     *
+     * @return $this
+     */
+    public function setUserAgent(UserAgent $userAgent)
+    {
+        $this->userAgent = $userAgent;
+
+        return $this;
+    }
+
+    /**
+     * @return UserAgent
+     */
+    public function getUserAgent()
+    {
+        return $this->userAgent;
+    }
 
     /**
      * @return string
      */
     public function getName()
     {
-        if (!$this->isDetected) {
-            $detector = (new DeviceDetector());
-            $detector->detect($this);
+        if (!isset($this->name)) {
+            DeviceDetector::detect($this, $this->getUserAgent());
         }
 
         return $this->name;
@@ -46,46 +76,6 @@ class Device
     public function setName($name)
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getVersion()
-    {
-        return $this->version;
-    }
-
-    /**
-     * @param string $version
-     *
-     * @return $this
-     */
-    public function setVersion($version)
-    {
-        $this->version = $version;
-
-        return $this;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isDetected()
-    {
-        return $this->isDetected;
-    }
-
-    /**
-     * @param bool $isDetected
-     *
-     * @return $this
-     */
-    public function setIsDetected($isDetected)
-    {
-        $this->isDetected = $isDetected;
 
         return $this;
     }

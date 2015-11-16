@@ -11,6 +11,5 @@ class DeviceTest extends PHPUnit_Framework_TestCase
     {
         $device = new Device();
         $this->assertEquals(Device::UNKNOWN, $device->getName());
-        $this->assertEquals(Device::UNKNOWN_VERSION, $device->getVersion());
     }
 }
