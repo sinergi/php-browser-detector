@@ -97,7 +97,9 @@ class OsDetector implements DetectorInterface
         if (stripos($userAgent->getUserAgentString(), 'OS X') !== false) {
             $os->setName($os::OSX);
             if (preg_match('/OS X ([\d\._]*)/i', $userAgent->getUserAgentString(), $matches)) {
-                $os->setVersion(str_replace('_', '.', $matches[1]));
+                if (isset($matches[1])) {
+                    $os->setVersion(str_replace('_', '.', $matches[1]));
+                }
             }
 
             return true;
@@ -120,35 +122,37 @@ class OsDetector implements DetectorInterface
             $os->setName($os::WINDOWS);
             // Windows version
             if (preg_match('/Windows NT ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
-                switch (str_replace('_', '.', $matches[1])) {
-                    case '6.3':
-                        $os->setVersion('8.1');
-                        break;
-                    case '6.2':
-                        $os->setVersion('8');
-                        break;
-                    case '6.1':
-                        $os->setVersion('7');
-                        break;
-                    case '6.0':
-                        $os->setVersion('Vista');
-                        break;
-                    case '5.2':
-                    case '5.1':
-                        $os->setVersion('XP');
-                        break;
-                    case '5.01':
-                    case '5.0':
-                        $os->setVersion('2000');
-                        break;
-                    case '4.0':
-                        $os->setVersion('NT 4.0');
-                        break;
-                    default:
-                        if ((float)$matches[1] >= 10.0) {
-                            $os->setVersion((float)$matches[1]);
-                        }
-                        break;
+                if (isset($matches[1])) {
+                    switch (str_replace('_', '.', $matches[1])) {
+                        case '6.3':
+                            $os->setVersion('8.1');
+                            break;
+                        case '6.2':
+                            $os->setVersion('8');
+                            break;
+                        case '6.1':
+                            $os->setVersion('7');
+                            break;
+                        case '6.0':
+                            $os->setVersion('Vista');
+                            break;
+                        case '5.2':
+                        case '5.1':
+                            $os->setVersion('XP');
+                            break;
+                        case '5.01':
+                        case '5.0':
+                            $os->setVersion('2000');
+                            break;
+                        case '4.0':
+                            $os->setVersion('NT 4.0');
+                            break;
+                        default:
+                            if ((float)$matches[1] >= 10.0) {
+                                $os->setVersion((float)$matches[1]);
+                            }
+                            break;
+                    }
                 }
             }
 
@@ -191,7 +195,9 @@ class OsDetector implements DetectorInterface
             $os->setName($os::WINDOWS_PHONE);
             // Windows version
             if (preg_match('/Windows Phone ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
-                $os->setVersion((float)$matches[1]);
+                if (isset($matches[1])) {
+                    $os->setVersion((float)$matches[1]);
+                }
             }
     
             return true;
@@ -292,7 +298,9 @@ class OsDetector implements DetectorInterface
     {
         if (stripos($userAgent->getUserAgentString(), 'Android') !== false) {
             if (preg_match('/Android ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
-                $os->setVersion($matches[1]);
+                if (isset($matches[1])) {
+                    $os->setVersion($matches[1]);
+                }
             } else {
                 $os->setVersion($os::VERSION_UNKNOWN);
             }
