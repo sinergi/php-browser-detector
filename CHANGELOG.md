@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 5.1.1 (released 2015-12-08)
+
+- Fixed several issues when bad user agents were passed
+
+## 5.1.0 (released 2015-11-16)
+
+- Reactored the device class
+
 ## 5.0.1 (released 2015-09-16)
 
 - Added Vivaldi detection
