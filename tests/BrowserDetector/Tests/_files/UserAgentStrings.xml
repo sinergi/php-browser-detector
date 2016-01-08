@@ -142,5 +142,16 @@
                 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.89 Vivaldi/1.0.83.38 Safari/537.36
             </field>
         </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">47.0.2526.80</field>
+            <field name="os">Chrome OS</field>
+            <field name="os_version">47.0.2526.80</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (X11; CrOS x86_64 7520.62.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36
+            </field>
+        </string>
     </strings>
 </document>

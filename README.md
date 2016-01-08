@@ -91,6 +91,7 @@ The OS class allow you to detect a user's operating system and version.
  * OS X
  * iOS
  * Android
+ * Chrome OS
  * Linux
  * SymbOS
  * Nokia

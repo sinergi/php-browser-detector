@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 5.1.2 (released 2016-01-08)
+
+- Added Chrome OS detection
+
 ## 5.1.1 (released 2015-12-08)
 
 - Fixed several issues when bad user agents were passed

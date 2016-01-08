@@ -21,6 +21,8 @@ class OsDetector implements DetectorInterface
         self::checkMobileBrowsers($os, $userAgent);
 
         return (
+            // Chrome OS before OS X
+            self::checkChromeOs($os, $userAgent) ||
             // iOS before OS X
             self::checkIOS($os, $userAgent) ||
             self::checkOSX($os, $userAgent) ||
@@ -78,6 +80,27 @@ class OsDetector implements DetectorInterface
             }
             $os->setIsMobile(true);
 
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the user's operating system is Chrome OS.
+     *
+     * @param Os $os
+     * @param UserAgent $userAgent
+     *
+     * @return bool
+     */
+    private static function checkChromeOs(Os $os, UserAgent $userAgent)
+    {
+        if (stripos($userAgent->getUserAgentString(), 'CrOS') !== false) {
+            $os->setName($os::CHROME_OS);
+            if (preg_match('/Chrome\/([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
+                $os->setVersion($matches[1]);
+            }
             return true;
         }
 

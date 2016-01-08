@@ -24,6 +24,7 @@ class Os
     const OS2 = 'OS2';
     const BEOS = 'BeOS';
     const WINDOWS_PHONE = 'Windows Phone';
+    const CHROME_OS = 'Chrome OS';
 
     const VERSION_UNKNOWN = 'unknown';
 
