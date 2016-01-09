@@ -14,7 +14,7 @@ class DeviceDetectorTest extends PHPUnit_Framework_TestCase
         $userAgentStringCollection = UserAgentStringMapper::map();
         foreach ($userAgentStringCollection as $userAgentString) {
             $device = new Device($userAgentString->getString());
-            $this->assertEquals($userAgentString->getDevice(), $device->getName());
+            $this->assertSame($userAgentString->getDevice(), $device->getName());
         }
     }
 }

@@ -21,7 +21,7 @@ class LanguageTest extends PHPUnit_Framework_TestCase
 
     public function testGetLanguage()
     {
-        $this->assertEquals('fr', $this->language->getLanguage());
+        $this->assertSame('fr', $this->language->getLanguage());
     }
 
     public function testGetLanguages()
@@ -31,7 +31,7 @@ class LanguageTest extends PHPUnit_Framework_TestCase
 
     public function testGetLanguageLocal()
     {
-        $this->assertEquals('fr-CA', $this->language->getLanguageLocale());
+        $this->assertSame('fr-CA', $this->language->getLanguageLocale());
     }
 
     public function testConstructor()
@@ -54,6 +54,6 @@ class LanguageTest extends PHPUnit_Framework_TestCase
     public function testGetLanguageLocale()
     {
         $language = new Language('ru,en-us;q=0.5,en;q=0.3');
-        $this->assertEquals('ru', $language->getLanguageLocale());
+        $this->assertSame('ru', $language->getLanguageLocale());
     }
 }
