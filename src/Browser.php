@@ -152,7 +152,7 @@ class Browser
             BrowserDetector::detect($this, $this->getUserAgent());
         }
 
-        return $this->version;
+        return (string) $this->version;
     }
 
     /**

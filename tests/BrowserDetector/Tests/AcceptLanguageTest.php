@@ -13,9 +13,9 @@ class AcceptLanguageTest extends PHPUnit_Framework_TestCase
         $this->assertNull($acceptLanguage->getAcceptLanguageString());
 
         $acceptLanguage = new AcceptLanguage('my_accept_language_string');
-        $this->assertEquals('my_accept_language_string', $acceptLanguage->getAcceptLanguageString());
+        $this->assertSame('my_accept_language_string', $acceptLanguage->getAcceptLanguageString());
 
         $acceptLanguage->setAcceptLanguageString('my_new_accept_language_string');
-        $this->assertEquals('my_new_accept_language_string', $acceptLanguage->getAcceptLanguageString());
+        $this->assertSame('my_new_accept_language_string', $acceptLanguage->getAcceptLanguageString());
     }
 }

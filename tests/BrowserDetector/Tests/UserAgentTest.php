@@ -13,9 +13,9 @@ class UserAgentTest extends PHPUnit_Framework_TestCase
         $this->assertNull($userAgent->getUserAgentString());
 
         $userAgent = new UserAgent('my_agent_user_string');
-        $this->assertEquals('my_agent_user_string', $userAgent->getUserAgentString());
+        $this->assertSame('my_agent_user_string', $userAgent->getUserAgentString());
 
         $userAgent->setUserAgentString('my_new_agent_user_string');
-        $this->assertEquals('my_new_agent_user_string', $userAgent->getUserAgentString());
+        $this->assertSame('my_new_agent_user_string', $userAgent->getUserAgentString());
     }
 }
