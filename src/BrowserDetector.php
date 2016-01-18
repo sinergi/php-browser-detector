@@ -143,8 +143,7 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserRobot()
     {
-        if (
-            stripos(self::$userAgentString, 'bot') !== false ||
+        if (stripos(self::$userAgentString, 'bot') !== false ||
             stripos(self::$userAgentString, 'spider') !== false ||
             stripos(self::$userAgentString, 'crawler') !== false
         ) {
@@ -217,8 +216,11 @@ class BrowserDetector implements DetectorInterface
                     }
                 } // Test for Pocket IE
                 else {
-                    if (stripos(self::$userAgentString, 'mspie') !== false || stripos(self::$userAgentString,
-                            'pocket') !== false
+                    if (stripos(self::$userAgentString, 'mspie') !== false ||
+                        stripos(
+                            self::$userAgentString,
+                            'pocket'
+                        ) !== false
                     ) {
                         $aresult = explode(' ', stristr(self::$userAgentString, 'mspie'));
                         self::$browser->setName(Browser::POCKET_IE);
@@ -571,8 +573,8 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserNetscapeNavigator9Plus()
     {
-        if (stripos(self::$userAgentString, 'Firefox') !== false && preg_match('/Navigator\/([^ ]*)/i',
-                self::$userAgentString, $matches)
+        if (stripos(self::$userAgentString, 'Firefox') !== false &&
+            preg_match('/Navigator\/([^ ]*)/i', self::$userAgentString, $matches)
         ) {
             if (isset($matches[1])) {
                 self::$browser->setVersion($matches[1]);
@@ -580,8 +582,8 @@ class BrowserDetector implements DetectorInterface
             self::$browser->setName(Browser::NETSCAPE_NAVIGATOR);
 
             return true;
-        } elseif (stripos(self::$userAgentString, 'Firefox') === false && preg_match('/Netscape6?\/([^ ]*)/i',
-                self::$userAgentString, $matches)
+        } elseif (stripos(self::$userAgentString, 'Firefox') === false &&
+            preg_match('/Netscape6?\/([^ ]*)/i', self::$userAgentString, $matches)
         ) {
             if (isset($matches[1])) {
                 self::$browser->setVersion($matches[1]);
@@ -601,8 +603,8 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserShiretoko()
     {
-        if (stripos(self::$userAgentString, 'Mozilla') !== false && preg_match('/Shiretoko\/([^ ]*)/i',
-                self::$userAgentString, $matches)
+        if (stripos(self::$userAgentString, 'Mozilla') !== false &&
+            preg_match('/Shiretoko\/([^ ]*)/i', self::$userAgentString, $matches)
         ) {
             if (isset($matches[1])) {
                 self::$browser->setVersion($matches[1]);
@@ -622,8 +624,8 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserIceCat()
     {
-        if (stripos(self::$userAgentString, 'Mozilla') !== false && preg_match('/IceCat\/([^ ]*)/i',
-                self::$userAgentString, $matches)
+        if (stripos(self::$userAgentString, 'Mozilla') !== false &&
+            preg_match('/IceCat\/([^ ]*)/i', self::$userAgentString, $matches)
         ) {
             if (isset($matches[1])) {
                 self::$browser->setVersion($matches[1]);
@@ -645,8 +647,8 @@ class BrowserDetector implements DetectorInterface
     {
         if (preg_match("/Nokia([^\/]+)\/([^ SP]+)/i", self::$userAgentString, $matches)) {
             self::$browser->setVersion($matches[2]);
-            if (stripos(self::$userAgentString, 'Series60') !== false || strpos(self::$userAgentString,
-                    'S60') !== false
+            if (stripos(self::$userAgentString, 'Series60') !== false ||
+                strpos(self::$userAgentString, 'S60') !== false
             ) {
                 self::$browser->setName(Browser::NOKIA_S60);
             } else {
@@ -739,8 +741,9 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserMozilla()
     {
-        if (stripos(self::$userAgentString, 'mozilla') !== false && preg_match('/rv:[0-9].[0-9][a-b]?/i',
-                self::$userAgentString) && stripos(self::$userAgentString, 'netscape') === false
+        if (stripos(self::$userAgentString, 'mozilla') !== false &&
+            preg_match('/rv:[0-9].[0-9][a-b]?/i', self::$userAgentString) &&
+            stripos(self::$userAgentString, 'netscape') === false
         ) {
             $aversion = explode(' ', stristr(self::$userAgentString, 'rv:'));
             preg_match('/rv:[0-9].[0-9][a-b]?/i', self::$userAgentString, $aversion);
@@ -748,16 +751,18 @@ class BrowserDetector implements DetectorInterface
             self::$browser->setName(Browser::MOZILLA);
 
             return true;
-        } elseif (stripos(self::$userAgentString, 'mozilla') !== false && preg_match('/rv:[0-9]\.[0-9]/i',
-                self::$userAgentString) && stripos(self::$userAgentString, 'netscape') === false
+        } elseif (stripos(self::$userAgentString, 'mozilla') !== false &&
+            preg_match('/rv:[0-9]\.[0-9]/i', self::$userAgentString) &&
+            stripos(self::$userAgentString, 'netscape') === false
         ) {
             $aversion = explode('', stristr(self::$userAgentString, 'rv:'));
             self::$browser->setVersion(str_replace('rv:', '', $aversion[0]));
             self::$browser->setName(Browser::MOZILLA);
 
             return true;
-        } elseif (stripos(self::$userAgentString, 'mozilla') !== false && preg_match('/mozilla\/([^ ]*)/i',
-                self::$userAgentString, $matches) && stripos(self::$userAgentString, 'netscape') === false
+        } elseif (stripos(self::$userAgentString, 'mozilla') !== false &&
+            preg_match('/mozilla\/([^ ]*)/i', self::$userAgentString, $matches) &&
+            stripos(self::$userAgentString, 'netscape') === false
         ) {
             if (isset($matches[1])) {
                 self::$browser->setVersion($matches[1]);

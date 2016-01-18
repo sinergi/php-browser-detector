@@ -10,7 +10,7 @@ class LanguageDetector implements DetectorInterface
      * @param Language $language
      * @param AcceptLanguage $acceptLanguage
      *
-     * @return bool
+     * @return null
      */
     public static function detect(Language $language, AcceptLanguage $acceptLanguage)
     {
@@ -19,7 +19,12 @@ class LanguageDetector implements DetectorInterface
         $language->setLanguages($languages);
 
         if (!empty($acceptLanguageString)) {
-            $httpLanguages = preg_split('/q=([\d\.]*)/', $acceptLanguageString, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+            $httpLanguages = preg_split(
+                '/q=([\d\.]*)/',
+                $acceptLanguageString,
+                -1,
+                PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE
+            );
 
             $key = 0;
             foreach (array_reverse($httpLanguages) as $value) {

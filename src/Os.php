@@ -100,11 +100,11 @@ class Os
     public function getVersion()
     {
         if (isset($this->version)) {
-            return (string) $this->version;
+            return (string)$this->version;
         } else {
             OsDetector::detect($this, $this->getUserAgent());
 
-            return (string) $this->version;
+            return (string)$this->version;
         }
     }
 
