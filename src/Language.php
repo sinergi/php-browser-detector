@@ -50,7 +50,7 @@ class Language
     /**
      * Set languages.
      *
-     * @param string $languages
+     * @param array $languages
      *
      * @return $this
      */
