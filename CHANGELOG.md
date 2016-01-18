@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 6.0.0 (upcoming)
+## 6.0.0 (released 2016-01-18)
 
 - Standardized versions type to string
 
