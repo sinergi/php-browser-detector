@@ -12,8 +12,6 @@ php:
   - hhvm
 
 before_script:
-  ## Composer
-  - composer self-update
   - composer install --no-interaction
 
 script:
