@@ -172,7 +172,7 @@ class OsDetector implements DetectorInterface
                             break;
                         default:
                             if ((float)$matches[1] >= 10.0) {
-                                $os->setVersion((float)$matches[1]);
+                                $os->setVersion($matches[1]);
                             }
                             break;
                     }

@@ -87,7 +87,7 @@ class Os
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = (string)$name;
 
         return $this;
     }
@@ -117,7 +117,7 @@ class Os
      */
     public function setVersion($version)
     {
-        $this->version = $version;
+        $this->version = (string)$version;
 
         return $this;
     }

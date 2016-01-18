@@ -26,7 +26,7 @@ class UserAgent
      */
     public function setUserAgentString($userAgentString)
     {
-        $this->userAgentString = $userAgentString;
+        $this->userAgentString = (string)$userAgentString;
 
         return $this;
     }

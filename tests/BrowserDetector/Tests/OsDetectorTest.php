@@ -13,7 +13,7 @@ class OsDetectorTest extends PHPUnit_Framework_TestCase
         foreach ($userAgentStringCollection as $userAgentString) {
             $os = new Os($userAgentString->getString());
             $this->assertSame($userAgentString->getOs(), $os->getName());
-            $this->assertSame($userAgentString->getosVersion(), $os->getVersion());
+            $this->assertSame($userAgentString->getOsVersion(), $os->getVersion());
         }
     }
 }

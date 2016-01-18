@@ -75,7 +75,7 @@ class Device
      */
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = (string)$name;
 
         return $this;
     }

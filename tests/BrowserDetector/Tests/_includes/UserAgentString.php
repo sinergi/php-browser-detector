@@ -82,7 +82,7 @@ class UserAgentString
     /**
      * @return string
      */
-    public function getosVersion()
+    public function getOsVersion()
     {
         return (string) $this->osVersion;
     }
