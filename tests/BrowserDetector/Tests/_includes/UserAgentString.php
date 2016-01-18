@@ -84,7 +84,7 @@ class UserAgentString
      */
     public function getosVersion()
     {
-        return $this->osVersion;
+        return (string) $this->osVersion;
     }
 
     /**
@@ -124,7 +124,7 @@ class UserAgentString
      */
     public function getbrowserVersion()
     {
-        return $this->browserVersion;
+        return (string) $this->browserVersion;
     }
 
     /**

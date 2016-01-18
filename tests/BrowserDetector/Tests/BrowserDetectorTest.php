@@ -12,8 +12,8 @@ class BrowserDetectorTest extends PHPUnit_Framework_TestCase
         $userAgentStringCollection = UserAgentStringMapper::map();
         foreach ($userAgentStringCollection as $userAgentString) {
             $browser = new Browser($userAgentString->getString());
-            $this->assertEquals($userAgentString->getBrowser(), $browser->getName());
-            $this->assertEquals($userAgentString->getBrowserVersion(), $browser->getVersion());
+            $this->assertSame($userAgentString->getBrowser(), $browser->getName());
+            $this->assertSame($userAgentString->getBrowserVersion(), $browser->getVersion());
         }
     }
 }
