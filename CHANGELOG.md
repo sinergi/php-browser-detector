@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.0.0 (upcoming)
+
+- Standardized versions type to string
+
 ## 5.1.2 (released 2016-01-08)
 
 - Added Chrome OS detection
