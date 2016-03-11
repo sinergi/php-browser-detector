@@ -270,4 +270,12 @@ class Browser
         return $this->isCompatibilityMode;
     }
 
+    /**
+     * Render pages outside of IE's compatibility mode.
+     */
+    public function endCompatibilityMode()
+    {
+        header('X-UA-Compatible: IE=edge');
+    }
+
 }
