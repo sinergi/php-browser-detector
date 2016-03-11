@@ -19,7 +19,7 @@ reliable and evolves at all time, use with care and feel free to contribute.
 This library uses PHP 5.3+.
 
 ## Install
-    
+
 It is recommended that you install the PHP Browser library [through composer](http://getcomposer.org). To do so, run the following command:
 
 ```sh
@@ -77,6 +77,20 @@ $browser = new Browser();
 
 if ($browser->getName() === Browser::IE && $browser->getVersion() < 11) {
     echo 'Please upgrade your browser.';
+}
+```
+
+#### Compatibility Mode
+
+Detect if Internet Explorer is in Compatibility Mode and send the correct header to have the browser render the page in its standard mode. This must be called before any output is sent to the browser.
+
+```php
+use Sinergi\BrowserDetector\Browser;
+
+$browser = new Browser();
+
+if ($browser->getName() === Browser::IE && $browser->isCompatibilityMode()) {
+    $browser->endCompatibilityMode();
 }
 ```
 
