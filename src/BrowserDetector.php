@@ -198,6 +198,39 @@ class BrowserDetector implements DetectorInterface
                     if (isset($matches[1])) {
                         self::$browser->setVersion($matches[1]);
                     }
+
+                    // At this poing in the method, we know the MSIE and Trident
+                    // strings are present in the $userAgentString. If we're in
+                    // compatibility mode, we need to determine the true version.
+                    // If the MSIE version is 7.0, we can look at the Trident
+                    // version to *approximate* the true IE version. If we don't
+                    // find a matching pair, ( e.g. MSIE 7.0 && Trident/7.0 )
+                    // we're *not* in compatibility mode and the browser really
+                    // is version 7.0.
+                    if (stripos(self::$userAgentString, 'MSIE 7.0;'))
+                    {
+                      // IE11 in compatibility mode
+                      if (stripos(self::$userAgentString, 'Trident/7.0;')) {
+                          self::$browser->setVersion('11.0');
+                          self::$browser->setIsCompatibilityMode(true);
+                      }
+                      // IE10 in compatibility mode
+                      else if (stripos(self::$userAgentString, 'Trident/6.0;')) {
+                          self::$browser->setVersion('10.0');
+                          self::$browser->setIsCompatibilityMode(true);
+                      }
+                      // IE9 in compatibility mode
+                      else if (stripos(self::$userAgentString, 'Trident/5.0;')) {
+                          self::$browser->setVersion('9.0');
+                          self::$browser->setIsCompatibilityMode(true);
+                      }
+                      // IE8 in compatibility mode
+                      else if (stripos(self::$userAgentString, 'Trident/4.0;')) {
+                          self::$browser->setVersion('8.0');
+                          self::$browser->setIsCompatibilityMode(true);
+                      }
+                    }
+
                 }
 
                 return true;
