@@ -72,6 +72,11 @@ class Browser
     private $isChromeFrame = false;
 
     /**
+     * @var bool
+     */
+    private $isCompatibilityMode = false;
+
+    /**
      * @param null|string|UserAgent $userAgent
      *
      * @throws \Sinergi\BrowserDetector\InvalidArgumentException
@@ -244,4 +249,25 @@ class Browser
     {
         return $this->userAgent;
     }
+
+    /**
+    * @param bool
+    *
+    * @return $this
+    */
+    public function setIsCompatibilityMode($isCompatibilityMode)
+    {
+      $this->isCompatibilityMode = $isCompatibilityMode;
+
+      return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCompatibilityMode()
+    {
+        return $this->isCompatibilityMode;
+    }
+
 }
