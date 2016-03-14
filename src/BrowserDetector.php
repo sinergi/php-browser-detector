@@ -207,30 +207,25 @@ class BrowserDetector implements DetectorInterface
                     // find a matching pair, ( e.g. MSIE 7.0 && Trident/7.0 )
                     // we're *not* in compatibility mode and the browser really
                     // is version 7.0.
-                    if (stripos(self::$userAgentString, 'MSIE 7.0;'))
-                    {
-                      // IE11 in compatibility mode
-                      if (stripos(self::$userAgentString, 'Trident/7.0;')) {
-                          self::$browser->setVersion('11.0');
-                          self::$browser->setIsCompatibilityMode(true);
-                      }
-                      // IE10 in compatibility mode
-                      else if (stripos(self::$userAgentString, 'Trident/6.0;')) {
-                          self::$browser->setVersion('10.0');
-                          self::$browser->setIsCompatibilityMode(true);
-                      }
-                      // IE9 in compatibility mode
-                      else if (stripos(self::$userAgentString, 'Trident/5.0;')) {
-                          self::$browser->setVersion('9.0');
-                          self::$browser->setIsCompatibilityMode(true);
-                      }
-                      // IE8 in compatibility mode
-                      else if (stripos(self::$userAgentString, 'Trident/4.0;')) {
-                          self::$browser->setVersion('8.0');
-                          self::$browser->setIsCompatibilityMode(true);
-                      }
+                    if (stripos(self::$userAgentString, 'MSIE 7.0;')) {
+                        if (stripos(self::$userAgentString, 'Trident/7.0;')) {
+                            // IE11 in compatibility mode
+                            self::$browser->setVersion('11.0');
+                            self::$browser->setIsCompatibilityMode(true);
+                        } elseif (stripos(self::$userAgentString, 'Trident/6.0;')) {
+                            // IE10 in compatibility mode
+                            self::$browser->setVersion('10.0');
+                            self::$browser->setIsCompatibilityMode(true);
+                        } elseif (stripos(self::$userAgentString, 'Trident/5.0;')) {
+                            // IE9 in compatibility mode
+                            self::$browser->setVersion('9.0');
+                            self::$browser->setIsCompatibilityMode(true);
+                        } elseif (stripos(self::$userAgentString, 'Trident/4.0;')) {
+                            // IE8 in compatibility mode
+                            self::$browser->setVersion('8.0');
+                            self::$browser->setIsCompatibilityMode(true);
+                        }
                     }
-
                 }
 
                 return true;

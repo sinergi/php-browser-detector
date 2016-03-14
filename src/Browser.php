@@ -251,15 +251,15 @@ class Browser
     }
 
     /**
-    * @param bool
-    *
-    * @return $this
-    */
+     * @param bool
+     *
+     * @return $this
+     */
     public function setIsCompatibilityMode($isCompatibilityMode)
     {
-      $this->isCompatibilityMode = $isCompatibilityMode;
+        $this->isCompatibilityMode = $isCompatibilityMode;
 
-      return $this;
+        return $this;
     }
 
     /**
@@ -277,5 +277,4 @@ class Browser
     {
         header('X-UA-Compatible: IE=edge');
     }
-
 }
