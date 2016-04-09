@@ -74,6 +74,11 @@ class Browser
     /**
      * @var bool
      */
+    private $isFacebookWebview = false;
+
+    /**
+     * @var bool
+     */
     private $isCompatibilityMode = false;
 
     /**
@@ -228,6 +233,40 @@ class Browser
     public function isChromeFrame()
     {
         return $this->getIsChromeFrame();
+    }
+
+    /**
+     * @param bool $isFacebookWebview
+     *
+     * @return $this
+     */
+    public function setIsFacebookWebview($isFacebookWebview)
+    {
+        $this->isFacebookWebview = (bool) $isFacebookWebview;
+
+        return $this;
+    }
+
+    /**
+     * Used to determine if the browser is actually "facebook".
+     *
+     * @return bool
+     */
+    public function getIsFacebookWebview()
+    {
+        if (!isset($this->name)) {
+            BrowserDetector::detect($this, $this->getUserAgent());
+        }
+
+        return $this->isFacebookWebview;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFacebookWebview()
+    {
+        return $this->getIsFacebookWebview();
     }
 
     /**

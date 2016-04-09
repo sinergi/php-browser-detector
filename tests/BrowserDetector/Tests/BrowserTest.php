@@ -51,6 +51,12 @@ class BrowserTest extends PHPUnit_Framework_TestCase
         $this->assertSame(Browser::VERSION_UNKNOWN, $browser->getVersion());
     }
 
+    public function testFacebookWebview()
+    {
+        $browser = new Browser('zilla/5.0 (Linux; Android 4.4.4; One Build/KTU84L.H4) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/28.0.0.20.16;]');
+        $this->assertTrue($browser->isFacebookWebview());
+    }
+
     public function testOpera()
     {
         $browser = new Browser('Opera/9.80 (Windows NT 6.0) Presto/2.12.388 Version/12.14');
