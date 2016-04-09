@@ -1,8 +1,8 @@
 # CHANGELOG
 
-## 6.1.0 (upcoming)
+## 6.0.1 (released 2016-04-09)
 
-- 
+- Added Facebook WebView detection
 
 ## 6.0.0 (released 2016-01-18)
 
