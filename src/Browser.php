@@ -74,7 +74,7 @@ class Browser
     /**
      * @var bool
      */
-    private $isFacebookWebview = false;
+    private $isFacebookWebView = false;
 
     /**
      * @var bool
@@ -236,13 +236,13 @@ class Browser
     }
 
     /**
-     * @param bool $isFacebookWebview
+     * @param bool $isFacebookWebView
      *
      * @return $this
      */
-    public function setIsFacebookWebview($isFacebookWebview)
+    public function setIsFacebookWebView($isFacebookWebView)
     {
-        $this->isFacebookWebview = (bool) $isFacebookWebview;
+        $this->isFacebookWebView = (bool) $isFacebookWebView;
 
         return $this;
     }
@@ -252,21 +252,21 @@ class Browser
      *
      * @return bool
      */
-    public function getIsFacebookWebview()
+    public function getIsFacebookWebView()
     {
         if (!isset($this->name)) {
             BrowserDetector::detect($this, $this->getUserAgent());
         }
 
-        return $this->isFacebookWebview;
+        return $this->isFacebookWebView;
     }
 
     /**
      * @return bool
      */
-    public function isFacebookWebview()
+    public function isFacebookWebView()
     {
-        return $this->getIsFacebookWebview();
+        return $this->getIsFacebookWebView();
     }
 
     /**

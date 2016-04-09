@@ -87,7 +87,7 @@ class BrowserDetector implements DetectorInterface
         self::$browser->setVersion(Browser::VERSION_UNKNOWN);
 
         self::checkChromeFrame();
-        self::checkFacebookWebview();
+        self::checkFacebookWebView();
 
         foreach (self::$browsersList as $browserName) {
             $funcName = self::FUNC_PREFIX . $browserName;
@@ -121,10 +121,10 @@ class BrowserDetector implements DetectorInterface
      *
      * @return bool
      */
-    public static function checkFacebookWebview()
+    public static function checkFacebookWebView()
     {
         if (strpos(self::$userAgentString, 'FBAV') !== false) {
-            self::$browser->setIsFacebookWebview(true);
+            self::$browser->setIsFacebookWebView(true);
 
             return true;
         }
