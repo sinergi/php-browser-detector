@@ -44,6 +44,7 @@ class Browser
     const GSA = 'Google Search Appliance';
     const YANDEX = 'Yandex';
     const EDGE = 'Edge';
+    const DRAGON = 'Dragon';
 
     const VERSION_UNKNOWN = 'unknown';
 
