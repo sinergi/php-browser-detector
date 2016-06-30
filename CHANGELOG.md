@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.0.2 (released 2016-06-30)
+
+- Added Comodo Dragon detection
+
 ## 6.0.1 (released 2016-04-09)
 
 - Added Facebook WebView detection
