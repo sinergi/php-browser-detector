@@ -67,6 +67,7 @@ The Browser class allow you to detect a user's browser and version.
  * Phoenix
  * SeaMonkey
  * Yandex Browser
+ * Comodo Dragon
 
 ### Usage
 
