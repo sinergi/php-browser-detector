@@ -37,6 +37,7 @@ class BrowserDetector implements DetectorInterface
         'Edge',
         'Opera',
         'Vivaldi',
+        'Dragon',
         'Galeon',
         'NetscapeNavigator9Plus',
         'SeaMonkey',
@@ -897,6 +898,27 @@ class BrowserDetector implements DetectorInterface
                 self::$browser->setVersion($aversion[0]);
             }
             self::$browser->setName(Browser::YANDEX);
+
+            return true;
+        }
+
+        return false;
+    }
+    
+    /**
+     * Determine if the browser is Comodo Dragon / Ice Dragon / Chromodo.
+     *
+     * @return bool
+     */
+    public static function checkBrowserDragon()
+    {
+        if (stripos(self::$userAgentString, 'Dragon') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Dragon'));
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion($aversion[0]);
+            }
+            self::$browser->setName(Browser::DRAGON);
 
             return true;
         }
