@@ -197,5 +197,27 @@
                 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
             </field>
         </string>
+        <string>
+            <field name="browser">Dragon</field>
+            <field name="version">16.1.1.0</field>
+            <field name="os">Windows</field>
+            <field name="os_version">8</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.7 (KHTML, like Gecko) Comodo_Dragon/16.1.1.0 Chrome/16.0.912.63 Safari/535.7
+            </field>
+        </string>
+        <string>
+            <field name="browser">Dragon</field>
+            <field name="version">4.1.1.11</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Comodo_Dragon/4.1.1.11 Chrome/4.1.249.1042 Safari/532.5
+            </field>
+        </string>
     </strings>
 </document>
