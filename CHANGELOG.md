@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.0.3 (released 2016-07-25)
+
+- Fixed BB10 detection
+
 ## 6.0.2 (released 2016-06-30)
 
 - Added Comodo Dragon detection

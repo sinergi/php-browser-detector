@@ -149,6 +149,14 @@ class BrowserDetector implements DetectorInterface
             self::$browser->setName(Browser::BLACKBERRY);
 
             return true;
+        } elseif (stripos(self::$userAgentString, 'BB10') !== false) {
+            $aresult = explode('Version/10.', self::$userAgentString);
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion('10.' . $aversion[0]);
+            }
+            self::$browser->setName(Browser::BLACKBERRY);
+            return true;
         }
 
         return false;

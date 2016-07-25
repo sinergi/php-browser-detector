@@ -311,6 +311,18 @@ class OsDetector implements DetectorInterface
             $os->setIsMobile(true);
 
             return true;
+        } elseif (stripos($userAgent->getUserAgentString(), 'BB10') !== false) {
+            $aresult = explode('Version/10.', $userAgent->getUserAgentString());
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                $os->setVersion('10.' . $aversion[0]);
+            } else {
+                $os->setVersion('10');
+            }
+            $os->setName($os::BLACKBERRY);
+            $os->setIsMobile(true);
+
+            return true;
         }
 
         return false;
