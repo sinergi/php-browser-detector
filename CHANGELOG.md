@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 6.0.4 (released 2016-07-27)
+
+- Fixed Windows Phone detection
+- Added Lumia device detection
+
 ## 6.0.3 (released 2016-07-25)
 
 - Fixed BB10 detection

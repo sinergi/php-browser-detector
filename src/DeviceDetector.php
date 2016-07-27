@@ -66,6 +66,11 @@ class DeviceDetector implements DetectorInterface
     private static function checkWindowsPhone(Device $device, UserAgent $userAgent)
     {
         if (stripos($userAgent->getUserAgentString(), 'Windows Phone') !== false) {
+            if (preg_match('/Microsoft; (Lumia [^)]*)\)/', $userAgent->getUserAgentString(), $matches)) {
+                $device->setName($matches[1]);
+                return true;
+            }
+
             $device->setName($device::WINDOWS_PHONE);
             return true;
         }
