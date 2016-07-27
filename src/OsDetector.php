@@ -99,7 +99,9 @@ class OsDetector implements DetectorInterface
      */
     private static function checkChromeOs(Os $os, UserAgent $userAgent)
     {
-        if (stripos($userAgent->getUserAgentString(), 'CrOS') !== false) {
+        if (stripos($userAgent->getUserAgentString(), ' CrOS') !== false ||
+            stripos($userAgent->getUserAgentString(), 'CrOS ') !== false
+        ) {
             $os->setName($os::CHROME_OS);
             if (preg_match('/Chrome\/([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {
                 $os->setVersion($matches[1]);
