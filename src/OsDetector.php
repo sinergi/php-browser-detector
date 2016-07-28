@@ -224,6 +224,7 @@ class OsDetector implements DetectorInterface
     private static function checkWindowsPhone(Os $os, UserAgent $userAgent)
     {
         if (stripos($userAgent->getUserAgentString(), 'Windows Phone') !== false) {
+            $os->setIsMobile(true);
             $os->setName($os::WINDOWS_PHONE);
             // Windows version
             if (preg_match('/Windows Phone ([\d\.]*)/i', $userAgent->getUserAgentString(), $matches)) {

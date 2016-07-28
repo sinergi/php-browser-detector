@@ -39,6 +39,8 @@ class OsTest extends PHPUnit_Framework_TestCase
 
     public function testIsMobile()
     {
+        $os = new Os('Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 640 LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/14.14393');
+        $this->assertTrue($os->isMobile());
         $os = new Os('Mozilla/5.0 (iPod; CPU iPhone OS 6_1_3 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) CriOS/28.0.1500.16 Mobile/10B329 Safari/8536.25');
         $this->assertTrue($os->isMobile());
     }

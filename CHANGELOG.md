@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.0.5 (released 2016-07-28)
+
+- Windows Phone now marks OS as mobile
+
 ## 6.0.4 (released 2016-07-27)
 
 - Fixed Windows Phone detection
