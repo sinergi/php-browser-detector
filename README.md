@@ -28,7 +28,7 @@ composer require sinergi/browser-detector
 
 ## Browser Detection
 
-The Browser class allow you to detect a user's browser and version.
+The Browser class allows you to detect a user's browser and version.
 
 ### Browsers Detected
 
@@ -97,7 +97,7 @@ if ($browser->getName() === Browser::IE && $browser->isCompatibilityMode()) {
 
 ## OS Detection
 
-The OS class allow you to detect a user's operating system and version.
+The OS class allows you to detect a user's operating system and version.
 
 ### OS Detected
 
@@ -133,7 +133,7 @@ if ($os->getName() === Os::IOS) {
 
 ## Device Detection
 
-The Device class allow you to detect a user's device.
+The Device class allows you to detect a user's device.
 
 ### Device Detected
 
@@ -156,7 +156,7 @@ if ($device->getName() === Device::IPAD) {
 
 ## Language Detection
 
-The Language class allow you to detect a user's language.
+The Language class allows you to detect a user's language.
 
 ### Usage
 
