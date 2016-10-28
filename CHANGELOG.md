@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.1.0 (released 2016-10-28)
+
+- Fixed issue with blackberry version detection
+
 ## 6.0.5 (released 2016-07-28)
 
 - Windows Phone now marks OS as mobile
