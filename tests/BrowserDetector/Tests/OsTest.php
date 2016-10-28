@@ -34,7 +34,7 @@ class OsTest extends PHPUnit_Framework_TestCase
     {
         $os = new Os('Mozilla/5.0 (BlackBerry; U; BlackBerry 9900; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.346 Mobile Safari/534.11+');
         $this->assertSame(Os::BLACKBERRY, $os->getName());
-        $this->assertSame(Os::VERSION_UNKNOWN, $os->getVersion());
+        $this->assertSame('7.1.0.346', $os->getVersion());
     }
 
     public function testIsMobile()

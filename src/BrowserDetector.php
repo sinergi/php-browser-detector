@@ -141,10 +141,18 @@ class BrowserDetector implements DetectorInterface
     public static function checkBrowserBlackBerry()
     {
         if (stripos(self::$userAgentString, 'blackberry') !== false) {
-            $aresult = explode('/', stristr(self::$userAgentString, 'BlackBerry'));
-            if (isset($aresult[1])) {
-                $aversion = explode(' ', $aresult[1]);
-                self::$browser->setVersion($aversion[0]);
+            if (stripos(self::$userAgentString, 'Version/') !== false) {
+                $aresult = explode('Version/', self::$userAgentString);
+                if (isset($aresult[1])) {
+                    $aversion = explode(' ', $aresult[1]);
+                    self::$browser->setVersion($aversion[0]);
+                }
+            } else {
+                $aresult = explode('/', stristr(self::$userAgentString, 'BlackBerry'));
+                if (isset($aresult[1])) {
+                    $aversion = explode(' ', $aresult[1]);
+                    self::$browser->setVersion($aversion[0]);
+                }
             }
             self::$browser->setName(Browser::BLACKBERRY);
 

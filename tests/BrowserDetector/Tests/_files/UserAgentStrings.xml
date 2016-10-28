@@ -241,5 +241,16 @@
                 Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 640 LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/14.14393
             </field>
         </string>
+        <string>
+            <field name="browser">BlackBerry</field>
+            <field name="version">7.1.0.523</field>
+            <field name="os">BlackBerry</field>
+            <field name="os_version">7.1.0.523</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (BlackBerry; U; BlackBerry 9380; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.523 Mobile Safari/534.11+
+            </field>
+        </string>
     </strings>
 </document>

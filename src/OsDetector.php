@@ -309,7 +309,15 @@ class OsDetector implements DetectorInterface
     private static function checkBlackBerry(Os $os, UserAgent $userAgent)
     {
         if (stripos($userAgent->getUserAgentString(), 'BlackBerry') !== false) {
-            $os->setVersion($os::VERSION_UNKNOWN);
+            if (stripos($userAgent->getUserAgentString(), 'Version/') !== false) {
+                $aresult = explode('Version/', $userAgent->getUserAgentString());
+                if (isset($aresult[1])) {
+                    $aversion = explode(' ', $aresult[1]);
+                    $os->setVersion($aversion[0]);
+                }
+            } else {
+                $os->setVersion($os::VERSION_UNKNOWN);
+            }
             $os->setName($os::BLACKBERRY);
             $os->setIsMobile(true);
 
