@@ -9,9 +9,7 @@
             "email": "me@gabrielbull.com"
         },
         {
-            "name": "Chris Schuld",
-            "email": "chris@chrisschuld.com",
-            "homepage": "http://chrisschuld.com"
+            "name": "Chris Schuld"
         }
     ],
     "require": {
@@ -28,11 +26,6 @@
     "autoload-dev": {
         "psr-4": {
             "Sinergi\\BrowserDetector\\Tests\\": ["tests/BrowserDetector/Tests", "tests/BrowserDetector/Tests/_includes"]
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "6.1-dev"
         }
     },
     "minimum-stability": "dev",

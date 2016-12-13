@@ -68,6 +68,7 @@ The Browser class allows you to detect a user's browser and version.
  * SeaMonkey
  * Yandex Browser
  * Comodo Dragon
+ * Samsung Browser
 
 ### Usage
 

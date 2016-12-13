@@ -18,7 +18,8 @@ class DeviceDetector implements DetectorInterface
         return (
             self::checkIpad($device, $userAgent) ||
             self::checkIphone($device, $userAgent) ||
-            self::checkWindowsPhone($device, $userAgent)
+            self::checkWindowsPhone($device, $userAgent) ||
+            self::checkSamsungPhone($device, $userAgent)
         );
     }
 
@@ -74,6 +75,23 @@ class DeviceDetector implements DetectorInterface
             $device->setName($device::WINDOWS_PHONE);
             return true;
         }
+        return false;
+    }
+
+    /**
+     * Determine if the device is Windows Phone.
+     *
+     * @param Device $device
+     * @param UserAgent $userAgent
+     * @return bool
+     */
+    private static function checkSamsungPhone(Device $device, UserAgent $userAgent)
+    {
+            if (preg_match('/SAMSUNG SM-([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+                $device->setName(str_ireplace('SAMSUNG', 'Samsung', $matches[0]));
+                return true;
+            }
+
         return false;
     }
 }

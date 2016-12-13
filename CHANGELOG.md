@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.1.1 (released 2016-12-13)
+
+- Added Samsung Browser detection
+
 ## 6.1.0 (released 2016-10-28)
 
 - Fixed issue with blackberry version detection

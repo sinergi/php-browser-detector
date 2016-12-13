@@ -43,6 +43,7 @@ class BrowserDetector implements DetectorInterface
         'SeaMonkey',
         'Firefox',
         'Yandex',
+        'Samsung',
         'Chrome',
         'OmniWeb',
         // common mobile
@@ -366,6 +367,27 @@ class BrowserDetector implements DetectorInterface
                     self::$browser->setVersion($matches[1]);
                 }
             }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the browser is Samsung.
+     *
+     * @return bool
+     */
+    public static function checkBrowserSamsung()
+    {
+        if (stripos(self::$userAgentString, 'SamsungBrowser') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'SamsungBrowser'));
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion($aversion[0]);
+            }
+            self::$browser->setName(Browser::SAMSUNG_BROWSER);
 
             return true;
         }
