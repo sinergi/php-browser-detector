@@ -87,11 +87,10 @@ class DeviceDetector implements DetectorInterface
      */
     private static function checkSamsungPhone(Device $device, UserAgent $userAgent)
     {
-            if (preg_match('/SAMSUNG SM-([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
-                $device->setName(str_ireplace('SAMSUNG', 'Samsung', $matches[0]));
-                return true;
-            }
-
+        if (preg_match('/SAMSUNG SM-([^ ]*)/i', $userAgent->getUserAgentString(), $matches)) {
+            $device->setName(str_ireplace('SAMSUNG', 'Samsung', $matches[0]));
+            return true;
+        }
         return false;
     }
 }
