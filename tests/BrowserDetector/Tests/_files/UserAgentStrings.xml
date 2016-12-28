@@ -263,5 +263,16 @@
                 Mozilla/5.0 (Linux; Android 5.1.1; SAMSUNG SM-G360T1 Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/3.3 Chrome/38.0.2125.102 Mobile Safari/537.36
             </field>
         </string>
+        <string>
+            <field name="browser">wkhtmltopdf</field>
+            <field name="version">unknown</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) wkhtmltopdf-amd64 Safari/534.34
+            </field>
+        </string>
     </strings>
 </document>

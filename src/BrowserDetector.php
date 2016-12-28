@@ -53,6 +53,8 @@ class BrowserDetector implements DetectorInterface
         'Gsa',
         // common bots
         'Robot',
+        // wkhtmltopdf before Safari
+        'Wkhtmltopdf',
         // WebKit base check (post mobile and others)
         'Safari',
         // everyone else
@@ -899,6 +901,20 @@ class BrowserDetector implements DetectorInterface
         return false;
     }
 
+    /**
+     * Determine if the browser is Safari.
+     *
+     * @return bool
+     */
+    public static function checkBrowserWkhtmltopdf()
+    {
+        if (stripos(self::$userAgentString, 'wkhtmltopdf') !== false) {
+            self::$browser->setName(Browser::WKHTMLTOPDF);
+            return true;
+        }
+
+        return false;
+    }
     /**
      * Determine if the browser is Safari.
      *

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 6.1.2 (released 2016-12-13)
+
+- Added wkhtmltopdf detection
+
 ## 6.1.1 (released 2016-12-13)
 
 - Added Samsung Browser detection
