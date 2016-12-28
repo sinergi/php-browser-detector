@@ -69,6 +69,7 @@ The Browser class allows you to detect a user's browser and version.
  * Yandex Browser
  * Comodo Dragon
  * Samsung Browser
+ * wkhtmltopdf
 
 ### Usage
 
