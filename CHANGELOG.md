@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 6.1.2 (released 2016-12-13)
+## 6.1.2 (released 2016-12-28)
 
 - Added wkhtmltopdf detection
 
