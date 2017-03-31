@@ -51,16 +51,13 @@ The Browser class allows you to detect a user's browser and version.
  * Lynx
  * Safari
  * Chrome
- * Navigator
- * GoogleBot
- * Yahoo! Slurp
- * W3C Validator
+ * Android Navigator
+ * UC Browser
  * BlackBerry
  * IceCat
  * Nokia S60 OSS Browser
  * Nokia Browser
  * MSN Browser
- * MSN Bot
  * Netscape Navigator
  * Galeon
  * NetPositive
@@ -69,14 +66,16 @@ The Browser class allows you to detect a user's browser and version.
  * Yandex Browser
  * Comodo Dragon
  * Samsung Browser
- * wkhtmltopdf
 
 ### Usage
 
 ```php
 use Sinergi\BrowserDetector\Browser;
 
-$browser = new Browser();
+$browser = new Browser();  
+
+//You can also provide a userAgent string if you don't wish to detec the current browser
+//$browser = new Browser("Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
 
 if ($browser->getName() === Browser::IE && $browser->getVersion() < 11) {
     echo 'Please upgrade your browser.';
@@ -94,6 +93,92 @@ $browser = new Browser();
 
 if ($browser->getName() === Browser::IE && $browser->isCompatibilityMode()) {
     $browser->endCompatibilityMode();
+}
+```
+
+## Scripted Agent Detection
+
+The ScriptedAgent class allows you to detect scripted agents (bots, spiders, tools)
+
+### Scripted Agents Detected
+
+Spiders
+
+ * GoogleBot
+ * Baidu
+ * Bing
+ * MSN
+ * Yahoo! Slurp
+ * W3C Spiders
+ * Yandex
+ * Apple
+ * Paper.li
+ * Majestic12
+ * Livelap
+ * Scoop.it
+ * Who.is
+ * Proximic
+
+Web Surveys
+
+ * Ahrefs
+ * MetaURI
+ * Netcraft
+ * Browsershots
+ * MageReport
+ * SocialRank.io
+ * Gluten Free
+ * Ubermetrics
+ * Verisign IPS-Agent
+
+Exploits
+
+ * ShellShock
+
+Web Preview bots
+
+ * ICQ
+ * Google Web
+ * Facebook
+ * Bing
+ * Twitter
+ * Skype
+
+Tools
+
+ * wkHTMLtoPDF
+ * W3C Validator
+ * WebDAV
+ * TLSProbe
+ * Wget
+ * Zgrab
+
+Generic
+
+ * Google Favicon
+ * Curl
+ * Python
+ * GoLang
+ * Perl
+ * Java
+
+Ad bots
+
+ * Google
+ * Microsoft
+ * AdBeat
+
+### Usage
+
+```php
+use Sinergi\BrowserDetector\Browser;
+
+$browser = new Browser();
+
+$scriptedAgent = $browser->detectScriptedAgent();
+if ($scriptedAgent!==false)
+{
+    die("Detected ".$scriptedAgent->getName()." which is a ".$scriptedAgent->getType().". Info: ".$scriptedAgent->getInfoURL());
 }
 ```
 

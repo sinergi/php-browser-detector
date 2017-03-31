@@ -25,20 +25,15 @@ class Browser
     const MOZILLA = 'Mozilla';
     const AMAYA = 'Amaya';
     const LYNX = 'Lynx';
-    const WKHTMLTOPDF = 'wkhtmltopdf';
     const SAFARI = 'Safari';
     const SAMSUNG_BROWSER = 'SamsungBrowser';
     const CHROME = 'Chrome';
-    const NAVIGATOR = 'Navigator';
-    const GOOGLEBOT = 'GoogleBot';
-    const SLURP = 'Yahoo! Slurp';
-    const W3CVALIDATOR = 'W3C Validator';
+    const NAVIGATOR = 'Android Navigator';
     const BLACKBERRY = 'BlackBerry';
     const ICECAT = 'IceCat';
     const NOKIA_S60 = 'Nokia S60 OSS Browser';
     const NOKIA = 'Nokia Browser';
     const MSN = 'MSN Browser';
-    const MSNBOT = 'MSN Bot';
     const NETSCAPE_NAVIGATOR = 'Netscape Navigator';
     const GALEON = 'Galeon';
     const NETPOSITIVE = 'NetPositive';
@@ -47,6 +42,11 @@ class Browser
     const YANDEX = 'Yandex';
     const EDGE = 'Edge';
     const DRAGON = 'Dragon';
+    const NSPLAYER = 'Windows Media Player';
+    const UCBROWSER = 'UC Browser';
+    const MICROSOFT_OFFICE = 'Microsoft Office';
+    const APPLE_NEWS = 'Apple News';
+    const DALVIK = 'Android';
 
     const VERSION_UNKNOWN = 'unknown';
 
@@ -67,17 +67,22 @@ class Browser
     /**
      * @var bool
      */
-    private $isRobot = false;
-
-    /**
-     * @var bool
-     */
     private $isChromeFrame = false;
 
     /**
      * @var bool
      */
+    private $isWebkit = false;
+
+    /**
+     * @var bool
+     */
     private $isFacebookWebView = false;
+
+    /**
+     * @var bool
+     */
+    private $isTwitterWebView = false;
 
     /**
      * @var bool
@@ -101,7 +106,7 @@ class Browser
     }
 
     /**
-     * Set the name of the OS.
+     * Set the name of the Browser.
      *
      * @param string $name
      *
@@ -149,7 +154,8 @@ class Browser
      */
     public function setVersion($version)
     {
-        $this->version = (string)$version;
+        //The regex for the Firefox version lets through a linebreak, causing the test to fail
+        $this->version = str_replace("\n","",(string)$version);
 
         return $this;
     }
@@ -169,39 +175,67 @@ class Browser
     }
 
     /**
-     * Set the Browser to be a robot.
+     * Detects scripted agents (robots / bots)
+     * Returns a resolved ScriptedAgent object if detected.
+     * Otherwise returns false.
      *
-     * @param bool $isRobot
-     *
-     * @return $this
+     * @return ScriptedAgent|bool
      */
-    public function setIsRobot($isRobot)
+    public function detectScriptedAgent()
     {
-        $this->isRobot = (bool)$isRobot;
-
-        return $this;
-    }
-
-    /**
-     * Is the browser from a robot (ex Slurp,GoogleBot)?
-     *
-     * @return bool
-     */
-    public function getIsRobot()
-    {
-        if (!isset($this->name)) {
-            BrowserDetector::detect($this, $this->getUserAgent());
+        $ua = $this->getUserAgent()->getUserAgentString();
+        if (stripos($ua, 'bot') !== FALSE ||
+            stripos($ua, 'spider') !== FALSE ||
+            stripos($ua, 'crawler') !== FALSE ||
+            stripos($ua, 'preview') !== FALSE ||
+            stripos($ua, 'slurp') !== FALSE ||
+            stripos($ua, 'facebookexternalhit') !== FALSE ||
+            stripos($ua, 'mediapartners') !== FALSE ||
+            stripos($ua, 'google-adwords') !== FALSE ||
+            stripos($ua, 'adxvastfetcher') !== FALSE ||
+            stripos($ua, 'adbeat') !== FALSE ||
+            stripos($ua, 'google favicon') !== FALSE ||
+            stripos($ua, 'webdav client') !== FALSE ||
+            stripos($ua, 'metauri api') !== FALSE ||
+            stripos($ua, 'tlsprobe') !== FALSE ||
+            stripos($ua, 'wpif') !== FALSE ||
+            stripos($ua, 'imgsizer') !== FALSE ||
+            stripos($ua, 'netcraft ssl server survey') !== FALSE ||
+            stripos($ua, 'curl/') !== FALSE ||
+            stripos($ua, 'go-http-client/') !== FALSE ||
+            stripos($ua, 'python') !== FALSE ||
+            stripos($ua, 'libwww') !== FALSE ||
+            stripos($ua, 'wget/') !== FALSE ||
+            stripos($ua, 'zgrab/') !== FALSE ||
+            stripos($ua, 'Java/') !== FALSE ||
+            stripos($ua, '() { :;}; /bin/bash -c') !== FALSE ||
+            stripos($ua, 'browsershots') !== FALSE ||
+            stripos($ua, 'magereport') !== FALSE ||
+            stripos($ua, 'ubermetrics-technologies') !== FALSE ||
+            stripos($ua, 'W3C') !== FALSE ||
+            stripos($ua, 'Validator') !== FALSE ||
+            stripos($ua, 'Jigsaw/') !== FALSE ||
+            stripos($ua, 'bing') !== FALSE ||
+            stripos($ua, 'msn') !== FALSE ||
+            stripos($ua, 'Google Web Preview') !== FALSE ||
+            stripos($ua, 'ips-agent') !== FALSE ||
+            (stripos($ua, 'Chrome/51.0.2704.103') !== FALSE && !isset($_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) && stristr($_SERVER['HTTP_ACCEPT_LANGUAGE'], "ru-RU") !== FALSE) //ICQ Preview
+        )
+        {
+            $scriptedAgent = new ScriptedAgent($ua);
+            if ($scriptedAgent->getName()==ScriptedAgent::UNKNOWN)
+            {
+                return false;
+            }
+            else
+            {
+                return $scriptedAgent;
+            }
         }
-
-        return $this->isRobot;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isRobot()
-    {
-        return $this->getIsRobot();
+        else
+        {
+            return false;
+        }
     }
 
     /**
@@ -239,6 +273,40 @@ class Browser
     }
 
     /**
+     * @param bool $isChromeFrame
+     *
+     * @return $this
+     */
+    public function setIsWebkit($isWebkit)
+    {
+        $this->isWebkit = (bool)$isWebkit;
+
+        return $this;
+    }
+
+    /**
+     * Used to determine if the browser is actually "chromeframe".
+     *
+     * @return bool
+     */
+    public function getIsWebkit()
+    {
+        if (!isset($this->name)) {
+            BrowserDetector::detect($this, $this->getUserAgent());
+        }
+
+        return $this->isWebkit;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isWebkit()
+    {
+        return $this->getIsWebkit();
+    }
+
+    /**
      * @param bool $isFacebookWebView
      *
      * @return $this
@@ -270,6 +338,40 @@ class Browser
     public function isFacebookWebView()
     {
         return $this->getIsFacebookWebView();
+    }
+
+    /**
+     * @param bool $isTwitterWebView
+     *
+     * @return $this
+     */
+    public function setIsTwitterWebView($isTwitterWebView)
+    {
+        $this->isTwitterWebView = (bool) $isTwitterWebView;
+
+        return $this;
+    }
+
+    /**
+     * Used to determine if the browser is actually "Twitter".
+     *
+     * @return bool
+     */
+    public function getIsTwitterWebView()
+    {
+        if (!isset($this->name)) {
+            BrowserDetector::detect($this, $this->getUserAgent());
+        }
+
+        return $this->isTwitterWebView;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isTwitterWebView()
+    {
+        return $this->getIsTwitterWebView();
     }
 
     /**
