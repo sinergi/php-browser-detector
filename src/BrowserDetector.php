@@ -772,7 +772,7 @@ class BrowserDetector implements DetectorInterface
     public static function checkBrowserFirefox()
     {
         if (stripos(self::$userAgentString, 'safari') === false) {
-            if (preg_match("/Firefox[\\/ \\(]([^ ;\\)]+)/i", self::$userAgentString, $matches)) {
+            if (preg_match("/Firefox[\\/ \\(]([a-zA-Z\\d\\.]*)/i", self::$userAgentString, $matches)) {
                 if (isset($matches[1])) {
                     self::$browser->setVersion($matches[1]);
                 }
@@ -798,7 +798,7 @@ class BrowserDetector implements DetectorInterface
     public static function checkBrowserSeaMonkey()
     {
         if (stripos(self::$userAgentString, 'safari') === false) {
-            if (preg_match("/SeaMonkey[\\/ \\(]([^ ;\\)]+)/i", self::$userAgentString, $matches)) {
+            if (preg_match("/SeaMonkey[\\/ \\(]([a-zA-Z\\d\\.]*)/i", self::$userAgentString, $matches)) {
                 if (isset($matches[1])) {
                     self::$browser->setVersion($matches[1]);
                 }

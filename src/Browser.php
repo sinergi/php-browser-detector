@@ -154,8 +154,7 @@ class Browser
      */
     public function setVersion($version)
     {
-        //The regex for the Firefox version lets through a linebreak, causing the test to fail
-        $this->version = str_replace("\n","",(string)$version);
+        $this->version = (string)$version;
 
         return $this;
     }
