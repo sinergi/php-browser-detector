@@ -74,7 +74,7 @@ use Sinergi\BrowserDetector\Browser;
 
 $browser = new Browser();  
 
-//You can also provide a userAgent string if you don't wish to detec the current browser
+//You can also provide a userAgent string if you don't wish to detect the current browser
 //$browser = new Browser("Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0");
 
 if ($browser->getName() === Browser::IE && $browser->getVersion() < 11) {
