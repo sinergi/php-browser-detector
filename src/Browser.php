@@ -2,9 +2,6 @@
 
 namespace Sinergi\BrowserDetector;
 
-/**
- * Browser Detection.
- */
 class Browser
 {
     const UNKNOWN = 'unknown';

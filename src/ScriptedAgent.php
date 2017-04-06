@@ -2,9 +2,6 @@
 
 namespace Sinergi\BrowserDetector;
 
-/**
- * Browser Detection.
- */
 class ScriptedAgent
 {
     const UNKNOWN = 'unknown';
@@ -185,9 +182,4 @@ class ScriptedAgent
     {
         return $this->userAgent;
     }
-
-
 }
-
-
-?>
