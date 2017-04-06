@@ -16,11 +16,9 @@ class UserAgentStringMapper
 
         foreach ($xml->strings->string as $string) {
             $userAgentString = new UserAgentString();
-            foreach($string->children() as $child)
-            {
+            foreach ($string->children() as $child) {
                 $attributes = $child->attributes();
-                switch($attributes['name'])
-                {
+                switch ($attributes['name']) {
                     case "browser":
                         $userAgentString->setBrowser((string)$child[0]);
                         break;
