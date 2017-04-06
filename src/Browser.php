@@ -38,6 +38,7 @@ class Browser
     const GSA = 'Google Search Appliance';
     const YANDEX = 'Yandex';
     const EDGE = 'Edge';
+    const EDGE_HTML = 'EdgeHTML';
     const DRAGON = 'Dragon';
     const NSPLAYER = 'Windows Media Player';
     const UCBROWSER = 'UC Browser';
