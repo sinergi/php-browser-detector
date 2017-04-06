@@ -40,6 +40,16 @@ class UserAgentString
     private $string;
 
     /**
+     * @var string
+     */
+    private $scriptedAgent;
+
+    /**
+     * @var string
+     */
+    private $scriptedAgentType;
+
+    /**
      * @return string
      */
     public function getBrowser()
@@ -177,5 +187,41 @@ class UserAgentString
         $this->deviceVersion = $deviceVersion;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScriptedAgent()
+    {
+        return $this->scriptedAgent;
+    }
+
+    /**
+     * @param string $scriptedAgent
+     *
+     * @return string
+     */
+    public function setScriptedAgent($scriptedAgent)
+    {
+        $this->scriptedAgent = $scriptedAgent;
+    }
+
+    /**
+     * @return string
+     */
+    public function getScriptedAgentType()
+    {
+        return $this->scriptedAgentType;
+    }
+
+    /**
+     * @param string $scriptedAgentType
+     *
+     * @return string
+     */
+    public function setScriptedAgentType($scriptedAgentType)
+    {
+        $this->scriptedAgentType = $scriptedAgentType;
     }
 }

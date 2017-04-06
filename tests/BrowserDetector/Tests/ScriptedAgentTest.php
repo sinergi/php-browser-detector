@@ -3,11 +3,13 @@
 namespace Sinergi\BrowserDetector\Tests;
 
 use PHPUnit_Framework_TestCase;
+use Sinergi\BrowserDetector\ScriptedAgent;
 
 class ScriptedAgentTest extends PHPUnit_Framework_TestCase
 {
-    public function testExample()
+    public function testDetect()
     {
-        $this->assertNotFalse(false);
+        $agent = new ScriptedAgent();
+        $this->assertSame(ScriptedAgent::UNKNOWN, $agent->getName());
     }
 }
