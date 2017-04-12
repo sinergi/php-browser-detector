@@ -12,3 +12,4 @@
 /phpunit.xml.dist export-ignore
 /README.md export-ignore
 /ruleset.xml export-ignore
+/scripts export-ignore
