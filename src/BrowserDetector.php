@@ -170,8 +170,6 @@ class BrowserDetector implements DetectorInterface
         return false;
     }
 
-
-
     /**
      * Determine if the user is using a BlackBerry.
      *

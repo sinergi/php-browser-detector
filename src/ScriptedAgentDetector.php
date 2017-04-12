@@ -55,7 +55,7 @@ class ScriptedAgentDetector implements DetectorInterface
     );
 
     /**
-     * Routine to determine the browser type.
+     * Routine to determine the scripted agent type.
      *
      * @param ScriptedAgent $scriptedAgent
      * @param UserAgent $userAgent
@@ -110,8 +110,7 @@ class ScriptedAgentDetector implements DetectorInterface
     {
         //Chrome 51 always provides the Upgrade-Insecure-Requests header. ICQ does not.
         //But to be extra safe, also check for the russian language which the ICQ bot sets.
-        if (stripos(self::$userAgentString, 'Chrome/51.0.2704.103') !== FALSE && !isset($_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) && stristr($_SERVER['HTTP_ACCEPT_LANGUAGE'], "ru-RU") !== FALSE)
-        {
+        if (stripos(self::$userAgentString, 'Chrome/51.0.2704.103') !== false && !isset($_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) && stristr($_SERVER['HTTP_ACCEPT_LANGUAGE'], "ru-RU") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::ICQ);
             self::$scriptedAgent->setType(ScriptedAgent::PREVIEW);
             self::$scriptedAgent->setInfoURL("https://icq.com");
@@ -127,8 +126,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotGoogle()
     {
-        if (stripos(self::$userAgentString, "Googlebot") !== false)
-        {
+        if (stripos(self::$userAgentString, "Googlebot") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::GOOGLEBOT);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://support.google.com/webmasters/answer/1061943?hl=en");
@@ -138,22 +136,19 @@ class ScriptedAgentDetector implements DetectorInterface
             || stripos(self::$userAgentString, "Mediapartners-Google") !== false
             || stripos(self::$userAgentString, "Google-Adwords") !== false
             || stripos(self::$userAgentString, "AdXVastFetcher-Google") !== false
-        )
-        {
+        ) {
             self::$scriptedAgent->setName(ScriptedAgent::GOOGLEADS);
             self::$scriptedAgent->setType(ScriptedAgent::ADVERTISING);
             self::$scriptedAgent->setInfoURL("https://support.google.com/webmasters/answer/1061943?hl=en");
             return true;
         }
-        if (stripos(self::$userAgentString, "Google Favicon") !== false)
-        {
+        if (stripos(self::$userAgentString, "Google Favicon") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::GOOGLEFAVICON);
             self::$scriptedAgent->setType(ScriptedAgent::GENERIC);
             self::$scriptedAgent->setInfoURL("https://www.webmasterworld.com/search_engine_spiders/4626518.htm");
             return true;
         }
-        if (stripos(self::$userAgentString, "Google Web Preview") !== false)
-        {
+        if (stripos(self::$userAgentString, "Google Web Preview") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::GOOGLEPREVIEW);
             self::$scriptedAgent->setType(ScriptedAgent::PREVIEW);
             self::$scriptedAgent->setInfoURL("https://www.distilnetworks.com/bot-directory/bot/google-web-preview/");
@@ -169,8 +164,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotBaidu()
     {
-        if (stripos(self::$userAgentString, "Baiduspider") !== false)
-        {
+        if (stripos(self::$userAgentString, "Baiduspider") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::BAIDU);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://support.google.com/webmasters/answer/1061943?hl=en");
@@ -186,8 +180,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotFacebook()
     {
-        if (stripos(self::$userAgentString, "facebookexternalhit") !== false)
-        {
+        if (stripos(self::$userAgentString, "facebookexternalhit") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::FACEBOOK);
             self::$scriptedAgent->setType(ScriptedAgent::PREVIEW);
             self::$scriptedAgent->setInfoURL("https://www.facebook.com/externalhit_uatext.php");
@@ -203,30 +196,25 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotBing()
     {
-
-        if (stripos(self::$userAgentString, "adidxbot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "adidxbot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::BING);
             self::$scriptedAgent->setType(ScriptedAgent::ADVERTISING);
             self::$scriptedAgent->setInfoURL("https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0");
             return true;
         }
-        if (stripos(self::$userAgentString, "/bingbot.htm") !== false)
-        {
+        if (stripos(self::$userAgentString, "/bingbot.htm") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::BING);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0");
             return true;
         }
-        if (stripos(self::$userAgentString, "/msnbot.htm") !== false)
-        {
+        if (stripos(self::$userAgentString, "/msnbot.htm") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::MSNBOT);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0");
             return true;
         }
-        if (stripos(self::$userAgentString, "BingPreview/") !== false)
-        {
+        if (stripos(self::$userAgentString, "BingPreview/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::BING_PREVIEW);
             self::$scriptedAgent->setType(ScriptedAgent::PREVIEW);
             self::$scriptedAgent->setInfoURL("https://www.bing.com/webmaster/help/which-crawlers-does-bing-use-8c184ec0");
@@ -243,8 +231,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotSlurp()
     {
-        if (stripos(self::$userAgentString, "Yahoo! Slurp") !== false)
-        {
+        if (stripos(self::$userAgentString, "Yahoo! Slurp") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::SLURP);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://help.yahoo.com/kb/SLN22600.html");
@@ -260,8 +247,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotTwitter()
     {
-        if (stripos(self::$userAgentString, "Twitterbot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "Twitterbot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::TWITTER);
             self::$scriptedAgent->setType(ScriptedAgent::PREVIEW);
             self::$scriptedAgent->setInfoURL("http://stackoverflow.com/questions/22362215/twitter-user-agent-on-sharing");
@@ -277,8 +263,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotSkype()
     {
-        if (stripos(self::$userAgentString, "SkypeUriPreview") !== false)
-        {
+        if (stripos(self::$userAgentString, "SkypeUriPreview") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::SKYPE);
             self::$scriptedAgent->setType(ScriptedAgent::PREVIEW);
             self::$scriptedAgent->setInfoURL("http://www.skype.com");
@@ -301,16 +286,14 @@ class ScriptedAgentDetector implements DetectorInterface
             stripos(self::$userAgentString, "FeedValidator/") !== false ||
             stripos(self::$userAgentString, "Jigsaw/") !== false ||
             stripos(self::$userAgentString, "JW3C_Unicorn/") !== false
-        )
-        {
+        ) {
             self::$scriptedAgent->setName(ScriptedAgent::W3CVALIDATOR);
             self::$scriptedAgent->setType(ScriptedAgent::TOOL);
             self::$scriptedAgent->setInfoURL("https://validator.w3.org/services");
             return true;
         }
         if (stripos(self::$userAgentString, "NING/") !== false ||
-            stripos(self::$userAgentString, "W3C-checklink") !== false)
-        {
+            stripos(self::$userAgentString, "W3C-checklink") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::W3CVALIDATOR);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://validator.w3.org/services");
@@ -326,8 +309,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotYandex()
     {
-        if (stripos(self::$userAgentString, "YandexBot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "YandexBot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::YANDEX);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("http://yandex.com/bots");
@@ -343,8 +325,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotApple()
     {
-        if (stripos(self::$userAgentString, "AppleBot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "AppleBot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::APPLEBOT);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://support.apple.com/en-gb/HT204683");
@@ -360,8 +341,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotPaperli()
     {
-        if (stripos(self::$userAgentString, "PaperLiBot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "PaperLiBot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::PAPERLI);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://support.paper.li/hc/en-us/articles/204105253-What-is-Paper-li-");
@@ -377,8 +357,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotAhrefs()
     {
-        if (stripos(self::$userAgentString, "AhrefsBot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "AhrefsBot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::AHREFS);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("https://ahrefs.com/robot");
@@ -394,8 +373,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotMJ12()
     {
-        if (stripos(self::$userAgentString, "MJ12Bot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "MJ12Bot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::MJ12);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("http://www.majestic12.co.uk/projects/dsearch/mj12bot.php");
@@ -411,8 +389,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotLiveLap()
     {
-        if (stripos(self::$userAgentString, "LivelapBot/") !== false)
-        {
+        if (stripos(self::$userAgentString, "LivelapBot/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::LIVELAP);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("http://site.livelap.com/crawler.html");
@@ -429,8 +406,7 @@ class ScriptedAgentDetector implements DetectorInterface
     public static function checkRobotWebdav()
     {
         if (stripos(self::$userAgentString, "WEBDAV Client") !== false ||
-            stripos(self::$userAgentString, "Microsoft Office Existence Discovery") !== false) //Office Webdav probe
-        {
+            stripos(self::$userAgentString, "Microsoft Office Existence Discovery") !== false) { //Office Webdav probe
             self::$scriptedAgent->setName(ScriptedAgent::WEBDAV);
             self::$scriptedAgent->setType(ScriptedAgent::TOOL);
             self::$scriptedAgent->setInfoURL("https://en.wikipedia.org/wiki/WebDAV");
@@ -446,8 +422,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotMetaURI()
     {
-        if (stripos(self::$userAgentString, "MetaURI API/") !== false)
-        {
+        if (stripos(self::$userAgentString, "MetaURI API/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::METAURI);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("https://github.com/stateless-systems/uri-meta");
@@ -463,8 +438,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotTLSProbe()
     {
-        if (stripos(self::$userAgentString, "TLSProbe/") !== false)
-        {
+        if (stripos(self::$userAgentString, "TLSProbe/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::TLSPROBE);
             self::$scriptedAgent->setType(ScriptedAgent::TOOL);
             self::$scriptedAgent->setInfoURL("https://bitbucket.org/marco-bellaccini/tlsprobe");
@@ -481,8 +455,7 @@ class ScriptedAgentDetector implements DetectorInterface
     public static function checkRobotScoopIt()
     {
         if (stripos(self::$userAgentString, "wpif Safari") !== false
-            || stripos(self::$userAgentString, "imgsizer Safari") !== false)
-        {
+            || stripos(self::$userAgentString, "imgsizer Safari") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::SCOOPIT);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("https://www.webmasterworld.com/search_engine_spiders/4785385.htm");
@@ -498,8 +471,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotNetcraft()
     {
-        if (stripos(self::$userAgentString, "Netcraft SSL Server Survey") !== false)
-        {
+        if (stripos(self::$userAgentString, "Netcraft SSL Server Survey") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::NETCRAFT);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("https://www.netcraft.com/internet-data-mining/ssl-survey/");
@@ -515,8 +487,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotCurl()
     {
-        if (stripos(self::$userAgentString, "curl/") !== false)
-        {
+        if (stripos(self::$userAgentString, "curl/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::CURL);
             self::$scriptedAgent->setType(ScriptedAgent::GENERIC);
             self::$scriptedAgent->setInfoURL("https://curl.haxx.se/");
@@ -533,8 +504,7 @@ class ScriptedAgentDetector implements DetectorInterface
     public static function checkRobotPython()
     {
         if (stripos(self::$userAgentString, "python-requests/") !== false ||
-            stripos(self::$userAgentString, "python-urllib/") !== false)
-        {
+            stripos(self::$userAgentString, "python-urllib/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::PYTHON);
             self::$scriptedAgent->setType(ScriptedAgent::GENERIC);
             self::$scriptedAgent->setInfoURL("https://www.python.org/");
@@ -550,8 +520,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotGoLang()
     {
-        if (stripos(self::$userAgentString, "Go-http-client") !== false)
-        {
+        if (stripos(self::$userAgentString, "Go-http-client") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::GOLANG);
             self::$scriptedAgent->setType(ScriptedAgent::GENERIC);
             self::$scriptedAgent->setInfoURL("https://golang.org/");
@@ -567,8 +536,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotPerl()
     {
-        if (stripos(self::$userAgentString, "libwww-perl/") !== false)
-        {
+        if (stripos(self::$userAgentString, "libwww-perl/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::PERL);
             self::$scriptedAgent->setType(ScriptedAgent::GENERIC);
             self::$scriptedAgent->setInfoURL("https://www.perl.org/");
@@ -584,8 +552,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotWget()
     {
-        if (stripos(self::$userAgentString, "Wget/") !== false)
-        {
+        if (stripos(self::$userAgentString, "Wget/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::WGET);
             self::$scriptedAgent->setType(ScriptedAgent::TOOL);
             self::$scriptedAgent->setInfoURL("https://www.gnu.org/software/wget/");
@@ -601,8 +568,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotZGrab()
     {
-        if (stripos(self::$userAgentString, "zgrab/") !== false)
-        {
+        if (stripos(self::$userAgentString, "zgrab/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::ZGRAB);
             self::$scriptedAgent->setType(ScriptedAgent::TOOL);
             self::$scriptedAgent->setInfoURL("https://github.com/zmap/zgrab");
@@ -618,8 +584,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotJava()
     {
-        if (stripos(self::$userAgentString, "Java/") !== false)
-        {
+        if (stripos(self::$userAgentString, "Java/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::JAVA);
             self::$scriptedAgent->setType(ScriptedAgent::GENERIC);
             self::$scriptedAgent->setInfoURL("https://www.java.com/en/");
@@ -635,8 +600,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotShellshock()
     {
-        if (stripos(self::$userAgentString, "() { :;}; /bin/bash -c") !== false)
-        {
+        if (stripos(self::$userAgentString, "() { :;}; /bin/bash -c") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::SHELLSHOCK);
             self::$scriptedAgent->setType(ScriptedAgent::EXPLOIT);
             self::$scriptedAgent->setInfoURL("https://blog.cloudflare.com/inside-shellshock/");
@@ -652,8 +616,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotBrowershots()
     {
-        if (stripos(self::$userAgentString, "Browsershots") !== false)
-        {
+        if (stripos(self::$userAgentString, "Browsershots") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::BROWSERSHOTS);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("http://browsershots.org/");
@@ -669,8 +632,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotWhois()
     {
-        if (stripos(self::$userAgentString, "who.is bot") !== false)
-        {
+        if (stripos(self::$userAgentString, "who.is bot") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::WHOIS);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("http://www.who.is/");
@@ -686,8 +648,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotMageReport()
     {
-        if (stripos(self::$userAgentString, "MageReport") !== false)
-        {
+        if (stripos(self::$userAgentString, "MageReport") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::MAGEREPORT);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("https://www.magereport.com/");
@@ -703,8 +664,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotAdbeat()
     {
-        if (stripos(self::$userAgentString, "adbeat.com") !== false)
-        {
+        if (stripos(self::$userAgentString, "adbeat.com") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::ADBEAT);
             self::$scriptedAgent->setType(ScriptedAgent::ADVERTISING);
             self::$scriptedAgent->setInfoURL("https://www.adbeat.com/operation_policy");
@@ -720,8 +680,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotSocialrank()
     {
-        if (stripos(self::$userAgentString, "SocialRankIOBot") !== false)
-        {
+        if (stripos(self::$userAgentString, "SocialRankIOBot") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::SOCIALRANK);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("http://socialrank.io/about");
@@ -737,8 +696,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotGlutenFree()
     {
-        if (stripos(self::$userAgentString, "Gluten Free Crawler/") !== false)
-        {
+        if (stripos(self::$userAgentString, "Gluten Free Crawler/") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::GLUTENFREE);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("http://glutenfreepleasure.com/");
@@ -754,8 +712,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotProximic()
     {
-        if (stripos(self::$userAgentString, "proximic;") !== false)
-        {
+        if (stripos(self::$userAgentString, "proximic;") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::PROXIMIC);
             self::$scriptedAgent->setType(ScriptedAgent::SPIDER);
             self::$scriptedAgent->setInfoURL("http://www.proximic.com/info/spider.php");
@@ -771,8 +728,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotUbermetrics()
     {
-        if (stripos(self::$userAgentString, "@ubermetrics-technologies.com") !== false)
-        {
+        if (stripos(self::$userAgentString, "@ubermetrics-technologies.com") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::UBERMETRICS);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("https://www.ubermetrics-technologies.com/");
@@ -788,8 +744,7 @@ class ScriptedAgentDetector implements DetectorInterface
      */
     public static function checkRobotVerisign()
     {
-        if (stripos(self::$userAgentString, "ips-agent") !== false)
-        {
+        if (stripos(self::$userAgentString, "ips-agent") !== false) {
             self::$scriptedAgent->setName(ScriptedAgent::VERISIGN);
             self::$scriptedAgent->setType(ScriptedAgent::SURVEY);
             self::$scriptedAgent->setInfoURL("http://www.spambotsecurity.com/forum/viewtopic.php?f=7&t=1453");
