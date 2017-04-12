@@ -538,21 +538,15 @@ class BrowserDetector implements DetectorInterface
     {
         if (stripos(self::$userAgentString, 'Edge') !== false) {
             preg_match('/Edge[\\/ \\(]([a-zA-Z\\d\\.]*)/i', self::$userAgentString, $matches);
-            if (sizeof($matches)>1)
-            {
-                if (isset(self::$edgeHTML[$matches[1]]))
-                {
+            if (sizeof($matches)>1) {
+                if (isset(self::$edgeHTML[$matches[1]])) {
                     self::$browser->setName(Browser::EDGE);
                     self::$browser->setVersion(self::$edgeHTML[$matches[1]]);
-                }
-                else
-                {
+                } else {
                     self::$browser->setName(Browser::EDGE_HTML);
                     self::$browser->setVersion($matches[1]);
                 }
-            }
-            else
-            {
+            } else {
                 self::$browser->setName(Browser::EDGE);
             }
 

@@ -12,11 +12,17 @@ class Wikipedia
     public static function fetch()
     {
         $content = file_get_contents(self::URL);
-        if (!$content) throw new Exception(self::$errors['fetch_error']);
+        if (!$content) {
+            throw new Exception(self::$errors['fetch_error']);
+        }
         $content = explode('===Release history===', $content);
-        if (!isset($content[1])) throw new Exception(self::$errors['parse_error']);
+        if (!isset($content[1])) {
+            throw new Exception(self::$errors['parse_error']);
+        }
         $table = explode('|-', $content[1]);
-        if (!isset($table[1])) throw new Exception(self::$errors['parse_error']);
+        if (!isset($table[1])) {
+            throw new Exception(self::$errors['parse_error']);
+        }
         $table = array_slice($table, 1);
         $versions = array_map(array('Wikipedia', 'extractVersion'), $table);
         self::writeEdgeVersions($versions);
@@ -26,14 +32,20 @@ class Wikipedia
     {
         $lines = array_slice(array_filter(
             explode(PHP_EOL, $content),
-            function ($val) { return trim($val) && strpos($val, '|') === 0; }
+            function ($val) {
+                return trim($val) && strpos($val, '|') === 0;
+            }
         ), 0, 2);
 
         preg_match("/{[^}{]*Version[^}{]*\| ?([\d\.]+)}/", $lines[0], $edgeVersion);
         preg_match("/\| *(\d*\.\d*)/", $lines[1], $edgeHtmlVersion);
 
-        if (!isset($edgeVersion[1])) throw new Exception(self::$errors['parse_error']);
-        if (!isset($edgeHtmlVersion[1])) throw new Exception(self::$errors['parse_error']);
+        if (!isset($edgeVersion[1])) {
+            throw new Exception(self::$errors['parse_error']);
+        }
+        if (!isset($edgeHtmlVersion[1])) {
+            throw new Exception(self::$errors['parse_error']);
+        }
 
         return array($edgeHtmlVersion[1], $edgeVersion[1]);
     }

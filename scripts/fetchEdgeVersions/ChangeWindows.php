@@ -21,7 +21,9 @@ class ChangeWindows
         $windowsVersions = json_decode(file_get_contents(__DIR__ . '/windowsVersions.json'), true);
         if (!count($windowsVersions)) {
             $currentVersion = explode('.', self::fetchCurrentVersion(), 2);
-            if (!isset($currentVersion[0])) throw new Exception(self::$errors['invalid_version']);
+            if (!isset($currentVersion[0])) {
+                throw new Exception(self::$errors['invalid_version']);
+            }
             $windowsVersions = self::fetchVersion($windowsVersions, $currentVersion[0]);
             self::writeWindowsVersions($windowsVersions);
         } else {
@@ -67,13 +69,21 @@ class ChangeWindows
     private static function fetchCurrentVersion()
     {
         $content = file_get_contents('https://changewindows.org/filter/pc/all/current/month/true');
-        if (!$content) throw new Exception(self::$errors['could_not_fetch_version']);
+        if (!$content) {
+            throw new Exception(self::$errors['could_not_fetch_version']);
+        }
         $content = explode('class="timeline"', $content, 2);
-        if (!isset($content[1])) throw new Exception(self::$errors['could_not_fetch_version']);
+        if (!isset($content[1])) {
+            throw new Exception(self::$errors['could_not_fetch_version']);
+        }
         $content = explode('build"', $content[1], 2);
-        if (!isset($content[1])) throw new Exception(self::$errors['could_not_fetch_version']);
+        if (!isset($content[1])) {
+            throw new Exception(self::$errors['could_not_fetch_version']);
+        }
         preg_match("/(\d*\.\d*)<\/div>/", $content[1], $matches);
-        if (!isset($matches[1])) throw new Exception(self::$errors['could_not_fetch_version']);
+        if (!isset($matches[1])) {
+            throw new Exception(self::$errors['could_not_fetch_version']);
+        }
         return $matches[1];
     }
 
@@ -122,15 +132,25 @@ PHP;
 
     private static function fetchSiblingVersions($content)
     {
-        if (!$content) throw new Exception(self::$errors['could_not_fetch_page']);
+        if (!$content) {
+            throw new Exception(self::$errors['could_not_fetch_page']);
+        }
         $content = explode('build-sidebar', $content, 2);
-        if (!isset($content[1])) throw new Exception(self::$errors['could_not_fetch_page']);
+        if (!isset($content[1])) {
+            throw new Exception(self::$errors['could_not_fetch_page']);
+        }
         $content = explode('fa-angle-left', $content[1]);
-        if (!isset($content[1])) throw new Exception(self::$errors['could_not_fetch_page']);
+        if (!isset($content[1])) {
+            throw new Exception(self::$errors['could_not_fetch_page']);
+        }
         $content = explode('fa-angle-right', $content[1]);
-        if (!isset($content[0])) throw new Exception(self::$errors['could_not_fetch_page']);
+        if (!isset($content[0])) {
+            throw new Exception(self::$errors['could_not_fetch_page']);
+        }
         preg_match_all("/> *(\d+) *</", $content[0], $matches);
-        if (!isset($matches[1])) throw new Exception(self::$errors['could_not_fetch_page']);
+        if (!isset($matches[1])) {
+            throw new Exception(self::$errors['could_not_fetch_page']);
+        }
         return $matches[1];
     }
 }
