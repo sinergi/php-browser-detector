@@ -10,7 +10,6 @@ Contributions are welcome, and are accepted via pull requests. Please review the
 * Send a coherent commit history, making sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please [squash](http://git-scm.com/book/en/Git-Tools-Rewriting-History) them before submitting.
 * You may also need to [rebase](http://git-scm.com/book/en/Git-Branching-Rebasing) to avoid merge conflicts.
 
-
 ## Running Tests
 
 You will need an install of [Composer](https://getcomposer.org) before continuing.

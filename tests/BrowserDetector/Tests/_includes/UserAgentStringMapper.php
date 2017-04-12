@@ -13,16 +13,41 @@ class UserAgentStringMapper
     {
         $collection = array();
         $xml = new SimpleXmlElement(file_get_contents(FILES . DIRECTORY_SEPARATOR . 'UserAgentStrings.xml'));
+
         foreach ($xml->strings->string as $string) {
-            $string = $string->field;
             $userAgentString = new UserAgentString();
-            $userAgentString->setBrowser((string)$string[0]);
-            $userAgentString->setBrowserVersion((string)$string[1]);
-            $userAgentString->setOs((string)$string[2]);
-            $userAgentString->setOsVersion((string)$string[3]);
-            $userAgentString->setDevice((string)$string[4]);
-            $userAgentString->setDeviceVersion((string)$string[5]);
-            $userAgentString->setString(str_replace(array(PHP_EOL, '  '), ' ', (string)$string[6]));
+            foreach ($string->children() as $child) {
+                $attributes = $child->attributes();
+                switch ($attributes['name']) {
+                    case "browser":
+                        $userAgentString->setBrowser((string)$child[0]);
+                        break;
+                    case "version":
+                        $userAgentString->setBrowserVersion((string)$child[0]);
+                        break;
+                    case "os":
+                        $userAgentString->setOs((string)$child[0]);
+                        break;
+                    case "os_version":
+                        $userAgentString->setOsVersion((string)$child[0]);
+                        break;
+                    case "device":
+                        $userAgentString->setDevice((string)$child[0]);
+                        break;
+                    case "device_version":
+                        $userAgentString->setDeviceVersion((string)$child[0]);
+                        break;
+                    case "scripted_agent":
+                        $userAgentString->setScriptedAgent((string)$child[0]);
+                        break;
+                    case "scripted_agent_type":
+                        $userAgentString->setScriptedAgentType((string)$child[0]);
+                        break;
+                    case "string":
+                        $userAgentString->setString(str_replace(array(PHP_EOL, '  '), ' ', (string)(string)$child[0]));
+                        break;
+                }
+            }
             $collection[] = $userAgentString;
         }
 

@@ -209,6 +209,11 @@ class OsDetector implements DetectorInterface
 
             return true;
         }
+        if (stripos($userAgent->getUserAgentString(), 'NSPlayer/') !== false) {
+            $os->setName(Os::WINDOWS);
+            $os->setVersion(Os::VERSION_UNKNOWN);
+            return true;
+        }
 
         return false;
     }
