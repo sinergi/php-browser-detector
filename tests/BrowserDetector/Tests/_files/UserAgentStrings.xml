@@ -128,7 +128,7 @@
         </string>
         <string>
             <field name="browser">Edge</field>
-            <field name="version">12.10136</field>
+            <field name="version">16.10136</field>
             <field name="os">Windows</field>
             <field name="os_version">10.0</field>
             <field name="device">unknown</field>
@@ -272,7 +272,7 @@
         </string>
         <string>
             <field name="browser">Edge</field>
-            <field name="version">14.14393</field>
+            <field name="version">38.14393</field>
             <field name="os">Windows Phone</field>
             <field name="os_version">10</field>
             <field name="device">Lumia 640 LTE</field>
@@ -281,6 +281,17 @@
             <field name="scripted_agent_type">unknown</field>
             <field name="string">
                 Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 640 LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/14.14393
+            </field>
+        </string>
+        <string>
+            <field name="browser">EdgeHTML</field>
+            <field name="version">12.00049</field>
+            <field name="os">Windows Phone</field>
+            <field name="os_version">10</field>
+            <field name="device">Lumia 640 LTE</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 640 LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/12.00049
             </field>
         </string>
         <string>
