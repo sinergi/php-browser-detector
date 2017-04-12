@@ -89,7 +89,6 @@ class Browser
 
     /**
      * @param null|string|UserAgent $userAgent
-     *
      * @throws \Sinergi\BrowserDetector\InvalidArgumentException
      */
     public function __construct($userAgent = null)
@@ -107,13 +106,11 @@ class Browser
      * Set the name of the Browser.
      *
      * @param string $name
-     *
      * @return $this
      */
     public function setName($name)
     {
         $this->name = (string)$name;
-
         return $this;
     }
 
@@ -135,7 +132,6 @@ class Browser
      * Check to see if the specific browser is valid.
      *
      * @param string $name
-     *
      * @return bool
      */
     public function isBrowser($name)
@@ -147,13 +143,11 @@ class Browser
      * Set the version of the browser.
      *
      * @param string $version
-     *
      * @return $this
      */
     public function setVersion($version)
     {
         $this->version = (string)$version;
-
         return $this;
     }
 
@@ -181,69 +175,61 @@ class Browser
     public function detectScriptedAgent()
     {
         $ua = $this->getUserAgent()->getUserAgentString();
-        if (stripos($ua, 'bot') !== FALSE ||
-            stripos($ua, 'spider') !== FALSE ||
-            stripos($ua, 'crawler') !== FALSE ||
-            stripos($ua, 'preview') !== FALSE ||
-            stripos($ua, 'slurp') !== FALSE ||
-            stripos($ua, 'facebookexternalhit') !== FALSE ||
-            stripos($ua, 'mediapartners') !== FALSE ||
-            stripos($ua, 'google-adwords') !== FALSE ||
-            stripos($ua, 'adxvastfetcher') !== FALSE ||
-            stripos($ua, 'adbeat') !== FALSE ||
-            stripos($ua, 'google favicon') !== FALSE ||
-            stripos($ua, 'webdav client') !== FALSE ||
-            stripos($ua, 'metauri api') !== FALSE ||
-            stripos($ua, 'tlsprobe') !== FALSE ||
-            stripos($ua, 'wpif') !== FALSE ||
-            stripos($ua, 'imgsizer') !== FALSE ||
-            stripos($ua, 'netcraft ssl server survey') !== FALSE ||
-            stripos($ua, 'curl/') !== FALSE ||
-            stripos($ua, 'go-http-client/') !== FALSE ||
-            stripos($ua, 'python') !== FALSE ||
-            stripos($ua, 'libwww') !== FALSE ||
-            stripos($ua, 'wget/') !== FALSE ||
-            stripos($ua, 'zgrab/') !== FALSE ||
-            stripos($ua, 'Java/') !== FALSE ||
-            stripos($ua, '() { :;}; /bin/bash -c') !== FALSE ||
-            stripos($ua, 'browsershots') !== FALSE ||
-            stripos($ua, 'magereport') !== FALSE ||
-            stripos($ua, 'ubermetrics-technologies') !== FALSE ||
-            stripos($ua, 'W3C') !== FALSE ||
-            stripos($ua, 'Validator') !== FALSE ||
-            stripos($ua, 'Jigsaw/') !== FALSE ||
-            stripos($ua, 'bing') !== FALSE ||
-            stripos($ua, 'msn') !== FALSE ||
-            stripos($ua, 'Google Web Preview') !== FALSE ||
-            stripos($ua, 'ips-agent') !== FALSE ||
-            (stripos($ua, 'Chrome/51.0.2704.103') !== FALSE && !isset($_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) && stristr($_SERVER['HTTP_ACCEPT_LANGUAGE'], "ru-RU") !== FALSE) //ICQ Preview
-        )
-        {
+        if (stripos($ua, 'bot') !== false ||
+            stripos($ua, 'spider') !== false ||
+            stripos($ua, 'crawler') !== false ||
+            stripos($ua, 'preview') !== false ||
+            stripos($ua, 'slurp') !== false ||
+            stripos($ua, 'facebookexternalhit') !== false ||
+            stripos($ua, 'mediapartners') !== false ||
+            stripos($ua, 'google-adwords') !== false ||
+            stripos($ua, 'adxvastfetcher') !== false ||
+            stripos($ua, 'adbeat') !== false ||
+            stripos($ua, 'google favicon') !== false ||
+            stripos($ua, 'webdav client') !== false ||
+            stripos($ua, 'metauri api') !== false ||
+            stripos($ua, 'tlsprobe') !== false ||
+            stripos($ua, 'wpif') !== false ||
+            stripos($ua, 'imgsizer') !== false ||
+            stripos($ua, 'netcraft ssl server survey') !== false ||
+            stripos($ua, 'curl/') !== false ||
+            stripos($ua, 'go-http-client/') !== false ||
+            stripos($ua, 'python') !== false ||
+            stripos($ua, 'libwww') !== false ||
+            stripos($ua, 'wget/') !== false ||
+            stripos($ua, 'zgrab/') !== false ||
+            stripos($ua, 'Java/') !== false ||
+            stripos($ua, '() { :;}; /bin/bash -c') !== false ||
+            stripos($ua, 'browsershots') !== false ||
+            stripos($ua, 'magereport') !== false ||
+            stripos($ua, 'ubermetrics-technologies') !== false ||
+            stripos($ua, 'W3C') !== false ||
+            stripos($ua, 'Validator') !== false ||
+            stripos($ua, 'Jigsaw/') !== false ||
+            stripos($ua, 'bing') !== false ||
+            stripos($ua, 'msn') !== false ||
+            stripos($ua, 'Google Web Preview') !== false ||
+            stripos($ua, 'ips-agent') !== false ||
+            (stripos($ua, 'Chrome/51.0.2704.103') !== false && !isset($_SERVER['HTTP_UPGRADE_INSECURE_REQUESTS']) && stristr($_SERVER['HTTP_ACCEPT_LANGUAGE'], "ru-RU") !== false) //ICQ Preview
+        ) {
             $scriptedAgent = new ScriptedAgent($ua);
-            if ($scriptedAgent->getName()==ScriptedAgent::UNKNOWN)
-            {
+            if ($scriptedAgent->getName()==ScriptedAgent::UNKNOWN) {
                 return false;
-            }
-            else
-            {
+            } else {
                 return $scriptedAgent;
             }
-        }
-        else
-        {
+        } else {
             return false;
         }
     }
 
     /**
      * @param bool $isChromeFrame
-     *
      * @return $this
      */
     public function setIsChromeFrame($isChromeFrame)
     {
         $this->isChromeFrame = (bool)$isChromeFrame;
-
         return $this;
     }
 
@@ -270,14 +256,12 @@ class Browser
     }
 
     /**
-     * @param bool $isChromeFrame
-     *
+     * @param bool $isWebkit
      * @return $this
      */
     public function setIsWebkit($isWebkit)
     {
         $this->isWebkit = (bool)$isWebkit;
-
         return $this;
     }
 
@@ -305,13 +289,11 @@ class Browser
 
     /**
      * @param bool $isFacebookWebView
-     *
      * @return $this
      */
     public function setIsFacebookWebView($isFacebookWebView)
     {
         $this->isFacebookWebView = (bool) $isFacebookWebView;
-
         return $this;
     }
 
@@ -339,13 +321,11 @@ class Browser
 
     /**
      * @param bool $isTwitterWebView
-     *
      * @return $this
      */
     public function setIsTwitterWebView($isTwitterWebView)
     {
         $this->isTwitterWebView = (bool) $isTwitterWebView;
-
         return $this;
     }
 
@@ -373,13 +353,11 @@ class Browser
 
     /**
      * @param UserAgent $userAgent
-     *
      * @return $this
      */
     public function setUserAgent(UserAgent $userAgent)
     {
         $this->userAgent = $userAgent;
-
         return $this;
     }
 
@@ -399,7 +377,6 @@ class Browser
     public function setIsCompatibilityMode($isCompatibilityMode)
     {
         $this->isCompatibilityMode = $isCompatibilityMode;
-
         return $this;
     }
 
