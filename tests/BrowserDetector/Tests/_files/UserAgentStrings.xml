@@ -284,8 +284,8 @@
             </field>
         </string>
         <string>
-            <field name="browser">EdgeHTML</field>
-            <field name="version">12.00049</field>
+            <field name="browser">Edge</field>
+            <field name="version">unknown</field>
             <field name="os">Windows Phone</field>
             <field name="os_version">10</field>
             <field name="device">Lumia 640 LTE</field>

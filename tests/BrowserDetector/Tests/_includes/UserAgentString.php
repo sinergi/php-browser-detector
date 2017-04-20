@@ -4,35 +4,37 @@ namespace Sinergi\BrowserDetector\Tests;
 
 class UserAgentString
 {
-    /**
-     * @var string
-     */
-    private $browser;
+    const UNKNOWN = 'unknown';
 
     /**
      * @var string
      */
-    private $browserVersion;
+    private $browser = self::UNKNOWN;
 
     /**
      * @var string
      */
-    private $os;
+    private $browserVersion = self::UNKNOWN;
 
     /**
      * @var string
      */
-    private $osVersion;
+    private $os = self::UNKNOWN;
 
     /**
      * @var string
      */
-    private $device;
+    private $osVersion = self::UNKNOWN;
 
     /**
      * @var string
      */
-    private $deviceVersion;
+    private $device = self::UNKNOWN;
+
+    /**
+     * @var string
+     */
+    private $deviceVersion = self::UNKNOWN;
 
     /**
      * @var string
@@ -42,12 +44,12 @@ class UserAgentString
     /**
      * @var string
      */
-    private $scriptedAgent;
+    private $scriptedAgent = self::UNKNOWN;
 
     /**
      * @var string
      */
-    private $scriptedAgentType;
+    private $scriptedAgentType = self::UNKNOWN;
 
     /**
      * @return string
