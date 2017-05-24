@@ -132,6 +132,17 @@
             </field>
         </string>
         <string>
+            <field name="browser">Firefox</field>
+            <field name="version">7.5b3349</field>
+            <field name="os">iOS</field>
+            <field name="os_version">10.0.2</field>
+            <field name="device">iPad</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (iPad; CPU OS 10_0_2 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) FxiOS/7.5b3349 Mobile/14A456 Safari/602.1.50
+            </field>
+        </string>
+        <string>
             <field name="browser">Vivaldi</field>
             <field name="version">1.0.83.38</field>
             <field name="os">Windows</field>
