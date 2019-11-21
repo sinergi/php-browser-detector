@@ -274,5 +274,610 @@
                 Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) wkhtmltopdf-amd64 Safari/534.34
             </field>
         </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">62.0.3202.84</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.0.0</field>
+            <field name="device">Android_SM-G960F</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">60.0.3112.107</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android_SM-G892A</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 7.0; SM-G892A Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/60.0.3112.107 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">58.0.3029.83</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android_SM-G930VC</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 7.0; SM-G930VC Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/58.0.3029.83 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">55.0.2883.91</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">Android_SM-G935S</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0.1; SM-G935S Build/MMB29K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">52.0.2743.98</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">Android_SM-G920V</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0.1; SM-G920V Build/MMB29K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">47.0.2526.83</field>
+            <field name="os">Android</field>
+            <field name="os_version">5.1.1</field>
+            <field name="device">Android_SM-G928X</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 5.1.1; SM-G928X Build/LMY47X) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">47.0.2526.83</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">Android_Nexus 6P</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0.1; Nexus 6P Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.83 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">59.0.3071.125</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.1.1</field>
+            <field name="device">Android_G8231</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 7.1.1; G8231 Build/41.2.A.0.219; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.125 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">52.0.2743.98</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">Android_E6653</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0.1; E6653 Build/32.2.A.0.253) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">61.0.3163.98</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0</field>
+            <field name="device">Android_HTC One X10</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0; HTC One X10 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/61.0.3163.98 Mobile Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">52.0.2743.98</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0</field>
+            <field name="device">Android_HTC One M9</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0; HTC One M9 Build/MRA58K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.3
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">52.0.2743.98</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android_Pixel C</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 7.0; Pixel C Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.98 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">52.0.2743.98</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">Android_SGP771</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0.1; SGP771 Build/32.2.A.0.253; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/52.0.2743.98 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">55.0.2883.91</field>
+            <field name="os">Android</field>
+            <field name="os_version">6.0.1</field>
+            <field name="device">Android_SHIELD Tablet K1</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 6.0.1; SHIELD Tablet K1 Build/MRA58K; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/55.0.2883.91 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">60.0.3112.116</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android_SM-T827R4</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 7.0; SM-T827R4 Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.116 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">47.0.2526.80</field>
+            <field name="os">Android</field>
+            <field name="os_version">4.4.3</field>
+            <field name="device">Android_KFTHWI</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 4.4.3; KFTHWI Build/KTU84M) AppleWebKit/537.36 (KHTML, like Gecko) Silk/47.1.79 like Chrome/47.0.2526.80 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">34.0.1847.118</field>
+            <field name="os">Android</field>
+            <field name="os_version">5.0.2</field>
+            <field name="device">Android_LG-V410/V41020c</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 5.0.2; LG-V410/V41020c Build/LRX22G) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/34.0.1847.118 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Chrome</field>
+            <field name="version">41.99900.2250.0242</field>
+            <field name="os">Android</field>
+            <field name="os_version">5.1</field>
+            <field name="device">Android_AFTS</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Linux; Android 5.1; AFTS Build/LMY47O) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/41.99900.2250.0242 Safari/537.36
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">64.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">5.0.2</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 5.0.2; Tablet; rv:64.0.2) Gecko/64.0.2 Firefox/64.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">64.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">5.0.2</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 5.0.2; Tablet; rv:64.0) Gecko/64.0 Firefox/64.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">5.1.1</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 5.1.1; Tablet; rv:68.0) Gecko/68.0 Firefox/68.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">57.0.1</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:57.0.1) Gecko/57.0.1 Firefox/57.0.1
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">57.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:57.0) Gecko/57.0 Firefox/57.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0.3</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:66.0.3) Gecko/66.0.3 Firefox/66.0.3
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0.5</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:66.0.5) Gecko/66.0.5 Firefox/66.0.5
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:66.0) Gecko/66.0 Firefox/66.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">67.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:67.0.2) Gecko/67.0.2 Firefox/67.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">67.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Mobile; rv:67.0) Gecko/67.0 Firefox/67.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">65.0.1</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Tablet; rv:65.0.1) Gecko/65.0.1 Firefox/65.0.1
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">65.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Tablet; rv:65.0) Gecko/65.0 Firefox/65.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">67.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.0; Tablet; rv:67.0) Gecko/67.0 Firefox/67.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.1.1</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.1.1; Mobile; rv:66.0.2) Gecko/66.0.2 Firefox/66.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">7.1.1</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 7.1.1; Mobile; rv:66.0) Gecko/66.0 Firefox/66.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">62.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.0.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.0.0; Mobile; rv:62.0.2) Gecko/62.0.2 Firefox/62.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">62.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.0.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.0.0; Mobile; rv:62.0) Gecko/62.0 Firefox/62.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.0.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.0.0; Mobile; rv:66.0.2) Gecko/66.0.2 Firefox/66.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.0.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.0.0; Mobile; rv:66.0) Gecko/66.0 Firefox/66.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.0.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.0.0; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">1.4.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.1.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.1.0; Tablet; rv:1.4.0) Gecko/1.4.0 Firefox/1.4.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">56.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.1.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.1.0; Tablet; rv:56.0) Gecko/56.0 Firefox/56.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">63.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.1.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.1.0; Tablet; rv:63.0) Gecko/63.0 Firefox/63.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.1.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.1.0; Tablet; rv:68.0) Gecko/68.0 Firefox/68.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.1.1</field>
+            <field name="os">Android</field>
+            <field name="os_version">8.1.0</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 8.1.0; Tablet; rv:68.1.1) Gecko/68.1.1 Firefox/68.1.1
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">63.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:63.0.2) Gecko/63.0.2 Firefox/63.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">63.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:63.0) Gecko/63.0 Firefox/63.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">65.0.1</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:65.0.1) Gecko/65.0.1 Firefox/65.0.1
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">65.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:65.0) Gecko/65.0 Firefox/65.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0.2</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:66.0.2) Gecko/66.0.2 Firefox/66.0.2
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">66.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:66.0) Gecko/66.0 Firefox/66.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">67.0.3</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:67.0.3) Gecko/67.0.3 Firefox/67.0.3
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">67.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:67.0) Gecko/67.0 Firefox/67.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.1.1</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:68.1.1) Gecko/68.1.1 Firefox/68.1.1
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.2.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Mobile; rv:68.2.0) Gecko/68.2.0 Firefox/68.2.0
+            </field>
+        </string>
+        <string>
+            <field name="browser">Firefox</field>
+            <field name="version">68.0</field>
+            <field name="os">Android</field>
+            <field name="os_version">9</field>
+            <field name="device">Android Phone</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Android 9; Tablet; rv:68.0) Gecko/68.0 Firefox/68.0
+            </field>
+        </string>
     </strings>
 </document>

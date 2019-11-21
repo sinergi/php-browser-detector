@@ -9,6 +9,7 @@ class Device
     const IPAD = 'iPad';
     const IPHONE = 'iPhone';
     const WINDOWS_PHONE = 'Windows Phone';
+    const ANDROID_PHONE = 'Android Phone';
 
     /**
      * @var string
