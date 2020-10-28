@@ -2,10 +2,10 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Sinergi\BrowserDetector\Device;
 
-class DeviceTest extends PHPUnit_Framework_TestCase
+class DeviceTest extends TestCase
 {
     public function testDevice()
     {

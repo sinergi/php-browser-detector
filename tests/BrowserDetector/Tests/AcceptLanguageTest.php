@@ -2,10 +2,10 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Sinergi\BrowserDetector\AcceptLanguage;
 
-class AcceptLanguageTest extends PHPUnit_Framework_TestCase
+class AcceptLanguageTest extends TestCase
 {
     public function testObject()
     {

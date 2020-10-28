@@ -2,12 +2,13 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
+use Sinergi\BrowserDetector\InvalidArgumentException;
 use Sinergi\BrowserDetector\Os;
 use Sinergi\BrowserDetector\UserAgent;
 
 // todo: move to os detector tests
-class OsTest extends PHPUnit_Framework_TestCase
+class OsTest extends TestCase
 {
     public function testIOs()
     {
@@ -60,12 +61,10 @@ class OsTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf("\\Sinergi\\BrowserDetector\\Os", $os);
     }
 
-    /**
-     * @expectedException \Sinergi\BrowserDetector\InvalidArgumentException
-     */
     public function testConstructorException()
     {
-        $os = new Os(1);
+        $this->expectException(InvalidArgumentException::class);
+        new Os(1);
     }
 
     public function testGetVersion()

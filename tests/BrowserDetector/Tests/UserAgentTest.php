@@ -2,10 +2,10 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Sinergi\BrowserDetector\UserAgent;
 
-class UserAgentTest extends PHPUnit_Framework_TestCase
+class UserAgentTest extends TestCase
 {
     public function testObject()
     {
