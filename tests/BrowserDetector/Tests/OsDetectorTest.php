@@ -2,10 +2,10 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Sinergi\BrowserDetector\Os;
 
-class OsDetectorTest extends PHPUnit_Framework_TestCase
+class OsDetectorTest extends TestCase
 {
     public function testDetect()
     {

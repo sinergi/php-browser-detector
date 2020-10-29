@@ -2,11 +2,11 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Sinergi\BrowserDetector\Browser;
 
 // todo: move to browser detector tests
-class BrowserTest extends PHPUnit_Framework_TestCase
+class BrowserTest extends TestCase
 {
     public function testBlackBerry()
     {

@@ -2,18 +2,19 @@
 
 namespace Sinergi\BrowserDetector\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Sinergi\BrowserDetector\AcceptLanguage;
+use Sinergi\BrowserDetector\InvalidArgumentException;
 use Sinergi\BrowserDetector\Language;
 
-class LanguageTest extends PHPUnit_Framework_TestCase
+class LanguageTest extends TestCase
 {
     /**
      * @var Language
      */
     private $language;
 
-    public function setUp()
+    public function setUp(): void
     {
         $httpAcceptLanguage = 'fr-CA,fr;q=0.8,en-CA;q=0.6,en;q=0.4,en-US;q=0.2';
         $this->language = new Language($httpAcceptLanguage);
@@ -43,12 +44,10 @@ class LanguageTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf("\\Sinergi\\BrowserDetector\\Language", $language);
     }
 
-    /**
-     * @expectedException \Sinergi\BrowserDetector\InvalidArgumentException
-     */
     public function testConstructorException()
     {
-        $language = new Language(1);
+        $this->expectException(InvalidArgumentException::class);
+        new Language(1);
     }
 
     public function testGetLanguageLocale()
