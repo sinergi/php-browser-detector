@@ -7,6 +7,7 @@ class BrowserDetector implements DetectorInterface
     const FUNC_PREFIX = 'checkBrowser';
 
     protected static $userAgentString;
+    protected static $edgeVersionsMap = null;
 
     /**
      * @var Browser
@@ -46,16 +47,14 @@ class BrowserDetector implements DetectorInterface
         'Samsung',
         'Chrome',
         'OmniWeb',
+        'UCBrowser', //before Android
         // common mobile
         'Android',
         'BlackBerry',
         'Nokia',
         'Gsa',
-        // common bots
-        'Robot',
-        // wkhtmltopdf before Safari
-        'Wkhtmltopdf',
         // WebKit base check (post mobile and others)
+        'AppleNews',
         'Safari',
         // everyone else
         'NetPositive',
@@ -65,11 +64,22 @@ class BrowserDetector implements DetectorInterface
         'Phoenix',
         'Amaya',
         'Lynx',
+        'NSPlayer',
+        'Office',
         'Shiretoko',
         'IceCat',
         'Iceweasel',
         'Mozilla', /* Mozilla is such an open standard that you must check it last */
     );
+
+    /**
+     * @return array
+     */
+    public static function getEdgeVersionsMap()
+    {
+        if (self::$edgeVersionsMap) return self::$edgeVersionsMap;
+        return self::$edgeVersionsMap = require __DIR__ . '/edgeVersionMap.php';
+    }
 
     /**
      * Routine to determine the browser type.
@@ -92,6 +102,8 @@ class BrowserDetector implements DetectorInterface
 
         self::checkChromeFrame();
         self::checkFacebookWebView();
+        self::checkTwitterWebView();
+        self::checkWebkit();
 
         foreach (self::$browsersList as $browserName) {
             $funcName = self::FUNC_PREFIX . $browserName;
@@ -121,6 +133,22 @@ class BrowserDetector implements DetectorInterface
     }
 
     /**
+     * Determine if the browser is a wekit webview.
+     *
+     * @return bool
+     */
+    public static function checkWebkit()
+    {
+        if (strpos(self::$userAgentString, 'AppleWebKit/') !== false) {
+            self::$browser->setIsWebkit(true);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Determine if the user is using Facebook.
      *
      * @return bool
@@ -129,6 +157,22 @@ class BrowserDetector implements DetectorInterface
     {
         if (strpos(self::$userAgentString, 'FBAV') !== false) {
             self::$browser->setIsFacebookWebView(true);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the user is using Twitter.
+     *
+     * @return bool
+     */
+    public static function checkTwitterWebView()
+    {
+        if (strpos(self::$userAgentString, 'Twitter for') !== false) {
+            self::$browser->setIsTwitterWebView(true);
 
             return true;
         }
@@ -167,25 +211,6 @@ class BrowserDetector implements DetectorInterface
                 self::$browser->setVersion('10.' . $aversion[0]);
             }
             self::$browser->setName(Browser::BLACKBERRY);
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * Determine if the browser is a robot.
-     *
-     * @return bool
-     */
-    public static function checkBrowserRobot()
-    {
-        if (stripos(self::$userAgentString, 'bot') !== false ||
-            stripos(self::$userAgentString, 'spider') !== false ||
-            stripos(self::$userAgentString, 'crawler') !== false
-        ) {
-            self::$browser->setIsRobot(true);
-
             return true;
         }
 
@@ -456,11 +481,16 @@ class BrowserDetector implements DetectorInterface
     public static function checkBrowserEdge()
     {
         if (stripos(self::$userAgentString, 'Edge') !== false) {
-            $version = explode('Edge/', self::$userAgentString);
-            if (isset($version[1])) {
-                self::$browser->setVersion((float)$version[1]);
-            }
             self::$browser->setName(Browser::EDGE);
+            preg_match('/Edge[\\/ \\(]([a-zA-Z\\d\\.]*)/i', self::$userAgentString, $matches);
+            if (sizeof($matches)>1) {
+                // todo: implement edge html version
+                $edgeVersionsMap = self::getEdgeVersionsMap();
+                // todo: match versions in between
+                if (isset($edgeVersionsMap[$matches[1]])) {
+                    self::$browser->setVersion($edgeVersionsMap[$matches[1]]);
+                }
+            }
 
             return true;
         }
@@ -731,7 +761,7 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserNokia()
     {
-        if (preg_match("/Nokia([^\/]+)\/([^ SP]+)/i", self::$userAgentString, $matches)) {
+        if (preg_match("/Nokia([^\\/]+)\\/([^ SP]+)/i", self::$userAgentString, $matches)) {
             self::$browser->setVersion($matches[2]);
             if (stripos(self::$userAgentString, 'Series60') !== false ||
                 strpos(self::$userAgentString, 'S60') !== false
@@ -755,7 +785,7 @@ class BrowserDetector implements DetectorInterface
     public static function checkBrowserFirefox()
     {
         if (stripos(self::$userAgentString, 'safari') === false) {
-            if (preg_match("/Firefox[\/ \(]([^ ;\)]+)/i", self::$userAgentString, $matches)) {
+            if (preg_match("/Firefox[\\/ \\(]([a-zA-Z\\d\\.]*)/i", self::$userAgentString, $matches)) {
                 if (isset($matches[1])) {
                     self::$browser->setVersion($matches[1]);
                 }
@@ -781,7 +811,7 @@ class BrowserDetector implements DetectorInterface
     public static function checkBrowserSeaMonkey()
     {
         if (stripos(self::$userAgentString, 'safari') === false) {
-            if (preg_match("/SeaMonkey[\/ \(]([^ ;\)]+)/i", self::$userAgentString, $matches)) {
+            if (preg_match("/SeaMonkey[\\/ \\(]([a-zA-Z\\d\\.]*)/i", self::$userAgentString, $matches)) {
                 if (isset($matches[1])) {
                     self::$browser->setVersion($matches[1]);
                 }
@@ -901,20 +931,7 @@ class BrowserDetector implements DetectorInterface
         return false;
     }
 
-    /**
-     * Determine if the browser is Safari.
-     *
-     * @return bool
-     */
-    public static function checkBrowserWkhtmltopdf()
-    {
-        if (stripos(self::$userAgentString, 'wkhtmltopdf') !== false) {
-            self::$browser->setName(Browser::WKHTMLTOPDF);
-            return true;
-        }
 
-        return false;
-    }
     /**
      * Determine if the browser is Safari.
      *
@@ -958,7 +975,7 @@ class BrowserDetector implements DetectorInterface
 
         return false;
     }
-    
+
     /**
      * Determine if the browser is Comodo Dragon / Ice Dragon / Chromodo.
      *
@@ -987,7 +1004,7 @@ class BrowserDetector implements DetectorInterface
      */
     public static function checkBrowserAndroid()
     {
-        // Navigator
+        // Android Navigator
         if (stripos(self::$userAgentString, 'Android') !== false) {
             if (preg_match('/Version\/([\d\.]*)/i', self::$userAgentString, $matches)) {
                 if (isset($matches[1])) {
@@ -997,6 +1014,104 @@ class BrowserDetector implements DetectorInterface
                 self::$browser->setVersion(Browser::VERSION_UNKNOWN);
             }
             self::$browser->setName(Browser::NAVIGATOR);
+
+            return true;
+        }
+
+        // Dalvik (Android OS)
+        if (stripos(self::$userAgentString, 'Dalvik/') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'Dalvik'));
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion($aversion[0]);
+            }
+            self::$browser->setName(Browser::DALVIK);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the browser is UCBrowser.
+     *
+     * @return bool
+     */
+    public static function checkBrowserUCBrowser()
+    {
+        // Navigator
+        if (stripos(self::$userAgentString, 'UCBrowser/') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'UCBrowser'));
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion($aversion[0]);
+            }
+            self::$browser->setName(Browser::UCBROWSER);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the browser is Windows Media Player.
+     *
+     * @return bool
+     */
+    public static function checkBrowserNSPlayer()
+    {
+        // Navigator
+        if (stripos(self::$userAgentString, 'NSPlayer/') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'NSPlayer'));
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion($aversion[0]);
+            }
+            self::$browser->setName(Browser::NSPLAYER);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the browser is Microsoft Office.
+     *
+     * @return bool
+     */
+    public static function checkBrowserOffice()
+    {
+        // Navigator
+        if (stripos(self::$userAgentString, 'Microsoft Office') !== false) {
+            self::$browser->setVersion(Browser::VERSION_UNKNOWN);
+            self::$browser->setName(Browser::NSPLAYER);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the browser is the Apple News app.
+     *
+     * @return bool
+     */
+    public static function checkBrowserAppleNews()
+    {
+        // Navigator
+        if (stripos(self::$userAgentString, 'AppleNews/') !== false) {
+            if (preg_match('/Version\/([\d\.]*)/i', self::$userAgentString, $matches)) {
+                if (isset($matches[1])) {
+                    self::$browser->setVersion($matches[1]);
+                }
+            } else {
+                self::$browser->setVersion(Browser::VERSION_UNKNOWN);
+            }
+            self::$browser->setName(Browser::APPLE_NEWS);
 
             return true;
         }
