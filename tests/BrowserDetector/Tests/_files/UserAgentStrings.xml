@@ -274,5 +274,17 @@
                 Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.34 (KHTML, like Gecko) wkhtmltopdf-amd64 Safari/534.34
             </field>
         </string>
+        <string>
+            <field name="browser">Edge</field>
+            <field name="version">80.0.361.40</field>
+            <field name="os">Windows</field>
+            <field name="os_version">10.0</field>
+            <field name="device">unknown</field>
+            <field name="device_version">unknown</field>
+            <field name="string">
+                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.66
+                Safari/537.36 Edg/80.0.361.40
+            </field>
+        </string>
     </strings>
 </document>
