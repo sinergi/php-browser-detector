@@ -463,6 +463,14 @@ class BrowserDetector implements DetectorInterface
             self::$browser->setName(Browser::EDGE);
 
             return true;
+        } elseif (stripos(self::$userAgentString, 'Edg') !== false) {
+            $version = explode('Edg/', self::$userAgentString);
+            if (isset($version[1])) {
+                self::$browser->setVersion(trim($version[1]));
+            }
+            self::$browser->setName(Browser::EDGE);
+
+            return true;
         }
 
         return false;
