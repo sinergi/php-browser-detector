@@ -38,6 +38,8 @@ class OsDetector implements DetectorInterface
             self::checkBeOS($os, $userAgent) ||
             // Android before Linux
             self::checkAndroid($os, $userAgent) ||
+            // webOS before Linux
+            self::checkWebOS($os, $userAgent) ||
             self::checkLinux($os, $userAgent) ||
             self::checkNokia($os, $userAgent) ||
             self::checkBlackBerry($os, $userAgent)
@@ -499,6 +501,45 @@ class OsDetector implements DetectorInterface
         if (stripos($userAgent->getUserAgentString(), 'BeOS') !== false) {
             $os->setVersion($os::VERSION_UNKNOWN);
             $os->setName($os::BEOS);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Determine if the user's operating system is webOS.
+     *
+     * @param Os $os
+     * @param UserAgent $userAgent
+     *
+     * @return bool
+     */
+    private static function checkWebOS(Os $os, UserAgent $userAgent)
+    {
+        if (stripos($userAgent->getUserAgentString(), 'hpwOS') !== false) {
+            $aresult = explode('hpwOS/', $userAgent->getUserAgentString());
+            if (isset($aresult[1])) {
+                $aversion = explode(';', $aresult[1]);
+                $os->setVersion($aversion[0]);
+            } else {
+                $os->setVersion($os::VERSION_UNKNOWN);
+            }
+            $os->setName($os::WEBOS);
+            $os->setIsMobile(true);
+
+            return true;
+        } elseif (stripos($userAgent->getUserAgentString(), 'webOS') !== false) {
+            $aresult = explode('webOS/', $userAgent->getUserAgentString());
+            if (isset($aresult[1])) {
+                $aversion = explode(';', $aresult[1]);
+                $os->setVersion($aversion[0]);
+            } else {
+                $os->setVersion($os::VERSION_UNKNOWN);
+            }
+            $os->setName($os::WEBOS);
+            $os->setIsMobile(true);
 
             return true;
         }
