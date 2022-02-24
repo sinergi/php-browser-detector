@@ -27,7 +27,8 @@ class LanguageTest extends TestCase
 
     public function testGetLanguages()
     {
-        $this->assertGreaterThan(0, count($this->language->getLanguages()));
+        $languages = ['fr-CA', 'fr', 'en-CA', 'en', 'en-US'];
+        $this->assertSame($languages, $this->language->getLanguages());
     }
 
     public function testGetLanguageLocal()
@@ -54,5 +55,11 @@ class LanguageTest extends TestCase
     {
         $language = new Language('ru,en-us;q=0.5,en;q=0.3');
         $this->assertSame('ru', $language->getLanguageLocale());
+    }
+
+    public function testGetLanguagesFromBogusHeader()
+    {
+        $language = new Language(';q=0.8, de, en;q=0.2, de-CH, de;q=0.4');
+        $this->assertSame(['de-CH', 'de', 'en'], $language->getLanguages());
     }
 }
