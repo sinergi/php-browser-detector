@@ -36,7 +36,7 @@ class LanguageDetector implements DetectorInterface
                 $value = trim($value, ',; .');
                 if (is_numeric($value)) {
                     $key = $value;
-                } else if($value) {
+                } elseif ($value) {
                     $languages[$key] = preg_split('/[^\w-]+/', $value);
                 }
             }
