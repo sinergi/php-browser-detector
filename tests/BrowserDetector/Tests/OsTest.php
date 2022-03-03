@@ -38,6 +38,13 @@ class OsTest extends TestCase
         $this->assertSame('7.1.0.346', $os->getVersion());
     }
 
+    public function testWebOS()
+    {
+        $os = new Os('Mozilla/5.0 (hp-tablet; Linux; hpwOS/3.0.5; U; en-US) AppleWebKit/534.6 (KHTML, like Gecko) wOSBrowser/234.83 Safari/534.6 TouchPad/1.0');
+        $this->assertSame(Os::WEBOS, $os->getName());
+        $this->assertSame('3.0.5', $os->getVersion());
+    }
+
     public function testIsMobile()
     {
         $os = new Os('Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Microsoft; Lumia 640 LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Mobile Safari/537.36 Edge/14.14393');
