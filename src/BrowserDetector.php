@@ -776,6 +776,15 @@ class BrowserDetector implements DetectorInterface
 
                 return true;
             }
+        } elseif (stripos(self::$userAgentString, 'FxiOS') !== false) {
+            $aresult = explode('/', stristr(self::$userAgentString, 'FxiOS'));
+            if (isset($aresult[1])) {
+                $aversion = explode(' ', $aresult[1]);
+                self::$browser->setVersion($aversion[0]);
+            }
+            self::$browser->setName(Browser::FIREFOX);
+
+            return true;
         }
 
         return false;
